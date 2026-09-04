@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkai4ea_frontend=globalThis.webpackChunkai4ea_frontend||[]).push([[6735],{6735(e,a,n){n.d(a,{createEventModelingServices:()=>i.g});var i=n(2968);n(9302)}}]);

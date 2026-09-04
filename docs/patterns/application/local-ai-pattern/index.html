@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-patterns/application/local-ai-pattern" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Reference Architecture — Local AI Patterns | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/patterns/application/local-ai-pattern/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Reference Architecture — Local AI Patterns | Governed Content Site"><meta data-rh="true" name="description" content="Local AI Patterns"><meta data-rh="true" property="og:description" content="Local AI Patterns"><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/application/local-ai-pattern/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/application/local-ai-pattern/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/application/local-ai-pattern/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/ai4ea/docs/knowledge-base/"><span title="Knowledge base" class="categoryLinkLabel_W154">Knowledge base</span></a><button aria-label="Collapse sidebar category &#x27;Knowledge base&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/policies/"><span title="Policies" class="categoryLinkLabel_W154">Policies</span></a><button aria-label="Expand sidebar category &#x27;Policies&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/ai4ea/docs/knowledge-base/patterns/"><span title="Patterns" class="categoryLinkLabel_W154">Patterns</span></a><button aria-label="Collapse sidebar category &#x27;Patterns&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/event-driven-timeseries-pattern/"><span title="Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)" class="linkLabel_WmDU">Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/gcp-egress-pattern/"><span title="Integration Reference Architecture — GCP Egress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — GCP Egress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/access-authorization-pattern/"><span title="Reference Architecture — Access &amp; Authorization Management Patterns" class="linkLabel_WmDU">Reference Architecture — Access &amp; Authorization Management Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/ai-patterns/"><span title="Reference Architecture — AI Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — AI Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/cicd-pipeline-pattern/"><span title="Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns" class="linkLabel_WmDU">Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai4ea/docs/patterns/application/local-ai-pattern/"><span title="Reference Architecture — Local AI Patterns" class="linkLabel_WmDU">Reference Architecture — Local AI Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/web-app-deployment-pattern/"><span title="Reference Architecture — Web Application Deployment Patterns" class="linkLabel_WmDU">Reference Architecture — Web Application Deployment Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-engineering-ingestion-pattern/"><span title="Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-ingestion-pattern/"><span title="Integration Reference Architecture — Data Ingestion Patterns" class="linkLabel_WmDU">Integration Reference Architecture — Data Ingestion Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/mdm-data-quality-pattern/"><span title="Reference Architecture — Master Data Management &amp; Data Quality Patterns" class="linkLabel_WmDU">Reference Architecture — Master Data Management &amp; Data Quality Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/cloud-armor-pattern/"><span title="Reference Architecture — Google Cloud Armor Usage Patterns" class="linkLabel_WmDU">Reference Architecture — Google Cloud Armor Usage Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/ot-streaming-pattern/"><span title="Integration Reference Architecture — OT Data Streaming Patterns" class="linkLabel_WmDU">Integration Reference Architecture — OT Data Streaming Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/"><span title="Reference Architecture — Terraform Infrastructure Patterns" class="linkLabel_WmDU">Reference Architecture — Terraform Infrastructure Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/api-ingress-pattern/"><span title="Integration Reference Architecture — API Ingress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — API Ingress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/Application Integration Solution Patterns/"><span title="Application Integration Solution Patterns" class="linkLabel_WmDU">Application Integration Solution Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/external-file-share-pattern/"><span title="Integration Reference Architecture — File Share Access and Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — File Share Access and Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sap-integration-pattern/"><span title="Integration Reference Architecture — SAP Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — SAP Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sharepoint-ingestion-pattern/"><span title="Integration Reference Architecture — SharePoint Online Data Ingestion" class="linkLabel_WmDU">Integration Reference Architecture — SharePoint Online Data Ingestion</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/principles/"><span title="Principles" class="categoryLinkLabel_W154">Principles</span></a><button aria-label="Expand sidebar category &#x27;Principles&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/standards/"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Expand sidebar category &#x27;Standards&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/positions/"><span title="Positions" class="categoryLinkLabel_W154">Positions</span></a><button aria-label="Expand sidebar category &#x27;Positions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Reference Architecture — Local AI Patterns</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="local-ai-patterns">Local AI Patterns<a href="#local-ai-patterns" class="hash-link" aria-label="Direct link to Local AI Patterns" title="Direct link to Local AI Patterns" translate="no">​</a></h2>
+<p><strong>Version:</strong> 0.1
+<strong>Status:</strong> Draft – Candidate for ARB/TRB Review
+<strong>Audience:</strong> Solution Architects, Application Engineers, Security, End User Computing, and Operations Teams</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-introduction">Document Introduction<a href="#document-introduction" class="hash-link" aria-label="Direct link to Document Introduction" title="Direct link to Document Introduction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="purpose-of-document">Purpose of Document<a href="#purpose-of-document" class="hash-link" aria-label="Direct link to Purpose of Document" title="Direct link to Purpose of Document" translate="no">​</a></h3>
+<p>This document defines an initial Entegris pattern for running approved local AI capabilities on managed workstations. It provides a documented position for cases where teams need on-device inference, offline experimentation, or local document processing without immediately standing up a cloud-hosted AI service.</p>
+<ul>
+<li class="">The value of the pattern is speed to execution — leveraging what others have done before and quickly achieving business outcomes</li>
+<li class="">A pattern is best expressed as: When to use, When Not to use certain technologies/approaches</li>
+<li class="">This document is for designers and architects who need to evaluate whether local AI on a managed endpoint is appropriate and what controls are required before it is allowed</li>
+<li class="">If implemented properly, these patterns enable teams to iterate safely while preserving governance, supportability, and data protection</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scope-and-applicability">Scope and Applicability<a href="#scope-and-applicability" class="hash-link" aria-label="Direct link to Scope and Applicability" title="Direct link to Scope and Applicability" translate="no">​</a></h3>
+<p>These patterns cover local AI runtimes and models executed on Entegris-managed workstations for development, research, summarization, and bounded knowledge tasks.</p>
+<ul>
+<li class="">Local model inference on a managed laptop, workstation, or approved engineering desktop</li>
+<li class="">Optional local document retrieval over approved, non-restricted content sets stored on the same device</li>
+<li class="">Controlled synchronization of prompts, configurations, logs, and approved artifacts back to enterprise systems when connectivity exists</li>
+</ul>
+<p><strong>Environments:</strong></p>
+<ul>
+<li class="">Local workstation</li>
+<li class="">Corporate desktop</li>
+<li class="">Isolated development environment</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intended-audience">Intended Audience<a href="#intended-audience" class="hash-link" aria-label="Direct link to Intended Audience" title="Direct link to Intended Audience" translate="no">​</a></h3>
+<ul>
+<li class="">Solution Architects</li>
+<li class="">Application Developers</li>
+<li class="">Data and AI Engineers</li>
+<li class="">Cybersecurity and Risk Teams</li>
+<li class="">End User Computing / Platform Engineering</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="context">Context<a href="#context" class="hash-link" aria-label="Direct link to Context" title="Direct link to Context" translate="no">​</a></h2>
+<ul>
+<li class="">The AI Policy allows work-related AI use only through authorized AI tools and requires new tools to go through review before use</li>
+<li class="">Teams may need local AI because software download restrictions, network constraints, offline work, or data-handling concerns make immediate use of a cloud AI service impractical</li>
+<li class="">Local AI reduces external data transfer but introduces endpoint governance, model provenance, patching, and auditability concerns</li>
+<li class="">Human review remains mandatory for outputs that influence business, compliance, quality, safety, or customer outcomes</li>
+<li class="">Confidential Restricted data must not be processed in local AI tools unless an explicit exception and legal review are in place</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-use-these-patterns">Why Use These Patterns<a href="#why-use-these-patterns" class="hash-link" aria-label="Direct link to Why Use These Patterns" title="Direct link to Why Use These Patterns" translate="no">​</a></h3>
+<ul>
+<li class="">Reduce experimentation friction for approved internal use cases</li>
+<li class="">Support low-latency or partially offline workflows on managed devices</li>
+<li class="">Keep early exploration documented so the organization can iterate toward a supported standard</li>
+<li class="">Provide a governed alternative to unmanaged public or personal AI tools</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-principles">Architecture Principles<a href="#architecture-principles" class="hash-link" aria-label="Direct link to Architecture Principles" title="Direct link to Architecture Principles" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enterprise-principles">Enterprise Principles<a href="#enterprise-principles" class="hash-link" aria-label="Direct link to Enterprise Principles" title="Direct link to Enterprise Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Keep It Simple</li>
+<li class="">Think Big and Execute Rapidly</li>
+<li class="">Reuse Shared Application Services First</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="domain-specific-principles">Domain-Specific Principles<a href="#domain-specific-principles" class="hash-link" aria-label="Direct link to Domain-Specific Principles" title="Direct link to Domain-Specific Principles" translate="no">​</a></h3>
+<ul>
+<li class="">AI Decisions Must Be Explainable</li>
+<li class="">Responsible AI Must Be Embedded in Design</li>
+<li class="">Humans in the Loop for Material Decisions</li>
+<li class="">Avoid AI Where Rules Suffice</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-principles">Security Principles<a href="#security-principles" class="hash-link" aria-label="Direct link to Security Principles" title="Direct link to Security Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Security and Privacy by Design</li>
+<li class="">Trust Through Data Stewardship</li>
+<li class="">Security Assurance Through Least Privilege</li>
+<li class="">Defense in Depth</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="guardrail-summary">Guardrail Summary<a href="#guardrail-summary" class="hash-link" aria-label="Direct link to Guardrail Summary" title="Direct link to Guardrail Summary" translate="no">​</a></h2>
+<p>This pattern is constrained by the following knowledge base guidance:</p>
+<ul>
+<li class="">The AI Policy requires any local AI runtime to be an authorized AI tool before business use</li>
+<li class="">Confidential Restricted data must not be entered into local AI tools</li>
+<li class="">Human review is mandatory before AI output is used for consequential business decisions or external communication</li>
+<li class="">Prompt, output, and local knowledge retention should be minimized and automatically deleted where feasible</li>
+<li class="">Endpoint controls such as disk encryption, malware protection, patching, and device management are part of the solution design, not afterthoughts</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-solution-patterns">High-Level Solution Patterns<a href="#high-level-solution-patterns" class="hash-link" aria-label="Direct link to High-Level Solution Patterns" title="Direct link to High-Level Solution Patterns" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Solution</th><th>When to Use</th><th>When Not to Use</th></tr></thead><tbody><tr><td>Local AI Workstation Pattern</td><td>• Need approved local inference on a managed endpoint<br>• Need rapid prototyping, summarization, coding assistance, or document analysis without dependence on a constant cloud connection<br>• Data can be limited to public, internal, or approved confidential non-restricted content</td><td>• The use case requires production-grade scale, centralized governance, or shared enterprise access<br>• The data includes Confidential Restricted content<br>• The endpoint cannot be managed to enterprise security standards</td></tr><tr><td>Local AI with Local RAG Pattern</td><td>• Need answers grounded in a small approved corpus stored locally on the device<br>• Need citations or traceability for engineering, policy, or support tasks while offline or semi-connected</td><td>• The corpus is large, fast-changing, or needs centralized freshness management<br>• Access must be shared across many users or roles<br>• Retrieval must span systems of record that should remain server-side</td></tr><tr><td>Local AI Experiment Sandbox Pattern</td><td>• Need a time-boxed evaluation of a local model runtime such as Ollama on a corporate device<br>• Architects want a documented pattern before deciding whether to standardize the runtime</td><td>• Users want to bypass software controls with personal accounts, side-loading, or unmanaged plugins<br>• The intent is to support unattended production automation or agentic actions without review</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pattern-selection-matrix">Pattern Selection Matrix<a href="#pattern-selection-matrix" class="hash-link" aria-label="Direct link to Pattern Selection Matrix" title="Direct link to Pattern Selection Matrix" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario Cue</th><th>Connectivity</th><th>Data Sensitivity</th><th>Primary Need</th><th>Recommended Pattern</th><th>Notes</th></tr></thead><tbody><tr><td>Developer needs local coding or summarization help on a managed laptop</td><td>Connected or intermittent</td><td>Public / Internal / approved Confidential</td><td>Fast personal productivity</td><td>Local AI Workstation Pattern</td><td>Start with a documented approved runtime and model allow-list; do not permit arbitrary model pulls</td></tr><tr><td>Engineer needs local question answering over a small approved document set</td><td>Intermittent or offline</td><td>Public / Internal / approved Confidential</td><td>Grounded answers with citations</td><td>Local AI with Local RAG Pattern</td><td>Keep the corpus curated and stored locally with device encryption; retain source metadata for traceability</td></tr><tr><td>Team wants to evaluate whether Ollama is viable in the enterprise</td><td>Connected during setup, optional offline use later</td><td>Non-sensitive test data only</td><td>Architecture evaluation</td><td>Local AI Experiment Sandbox Pattern</td><td>Time-box the evaluation, document risks, and route approval through ARB/TRB and Cybersecurity</td></tr><tr><td>Department wants a shared assistant for many users</td><td>Connected</td><td>Mixed enterprise data</td><td>Multi-user service</td><td>Use cloud AI patterns instead</td><td>Move to LiteLLM gateway and centralized controls rather than distributing models endpoint-by-endpoint</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="canonical-patterns">Canonical Patterns<a href="#canonical-patterns" class="hash-link" aria-label="Direct link to Canonical Patterns" title="Direct link to Canonical Patterns" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="local-ai-workstation-pattern">Local AI Workstation Pattern<a href="#local-ai-workstation-pattern" class="hash-link" aria-label="Direct link to Local AI Workstation Pattern" title="Direct link to Local AI Workstation Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A user or small team needs AI assistance directly on a managed workstation because local execution offers lower friction, lower latency, or reduced external data movement for an approved use case.</td></tr><tr><td><strong>Problem</strong></td><td>How do we enable local AI on corporate endpoints without creating an unmanaged shadow AI footprint or bypassing enterprise governance?</td></tr><tr><td><strong>Solution</strong></td><td>• Package and approve a local AI runtime, model set, and installation method through standard enterprise review channels before business use<br>• Run only on managed devices with disk encryption, endpoint protection, OS patching, and least-privilege installation controls<br>• Restrict usage to approved prompts and data classes, require human review of outputs, and synchronize minimal audit events to enterprise logging when feasible<br>• Treat model files and prompt templates as versioned artifacts with documented provenance and ownership</td></tr><tr><td><strong>Benefits</strong></td><td>• Enables rapid local experimentation and user productivity without dependence on constant cloud access<br>• Reduces uncontrolled use of public AI tools by offering a governed local alternative<br>• Keeps data processing closer to the user for approved low-risk workflows</td></tr><tr><td><strong>Considerations</strong></td><td>• Endpoint-by-endpoint deployment increases operational support effort compared with a centralized service<br>• Model downloads, updates, and hardware requirements must be governed explicitly<br>• Local execution does not remove the need for policy, logging, and review controls</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="local-ai-with-local-rag-pattern">Local AI with Local RAG Pattern<a href="#local-ai-with-local-rag-pattern" class="hash-link" aria-label="Direct link to Local AI with Local RAG Pattern" title="Direct link to Local AI with Local RAG Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A user needs local AI answers grounded in a bounded set of approved documents, for example architecture guidance, technical references, or working notes that can be stored on the same device.</td></tr><tr><td><strong>Problem</strong></td><td>How do we provide grounded local answers while preserving traceability and avoiding a fragile, oversized local knowledge base?</td></tr><tr><td><strong>Solution</strong></td><td>• Store only an approved, curated document subset on the device and generate embeddings locally or through a controlled pre-processing step<br>• Retrieve local passages at query time and require the model to answer from retrieved context with source references<br>• Enforce data minimization, local encryption, retention limits, and removal of stale or unapproved documents from the device</td></tr><tr><td><strong>Benefits</strong></td><td>• Improves answer quality compared with prompt-only local inference<br>• Supports explainability through local citations and grounded context<br>• Works when network access is limited or disconnected</td></tr><tr><td><strong>Considerations</strong></td><td>• Local corpora drift quickly if ownership and refresh processes are unclear<br>• Sensitive or broadly shared knowledge sources are usually better served by centralized RAG patterns</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="local-ai-experiment-sandbox-pattern">Local AI Experiment Sandbox Pattern<a href="#local-ai-experiment-sandbox-pattern" class="hash-link" aria-label="Direct link to Local AI Experiment Sandbox Pattern" title="Direct link to Local AI Experiment Sandbox Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>The organization wants to evaluate a local AI runtime such as Ollama, but the runtime is not yet a broadly established enterprise standard and installation may currently be blocked by endpoint controls.</td></tr><tr><td><strong>Problem</strong></td><td>How do we evaluate a blocked or not-yet-standard local AI runtime without encouraging policy bypass or ungoverned experimentation?</td></tr><tr><td><strong>Solution</strong></td><td>• Treat the runtime as a candidate authorized AI tool and document the evaluation scope, owner, approved devices, approved models, and exit criteria before installation<br>• Use only non-sensitive test prompts and datasets during the evaluation unless broader approval is explicitly granted<br>• Route software packaging, endpoint exceptions, risk review, and architecture approval through normal ARB/TRB/Cybersecurity processes rather than ad hoc local admin changes<br>• Capture findings on performance, supportability, model quality, logging, update mechanism, and data-handling behavior to decide whether the tool becomes an approved standard</td></tr><tr><td><strong>Benefits</strong></td><td>• Creates a legitimate path to test local AI without normalizing shadow IT behavior<br>• Produces architecture evidence that can support a future approved local AI standard<br>• Makes security, platform, and support concerns visible early</td></tr><tr><td><strong>Considerations</strong></td><td>• A documented pattern does not itself authorize a tool; formal review and approval are still required<br>• Evaluation environments should be time-boxed and removed if approval is not granted</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-controls">Required Controls<a href="#required-controls" class="hash-link" aria-label="Direct link to Required Controls" title="Direct link to Required Controls" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Control Area</th><th>Required Direction for Local AI</th></tr></thead><tbody><tr><td><strong>Authorization</strong></td><td>The runtime, model source, and installation method must be reviewed and approved as an authorized AI tool before business use.</td></tr><tr><td><strong>Identity and Access</strong></td><td>Use managed corporate identities for any connected control plane or artifact source; no personal accounts or local shared credentials.</td></tr><tr><td><strong>Endpoint Security</strong></td><td>Device must be corporate-managed with full-disk encryption, current patching, EDR, malware protection, and standard device compliance checks.</td></tr><tr><td><strong>Data Handling</strong></td><td>Do not use Confidential Restricted data. Minimize prompt content, avoid secrets and PII, and retain local artifacts only as long as necessary.</td></tr><tr><td><strong>Model Provenance</strong></td><td>Pull models only from approved sources with version pinning, checksum validation where feasible, and named ownership.</td></tr><tr><td><strong>Network and Egress</strong></td><td>Restrict runtime egress to approved endpoints required for installation, model retrieval, patching, and optional telemetry.</td></tr><tr><td><strong>Logging and Audit</strong></td><td>Capture installation, model version, user, and high-level usage events in enterprise logs when technically feasible; do not log sensitive prompt bodies by default.</td></tr><tr><td><strong>Human Oversight</strong></td><td>Human review is required before outputs are used in material business, quality, compliance, safety, or customer decisions.</td></tr><tr><td><strong>Lifecycle Management</strong></td><td>Define ownership for packaging, updates, model refresh, exception tracking, and decommissioning.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sequence-diagrams">Sequence Diagrams<a href="#sequence-diagrams" class="hash-link" aria-label="Direct link to Sequence Diagrams" title="Direct link to Sequence Diagrams" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="local-ai-workstation-pattern-flow">Local AI Workstation Pattern Flow<a href="#local-ai-workstation-pattern-flow" class="hash-link" aria-label="Direct link to Local AI Workstation Pattern Flow" title="Direct link to Local AI Workstation Pattern Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="local-ai-with-local-rag-pattern-flow">Local AI with Local RAG Pattern Flow<a href="#local-ai-with-local-rag-pattern-flow" class="hash-link" aria-label="Direct link to Local AI with Local RAG Pattern Flow" title="Direct link to Local AI with Local RAG Pattern Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="local-ai-experiment-sandbox-pattern-flow">Local AI Experiment Sandbox Pattern Flow<a href="#local-ai-experiment-sandbox-pattern-flow" class="hash-link" aria-label="Direct link to Local AI Experiment Sandbox Pattern Flow" title="Direct link to Local AI Experiment Sandbox Pattern Flow" translate="no">​</a></h3>
+<!-- -->
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-guidance">Implementation Guidance<a href="#implementation-guidance" class="hash-link" aria-label="Direct link to Implementation Guidance" title="Direct link to Implementation Guidance" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preferred-approach">Preferred Approach<a href="#preferred-approach" class="hash-link" aria-label="Direct link to Preferred Approach" title="Direct link to Preferred Approach" translate="no">​</a></h3>
+<ul>
+<li class="">Start with a small, named pilot owned by one architect or engineering team</li>
+<li class="">Define an approved runtime package, approved model list, approved devices, and approved data classes before installation</li>
+<li class="">Use test prompts and representative but non-sensitive documents first</li>
+<li class="">Record known limitations such as hallucination behavior, hardware constraints, and unsupported workflows</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="explicit-non-goals">Explicit Non-Goals<a href="#explicit-non-goals" class="hash-link" aria-label="Direct link to Explicit Non-Goals" title="Direct link to Explicit Non-Goals" translate="no">​</a></h3>
+<ul>
+<li class="">This pattern does not approve local AI use on unmanaged personal devices</li>
+<li class="">This pattern does not permit bypassing software restrictions, VPN controls, browser controls, or endpoint tooling</li>
+<li class="">This pattern does not permit autonomous production agents or unattended write actions from a local runtime</li>
+<li class="">This pattern does not replace centralized enterprise AI patterns for shared or production-grade use cases</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-knowledge-base-guidance">Related Knowledge Base Guidance<a href="#related-knowledge-base-guidance" class="hash-link" aria-label="Direct link to Related Knowledge Base Guidance" title="Direct link to Related Knowledge Base Guidance" translate="no">​</a></h3>
+<ul>
+<li class="">AI Policy</li>
+<li class="">AI Principles</li>
+<li class="">Security Principles</li>
+<li class="">Architecture Assurance Guardrail Framework</li>
+<li class="">Application Principles</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-and-best-practices">Tips and Best Practices<a href="#tips-and-best-practices" class="hash-link" aria-label="Direct link to Tips and Best Practices" title="Direct link to Tips and Best Practices" translate="no">​</a></h2>
+<ul>
+<li class="">Treat local AI as an exception-based enterprise capability until a standard packaging and support model exists</li>
+<li class="">Keep the initial pattern focused on summarization, drafting, coding assistance, and bounded Q&amp;A rather than autonomous workflows</li>
+<li class="">Prefer smaller approved models that fit the endpoint hardware predictably over large models that force uncontrolled downloads or unstable performance</li>
+<li class="">Version prompt templates and local configuration files in GitHub rather than relying on ad hoc local settings</li>
+<li class="">If a use case becomes multi-user, sensitive, or operationally critical, graduate it to a centralized cloud AI pattern rather than scaling endpoint-by-endpoint</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sources">Sources<a href="#sources" class="hash-link" aria-label="Direct link to Sources" title="Direct link to Sources" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/ai4ea/docs/context/architecture-patterns-and-template/">Architecture Patterns Defined</a></li>
+<li class=""><a class="" href="/ai4ea/docs/context/architecture-assurance-guardrails/">Architecture Assurance Guardrail Framework</a></li>
+<li class=""><a class="" href="/ai4ea/docs/principles/ai-principles/">AI Principles</a></li>
+<li class=""><a class="" href="/ai4ea/docs/principles/application-principles/">Application Principles</a></li>
+<li class=""><a class="" href="/ai4ea/docs/principles/security-principles/">Security Principles</a></li>
+<li class=""><a class="" href="/ai4ea/docs/policies/cybersecurity/ai-policy/">Entegris Artificial Intelligence (AI) Policy</a></li>
+<li class=""><a class="" href="/ai4ea/docs/patterns/application/ai-patterns/">AI Architecture Patterns</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#local-ai-patterns" class="table-of-contents__link toc-highlight">Local AI Patterns</a></li><li><a href="#document-introduction" class="table-of-contents__link toc-highlight">Document Introduction</a><ul><li><a href="#purpose-of-document" class="table-of-contents__link toc-highlight">Purpose of Document</a></li><li><a href="#scope-and-applicability" class="table-of-contents__link toc-highlight">Scope and Applicability</a></li><li><a href="#intended-audience" class="table-of-contents__link toc-highlight">Intended Audience</a></li></ul></li><li><a href="#context" class="table-of-contents__link toc-highlight">Context</a><ul><li><a href="#why-use-these-patterns" class="table-of-contents__link toc-highlight">Why Use These Patterns</a></li></ul></li><li><a href="#architecture-principles" class="table-of-contents__link toc-highlight">Architecture Principles</a><ul><li><a href="#enterprise-principles" class="table-of-contents__link toc-highlight">Enterprise Principles</a></li><li><a href="#domain-specific-principles" class="table-of-contents__link toc-highlight">Domain-Specific Principles</a></li><li><a href="#security-principles" class="table-of-contents__link toc-highlight">Security Principles</a></li></ul></li><li><a href="#guardrail-summary" class="table-of-contents__link toc-highlight">Guardrail Summary</a></li><li><a href="#high-level-solution-patterns" class="table-of-contents__link toc-highlight">High-Level Solution Patterns</a></li><li><a href="#pattern-selection-matrix" class="table-of-contents__link toc-highlight">Pattern Selection Matrix</a></li><li><a href="#canonical-patterns" class="table-of-contents__link toc-highlight">Canonical Patterns</a><ul><li><a href="#local-ai-workstation-pattern" class="table-of-contents__link toc-highlight">Local AI Workstation Pattern</a></li><li><a href="#local-ai-with-local-rag-pattern" class="table-of-contents__link toc-highlight">Local AI with Local RAG Pattern</a></li><li><a href="#local-ai-experiment-sandbox-pattern" class="table-of-contents__link toc-highlight">Local AI Experiment Sandbox Pattern</a></li></ul></li><li><a href="#required-controls" class="table-of-contents__link toc-highlight">Required Controls</a></li><li><a href="#sequence-diagrams" class="table-of-contents__link toc-highlight">Sequence Diagrams</a><ul><li><a href="#local-ai-workstation-pattern-flow" class="table-of-contents__link toc-highlight">Local AI Workstation Pattern Flow</a></li><li><a href="#local-ai-with-local-rag-pattern-flow" class="table-of-contents__link toc-highlight">Local AI with Local RAG Pattern Flow</a></li><li><a href="#local-ai-experiment-sandbox-pattern-flow" class="table-of-contents__link toc-highlight">Local AI Experiment Sandbox Pattern Flow</a></li></ul></li><li><a href="#implementation-guidance" class="table-of-contents__link toc-highlight">Implementation Guidance</a><ul><li><a href="#preferred-approach" class="table-of-contents__link toc-highlight">Preferred Approach</a></li><li><a href="#explicit-non-goals" class="table-of-contents__link toc-highlight">Explicit Non-Goals</a></li><li><a href="#related-knowledge-base-guidance" class="table-of-contents__link toc-highlight">Related Knowledge Base Guidance</a></li></ul></li><li><a href="#tips-and-best-practices" class="table-of-contents__link toc-highlight">Tips and Best Practices</a></li><li><a href="#sources" class="table-of-contents__link toc-highlight">Sources</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

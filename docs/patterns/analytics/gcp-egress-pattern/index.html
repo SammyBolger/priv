@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-patterns/analytics/gcp-egress-pattern" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Integration Reference Architecture — GCP Egress Patterns | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/patterns/analytics/gcp-egress-pattern/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Integration Reference Architecture — GCP Egress Patterns | Governed Content Site"><meta data-rh="true" name="description" content="GCP Egress Patterns"><meta data-rh="true" property="og:description" content="GCP Egress Patterns"><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/analytics/gcp-egress-pattern/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/analytics/gcp-egress-pattern/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/analytics/gcp-egress-pattern/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/ai4ea/docs/knowledge-base/"><span title="Knowledge base" class="categoryLinkLabel_W154">Knowledge base</span></a><button aria-label="Collapse sidebar category &#x27;Knowledge base&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/policies/"><span title="Policies" class="categoryLinkLabel_W154">Policies</span></a><button aria-label="Expand sidebar category &#x27;Policies&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/ai4ea/docs/knowledge-base/patterns/"><span title="Patterns" class="categoryLinkLabel_W154">Patterns</span></a><button aria-label="Collapse sidebar category &#x27;Patterns&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/event-driven-timeseries-pattern/"><span title="Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)" class="linkLabel_WmDU">Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai4ea/docs/patterns/analytics/gcp-egress-pattern/"><span title="Integration Reference Architecture — GCP Egress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — GCP Egress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/access-authorization-pattern/"><span title="Reference Architecture — Access &amp; Authorization Management Patterns" class="linkLabel_WmDU">Reference Architecture — Access &amp; Authorization Management Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/ai-patterns/"><span title="Reference Architecture — AI Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — AI Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/cicd-pipeline-pattern/"><span title="Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns" class="linkLabel_WmDU">Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/local-ai-pattern/"><span title="Reference Architecture — Local AI Patterns" class="linkLabel_WmDU">Reference Architecture — Local AI Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/web-app-deployment-pattern/"><span title="Reference Architecture — Web Application Deployment Patterns" class="linkLabel_WmDU">Reference Architecture — Web Application Deployment Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-engineering-ingestion-pattern/"><span title="Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-ingestion-pattern/"><span title="Integration Reference Architecture — Data Ingestion Patterns" class="linkLabel_WmDU">Integration Reference Architecture — Data Ingestion Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/mdm-data-quality-pattern/"><span title="Reference Architecture — Master Data Management &amp; Data Quality Patterns" class="linkLabel_WmDU">Reference Architecture — Master Data Management &amp; Data Quality Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/cloud-armor-pattern/"><span title="Reference Architecture — Google Cloud Armor Usage Patterns" class="linkLabel_WmDU">Reference Architecture — Google Cloud Armor Usage Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/ot-streaming-pattern/"><span title="Integration Reference Architecture — OT Data Streaming Patterns" class="linkLabel_WmDU">Integration Reference Architecture — OT Data Streaming Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/"><span title="Reference Architecture — Terraform Infrastructure Patterns" class="linkLabel_WmDU">Reference Architecture — Terraform Infrastructure Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/api-ingress-pattern/"><span title="Integration Reference Architecture — API Ingress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — API Ingress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/Application Integration Solution Patterns/"><span title="Application Integration Solution Patterns" class="linkLabel_WmDU">Application Integration Solution Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/external-file-share-pattern/"><span title="Integration Reference Architecture — File Share Access and Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — File Share Access and Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sap-integration-pattern/"><span title="Integration Reference Architecture — SAP Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — SAP Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sharepoint-ingestion-pattern/"><span title="Integration Reference Architecture — SharePoint Online Data Ingestion" class="linkLabel_WmDU">Integration Reference Architecture — SharePoint Online Data Ingestion</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/principles/"><span title="Principles" class="categoryLinkLabel_W154">Principles</span></a><button aria-label="Expand sidebar category &#x27;Principles&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/standards/"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Expand sidebar category &#x27;Standards&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/positions/"><span title="Positions" class="categoryLinkLabel_W154">Positions</span></a><button aria-label="Expand sidebar category &#x27;Positions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Integration Reference Architecture — GCP Egress Patterns</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gcp-egress-patterns">GCP Egress Patterns<a href="#gcp-egress-patterns" class="hash-link" aria-label="Direct link to GCP Egress Patterns" title="Direct link to GCP Egress Patterns" translate="no">​</a></h2>
+<p><strong>Version:</strong> 0.1
+<strong>Status:</strong> Draft – Pending Architecture Review
+<strong>Audience:</strong> Solution Architects, Integration Engineers, Security and Operations Teams</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-introduction">Document Introduction<a href="#document-introduction" class="hash-link" aria-label="Direct link to Document Introduction" title="Direct link to Document Introduction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="purpose-of-document">Purpose of Document<a href="#purpose-of-document" class="hash-link" aria-label="Direct link to Purpose of Document" title="Direct link to Purpose of Document" translate="no">​</a></h3>
+<p>This document defines approved patterns for outbound data and integration traffic leaving Entegris workloads on GCP. It helps teams choose a controlled egress path that aligns with data classification, network policy, and external integration standards.</p>
+<ul>
+<li class="">The value of the pattern is speed to execution — leveraging what others have done before and quickly achieving business outcomes</li>
+<li class="">A pattern is best expressed as: When to use, When Not to use certain technologies/approaches</li>
+<li class="">This document is for designers and architects who need to send data or requests from GCP to external systems without bypassing Entegris integration controls</li>
+<li class="">If implemented properly, these patterns enable you to get to production as fast as possible and have the most stable, scalable, and maintenance-free set of applications possible</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scope-and-applicability">Scope and Applicability<a href="#scope-and-applicability" class="hash-link" aria-label="Direct link to Scope and Applicability" title="Direct link to Scope and Applicability" translate="no">​</a></h3>
+<p>These patterns cover outbound API, file, and mediated integration flows from GCP-hosted services to destinations outside the local platform boundary.</p>
+<ul>
+<li class="">Outbound API requests and partner file exchanges from GCP-managed workloads</li>
+<li class="">Brokered integration through Boomi for external enterprise system connectivity</li>
+</ul>
+<p><strong>Environments:</strong></p>
+<ul>
+<li class="">Cloud</li>
+<li class="">Hybrid</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intended-audience">Intended Audience<a href="#intended-audience" class="hash-link" aria-label="Direct link to Intended Audience" title="Direct link to Intended Audience" translate="no">​</a></h3>
+<ul>
+<li class="">Solution Architects</li>
+<li class="">Integration Engineers</li>
+<li class="">Application Developers</li>
+<li class="">Security and Operations Teams</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="context">Context<a href="#context" class="hash-link" aria-label="Direct link to Context" title="Direct link to Context" translate="no">​</a></h2>
+<ul>
+<li class="">Private GCP resources use Cloud NAT or approved private connectivity for outbound internet access</li>
+<li class="">VPC Service Controls and network policy should constrain egress to approved services and destinations</li>
+<li class="">Data classification checks are mandatory before egressing PII, financial, or otherwise regulated information</li>
+<li class="">External system integration flows are standardized through Boomi rather than direct application-managed connections</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-use-these-patterns">Why Use These Patterns<a href="#why-use-these-patterns" class="hash-link" aria-label="Direct link to Why Use These Patterns" title="Direct link to Why Use These Patterns" translate="no">​</a></h3>
+<ul>
+<li class="">Reduce cost through consolidation of functionality</li>
+<li class="">Agility through solutions based on a set of services that supports restructuring and reconfiguration of business processes</li>
+<li class="">Time-to-market through business-aligned solutions</li>
+<li class="">Alignment between IT and business goals, enabling re-use over time</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-principles">Architecture Principles<a href="#architecture-principles" class="hash-link" aria-label="Direct link to Architecture Principles" title="Direct link to Architecture Principles" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enterprise-principles">Enterprise Principles<a href="#enterprise-principles" class="hash-link" aria-label="Direct link to Enterprise Principles" title="Direct link to Enterprise Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Loosely Coupled and Interoperable Solutions</li>
+<li class="">Remove Friction</li>
+<li class="">Keep It Simple</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="domain-specific-principles">Domain-Specific Principles<a href="#domain-specific-principles" class="hash-link" aria-label="Direct link to Domain-Specific Principles" title="Direct link to Domain-Specific Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Internet and API First</li>
+<li class="">Observability and Reliability by Design</li>
+<li class="">Integration Through Standard Middleware</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-principles">Security Principles<a href="#security-principles" class="hash-link" aria-label="Direct link to Security Principles" title="Direct link to Security Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Security and Privacy by Design</li>
+<li class="">Defense in Depth</li>
+<li class="">Security Assurance Through Least Privilege</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-solution-patterns">High-Level Solution Patterns<a href="#high-level-solution-patterns" class="hash-link" aria-label="Direct link to High-Level Solution Patterns" title="Direct link to High-Level Solution Patterns" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Solution</th><th>When to Use</th><th>When Not to Use</th></tr></thead><tbody><tr><td>API Egress</td><td>• Need an approved outbound HTTPS call from a GCP-hosted service<br>• Destination is a controlled external API with defined contract and low complexity</td><td>• The flow is an enterprise system integration better owned in Boomi<br>• The destination lacks approved security controls or data classification clearance</td></tr><tr><td>File Egress</td><td>• Need scheduled or event-driven delivery to SFTP or partner file exchange<br>• Payloads are file-oriented and contractually defined</td><td>• The integration needs near-real-time API semantics<br>• A direct application-managed file transfer would bypass enterprise integration governance</td></tr><tr><td>Boomi-mediated Egress</td><td>• GCP service needs to integrate with a complex external system<br>• Boomi provides orchestration value through centralized retry, mapping, and partner controls</td><td>• The use case is a simple internal-only call that does not leave the platform boundary<br>• The team expects to hardcode destination integration logic inside an app</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pattern-selection-matrix">Pattern Selection Matrix<a href="#pattern-selection-matrix" class="hash-link" aria-label="Direct link to Pattern Selection Matrix" title="Direct link to Pattern Selection Matrix" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario Cue</th><th>Destination Type</th><th>Data Classification</th><th>Direction</th><th>Recommended Pattern</th><th>Notes</th></tr></thead><tbody><tr><td>Approved SaaS status API lookup</td><td>External API</td><td>Low to moderate</td><td>GCP → External API</td><td>API Egress</td><td>Use Cloud NAT with static IPs for IP allowlisting by external partners; store external API keys in GCP Secret Manager with 90-day rotation</td></tr><tr><td>Nightly partner file handoff</td><td>SFTP or managed file exchange</td><td>Moderate to high</td><td>GCP → Partner</td><td>File Egress</td><td>Encrypt all files with customer-managed Cloud KMS keys before SFTP transfer</td></tr><tr><td>Outbound master-data sync to external enterprise system</td><td>Enterprise application</td><td>Sensitive or regulated</td><td>GCP → External System</td><td>Boomi-mediated Egress</td><td>Use Boomi when target system requires complex authentication, retry, or scheduling logic</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="canonical-patterns">Canonical Patterns<a href="#canonical-patterns" class="hash-link" aria-label="Direct link to Canonical Patterns" title="Direct link to Canonical Patterns" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-egress">API Egress<a href="#api-egress" class="hash-link" aria-label="Direct link to API Egress" title="Direct link to API Egress" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A GCP-hosted workload needs to call an approved external API to complete a business process. The traffic originates from private resources that still require controlled outbound internet access.</td></tr><tr><td><strong>Problem</strong></td><td>How do we let a GCP workload call an external API without opening unmanaged egress paths or skipping security review?</td></tr><tr><td><strong>Solution</strong></td><td>• Route outbound traffic through Cloud NAT or approved private connectivity from the VPC hosting the workload<br>• Validate the destination against data-classification and network allow-list requirements before enabling the integration<br>• Use TLS and managed secrets for credentials while logging outbound correlation details for operational support</td></tr><tr><td><strong>Benefits</strong></td><td>• Provides a controlled pattern for low-complexity outbound API use cases<br>• Keeps private workloads private while still allowing approved external calls<br>• Supports centralized monitoring and policy enforcement on outbound traffic</td></tr><tr><td><strong>Considerations</strong></td><td>• External system integrations should move to Boomi when orchestration, mapping, or partner governance is needed<br>• VPC Service Controls and firewall policy must be kept aligned with approved destinations</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="file-egress">File Egress<a href="#file-egress" class="hash-link" aria-label="Direct link to File Egress" title="Direct link to File Egress" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A business process requires file delivery from GCP to a partner or service that expects SFTP or managed file exchange. The payload is file-centric rather than request-reply API traffic.</td></tr><tr><td><strong>Problem</strong></td><td>How do we deliver outbound files securely and repeatably without pushing file-transfer logic into individual applications?</td></tr><tr><td><strong>Solution</strong></td><td>• Prepare the outbound file in an approved GCP landing area and initiate transfer through a managed integration process<br>• Use encrypted transport such as SFTP with credentials or keys managed through approved secret handling controls<br>• Record transfer status, correlation IDs, and replay metadata so failed deliveries can be retried safely</td></tr><tr><td><strong>Benefits</strong></td><td>• Supports common partner exchange patterns with clear operational checkpoints<br>• Improves supportability for retries, acknowledgements, and audit needs<br>• Separates file packaging concerns from application runtime logic</td></tr><tr><td><strong>Considerations</strong></td><td>• File formats and encryption expectations must be contractually defined with the receiver<br>• Sensitive outbound files may require additional approval, masking, or retention controls before transfer</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="boomi-mediated-egress">Boomi-mediated Egress<a href="#boomi-mediated-egress" class="hash-link" aria-label="Direct link to Boomi-mediated Egress" title="Direct link to Boomi-mediated Egress" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A GCP workload needs to send data to an external enterprise system where mappings, retries, and operational governance matter. The flow is an integration concern rather than a simple application HTTP call.</td></tr><tr><td><strong>Problem</strong></td><td>How do we standardize outbound external integrations so application teams do not build one-off connectivity and error handling?</td></tr><tr><td><strong>Solution</strong></td><td>• Publish or stage the outbound payload from GCP and hand off the integration to Boomi for protocol handling and orchestration<br>• Use Boomi to apply retries, mapping, error routing, and partner-specific controls before transmitting to the destination system<br>• Enforce TLS, approved credentials, and destination governance while capturing full audit and support metadata</td></tr><tr><td><strong>Benefits</strong></td><td>• Aligns outbound enterprise integrations to the Entegris middleware standard<br>• Centralizes connectivity, monitoring, and replay controls in one platform<br>• Reduces custom egress code in applications and improves maintainability</td></tr><tr><td><strong>Considerations</strong></td><td>• Application teams should not bypass Boomi for external system integration just to reduce short-term implementation effort<br>• Destination SLAs and payload contracts still need explicit ownership between business and integration teams</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sequence-diagrams">Sequence Diagrams<a href="#sequence-diagrams" class="hash-link" aria-label="Direct link to Sequence Diagrams" title="Direct link to Sequence Diagrams" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-egress-flow">API Egress Flow<a href="#api-egress-flow" class="hash-link" aria-label="Direct link to API Egress Flow" title="Direct link to API Egress Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="file-egress-flow">File Egress Flow<a href="#file-egress-flow" class="hash-link" aria-label="Direct link to File Egress Flow" title="Direct link to File Egress Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="boomi-mediated-egress-flow">Boomi-mediated Egress Flow<a href="#boomi-mediated-egress-flow" class="hash-link" aria-label="Direct link to Boomi-mediated Egress Flow" title="Direct link to Boomi-mediated Egress Flow" translate="no">​</a></h3>
+<!-- -->
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-and-best-practices">Tips and Best Practices<a href="#tips-and-best-practices" class="hash-link" aria-label="Direct link to Tips and Best Practices" title="Direct link to Tips and Best Practices" translate="no">​</a></h2>
+<ul>
+<li class="">Use Cloud NAT for egress traffic from private GCE/GKE instances</li>
+<li class="">Store external API credentials in GCP Secret Manager with automatic rotation</li>
+<li class="">Log all egress API calls to Cloud Logging with correlation_id and external_system tags</li>
+<li class="">Use Boomi for orchestration when target systems require complex retry or scheduling logic</li>
+<li class="">Implement circuit breakers in Cloud Run services calling flaky external APIs</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#gcp-egress-patterns" class="table-of-contents__link toc-highlight">GCP Egress Patterns</a></li><li><a href="#document-introduction" class="table-of-contents__link toc-highlight">Document Introduction</a><ul><li><a href="#purpose-of-document" class="table-of-contents__link toc-highlight">Purpose of Document</a></li><li><a href="#scope-and-applicability" class="table-of-contents__link toc-highlight">Scope and Applicability</a></li><li><a href="#intended-audience" class="table-of-contents__link toc-highlight">Intended Audience</a></li></ul></li><li><a href="#context" class="table-of-contents__link toc-highlight">Context</a><ul><li><a href="#why-use-these-patterns" class="table-of-contents__link toc-highlight">Why Use These Patterns</a></li></ul></li><li><a href="#architecture-principles" class="table-of-contents__link toc-highlight">Architecture Principles</a><ul><li><a href="#enterprise-principles" class="table-of-contents__link toc-highlight">Enterprise Principles</a></li><li><a href="#domain-specific-principles" class="table-of-contents__link toc-highlight">Domain-Specific Principles</a></li><li><a href="#security-principles" class="table-of-contents__link toc-highlight">Security Principles</a></li></ul></li><li><a href="#high-level-solution-patterns" class="table-of-contents__link toc-highlight">High-Level Solution Patterns</a></li><li><a href="#pattern-selection-matrix" class="table-of-contents__link toc-highlight">Pattern Selection Matrix</a></li><li><a href="#canonical-patterns" class="table-of-contents__link toc-highlight">Canonical Patterns</a><ul><li><a href="#api-egress" class="table-of-contents__link toc-highlight">API Egress</a></li><li><a href="#file-egress" class="table-of-contents__link toc-highlight">File Egress</a></li><li><a href="#boomi-mediated-egress" class="table-of-contents__link toc-highlight">Boomi-mediated Egress</a></li></ul></li><li><a href="#sequence-diagrams" class="table-of-contents__link toc-highlight">Sequence Diagrams</a><ul><li><a href="#api-egress-flow" class="table-of-contents__link toc-highlight">API Egress Flow</a></li><li><a href="#file-egress-flow" class="table-of-contents__link toc-highlight">File Egress Flow</a></li><li><a href="#boomi-mediated-egress-flow" class="table-of-contents__link toc-highlight">Boomi-mediated Egress Flow</a></li></ul></li><li><a href="#tips-and-best-practices" class="table-of-contents__link toc-highlight">Tips and Best Practices</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

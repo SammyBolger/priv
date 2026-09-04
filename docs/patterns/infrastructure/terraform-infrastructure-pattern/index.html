@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-patterns/infrastructure/terraform-infrastructure-pattern" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Reference Architecture — Terraform Infrastructure Patterns | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Reference Architecture — Terraform Infrastructure Patterns | Governed Content Site"><meta data-rh="true" name="description" content="Terraform Infrastructure Patterns"><meta data-rh="true" property="og:description" content="Terraform Infrastructure Patterns"><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/ai4ea/docs/knowledge-base/"><span title="Knowledge base" class="categoryLinkLabel_W154">Knowledge base</span></a><button aria-label="Collapse sidebar category &#x27;Knowledge base&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/policies/"><span title="Policies" class="categoryLinkLabel_W154">Policies</span></a><button aria-label="Expand sidebar category &#x27;Policies&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/ai4ea/docs/knowledge-base/patterns/"><span title="Patterns" class="categoryLinkLabel_W154">Patterns</span></a><button aria-label="Collapse sidebar category &#x27;Patterns&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/event-driven-timeseries-pattern/"><span title="Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)" class="linkLabel_WmDU">Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/gcp-egress-pattern/"><span title="Integration Reference Architecture — GCP Egress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — GCP Egress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/access-authorization-pattern/"><span title="Reference Architecture — Access &amp; Authorization Management Patterns" class="linkLabel_WmDU">Reference Architecture — Access &amp; Authorization Management Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/ai-patterns/"><span title="Reference Architecture — AI Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — AI Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/cicd-pipeline-pattern/"><span title="Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns" class="linkLabel_WmDU">Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/local-ai-pattern/"><span title="Reference Architecture — Local AI Patterns" class="linkLabel_WmDU">Reference Architecture — Local AI Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/web-app-deployment-pattern/"><span title="Reference Architecture — Web Application Deployment Patterns" class="linkLabel_WmDU">Reference Architecture — Web Application Deployment Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-engineering-ingestion-pattern/"><span title="Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-ingestion-pattern/"><span title="Integration Reference Architecture — Data Ingestion Patterns" class="linkLabel_WmDU">Integration Reference Architecture — Data Ingestion Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/mdm-data-quality-pattern/"><span title="Reference Architecture — Master Data Management &amp; Data Quality Patterns" class="linkLabel_WmDU">Reference Architecture — Master Data Management &amp; Data Quality Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/cloud-armor-pattern/"><span title="Reference Architecture — Google Cloud Armor Usage Patterns" class="linkLabel_WmDU">Reference Architecture — Google Cloud Armor Usage Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/ot-streaming-pattern/"><span title="Integration Reference Architecture — OT Data Streaming Patterns" class="linkLabel_WmDU">Integration Reference Architecture — OT Data Streaming Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/"><span title="Reference Architecture — Terraform Infrastructure Patterns" class="linkLabel_WmDU">Reference Architecture — Terraform Infrastructure Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/api-ingress-pattern/"><span title="Integration Reference Architecture — API Ingress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — API Ingress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/Application Integration Solution Patterns/"><span title="Application Integration Solution Patterns" class="linkLabel_WmDU">Application Integration Solution Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/external-file-share-pattern/"><span title="Integration Reference Architecture — File Share Access and Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — File Share Access and Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sap-integration-pattern/"><span title="Integration Reference Architecture — SAP Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — SAP Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sharepoint-ingestion-pattern/"><span title="Integration Reference Architecture — SharePoint Online Data Ingestion" class="linkLabel_WmDU">Integration Reference Architecture — SharePoint Online Data Ingestion</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/principles/"><span title="Principles" class="categoryLinkLabel_W154">Principles</span></a><button aria-label="Expand sidebar category &#x27;Principles&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/standards/"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Expand sidebar category &#x27;Standards&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/positions/"><span title="Positions" class="categoryLinkLabel_W154">Positions</span></a><button aria-label="Expand sidebar category &#x27;Positions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Reference Architecture — Terraform Infrastructure Patterns</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="terraform-infrastructure-patterns">Terraform Infrastructure Patterns<a href="#terraform-infrastructure-patterns" class="hash-link" aria-label="Direct link to Terraform Infrastructure Patterns" title="Direct link to Terraform Infrastructure Patterns" translate="no">​</a></h2>
+<p><strong>Version:</strong> 0.1
+<strong>Status:</strong> Draft – Pending Architecture Review
+<strong>Audience:</strong> Solution Architects, Integration Engineers, Security and Operations Teams</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-introduction">Document Introduction<a href="#document-introduction" class="hash-link" aria-label="Direct link to Document Introduction" title="Direct link to Document Introduction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="purpose-of-document">Purpose of Document<a href="#purpose-of-document" class="hash-link" aria-label="Direct link to Purpose of Document" title="Direct link to Purpose of Document" translate="no">​</a></h3>
+<p>This document defines approved Terraform patterns for provisioning and operating Entegris cloud resources. It gives teams a repeatable model for reusable modules, environment isolation, and pipeline-driven infrastructure changes.</p>
+<ul>
+<li class="">The value of the pattern is speed to execution — leveraging what others have done before and quickly achieving business outcomes</li>
+<li class="">A pattern is best expressed as: When to use, When Not to use certain technologies/approaches</li>
+<li class="">This document is for designers and architects who need to provision and change cloud infrastructure using approved infrastructure-as-code practices instead of manual console work</li>
+<li class="">If implemented properly, these patterns enable you to get to production as fast as possible and have the most stable, scalable, and maintenance-free set of applications possible</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scope-and-applicability">Scope and Applicability<a href="#scope-and-applicability" class="hash-link" aria-label="Direct link to Scope and Applicability" title="Direct link to Scope and Applicability" translate="no">​</a></h3>
+<p>These patterns cover Terraform usage for shared modules, environment separation, and CI/CD execution across Entegris cloud estates.</p>
+<ul>
+<li class="">Provisioning GCP and related cloud resources through version-controlled Terraform code</li>
+<li class="">Running plan, apply, and drift-detection workflows through GitHub Actions</li>
+</ul>
+<p><strong>Environments:</strong></p>
+<ul>
+<li class="">Cloud</li>
+<li class="">Hybrid</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intended-audience">Intended Audience<a href="#intended-audience" class="hash-link" aria-label="Direct link to Intended Audience" title="Direct link to Intended Audience" translate="no">​</a></h3>
+<ul>
+<li class="">Solution Architects</li>
+<li class="">Platform Engineers</li>
+<li class="">DevOps Engineers</li>
+<li class="">Security and Operations Teams</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="context">Context<a href="#context" class="hash-link" aria-label="Direct link to Context" title="Direct link to Context" translate="no">​</a></h2>
+<ul>
+<li class="">Production state must be stored remotely in GCS and never on local developer machines</li>
+<li class="">Reusable modules reduce copy-paste infrastructure and drive consistent security controls</li>
+<li class="">Environment separation must be explicit so dev, staging, and prod changes can be promoted safely</li>
+<li class="">GitHub Actions is the standard execution path for plan, apply, and drift detection</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-use-these-patterns">Why Use These Patterns<a href="#why-use-these-patterns" class="hash-link" aria-label="Direct link to Why Use These Patterns" title="Direct link to Why Use These Patterns" translate="no">​</a></h3>
+<ul>
+<li class="">Reduce cost through consolidation of functionality</li>
+<li class="">Agility through solutions based on a set of services that supports restructuring and reconfiguration of business processes</li>
+<li class="">Time-to-market through business-aligned solutions</li>
+<li class="">Alignment between IT and business goals, enabling re-use over time</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-principles">Architecture Principles<a href="#architecture-principles" class="hash-link" aria-label="Direct link to Architecture Principles" title="Direct link to Architecture Principles" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enterprise-principles">Enterprise Principles<a href="#enterprise-principles" class="hash-link" aria-label="Direct link to Enterprise Principles" title="Direct link to Enterprise Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Keep It Simple</li>
+<li class="">Automate Where Possible</li>
+<li class="">Think Big and Execute Rapidly</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="domain-specific-principles">Domain-Specific Principles<a href="#domain-specific-principles" class="hash-link" aria-label="Direct link to Domain-Specific Principles" title="Direct link to Domain-Specific Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Cloud-Smart by Default</li>
+<li class="">Platform Over Point Solutions</li>
+<li class="">Architecture Governance Through ARB and TRB</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-principles">Security Principles<a href="#security-principles" class="hash-link" aria-label="Direct link to Security Principles" title="Direct link to Security Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Security and Privacy by Design</li>
+<li class="">Security Assurance Through Least Privilege</li>
+<li class="">Defense in Depth</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-solution-patterns">High-Level Solution Patterns<a href="#high-level-solution-patterns" class="hash-link" aria-label="Direct link to High-Level Solution Patterns" title="Direct link to High-Level Solution Patterns" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Solution</th><th>When to Use</th><th>When Not to Use</th></tr></thead><tbody><tr><td>Module Pattern</td><td>• Need reusable infrastructure blocks with consistent policy and naming<br>• Several teams provision the same resource type repeatedly</td><td>• The component is a one-off script that no team will reuse<br>• Teams plan to duplicate resource definitions rather than manage a module lifecycle</td></tr><tr><td>Environment Workspace Pattern</td><td>• Need a clear separation strategy for dev, staging, and prod state<br>• The same infrastructure design must be promoted across environments</td><td>• Environment boundaries are unclear or intentionally mixed<br>• State isolation cannot be managed safely</td></tr><tr><td>CI/CD-driven IaC Pattern</td><td>• Need governed plan and apply execution through pull requests and merges<br>• Require automated review, policy checks, and drift detection</td><td>• Teams expect to run production applies manually from laptops<br>• Infrastructure changes do not pass through protected branches</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pattern-selection-matrix">Pattern Selection Matrix<a href="#pattern-selection-matrix" class="hash-link" aria-label="Direct link to Pattern Selection Matrix" title="Direct link to Pattern Selection Matrix" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario Cue</th><th>Change Scope</th><th>Environment Isolation</th><th>Execution Flow</th><th>Recommended Pattern</th><th>Notes</th></tr></thead><tbody><tr><td>Provisioning standard Cloud Run services repeatedly</td><td>Reusable resource pattern</td><td>Shared across multiple environments</td><td>GitHub → Terraform → GCP</td><td>Module Pattern</td><td>Publish modules to internal GitHub; version with semantic tags (v1.2.3) for change control</td></tr><tr><td>Managing separate dev, staging, and prod projects</td><td>Environment-specific deployment</td><td>Distinct state per environment</td><td>GitHub → Terraform → GCP</td><td>Environment Workspace Pattern</td><td>Store Terraform state in GCS with versioning enabled; use separate buckets per environment</td></tr><tr><td>Applying reviewed infrastructure changes</td><td>Controlled release change</td><td>Promotion through protected branches</td><td>GitHub Actions → Terraform plan/apply</td><td>CI/CD-driven IaC Pattern</td><td>Use Sentinel or OPA policies to enforce required labels, encryption, and IAM guardrails</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="canonical-patterns">Canonical Patterns<a href="#canonical-patterns" class="hash-link" aria-label="Direct link to Canonical Patterns" title="Direct link to Canonical Patterns" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-pattern">Module Pattern<a href="#module-pattern" class="hash-link" aria-label="Direct link to Module Pattern" title="Direct link to Module Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>Many Entegris teams provision the same classes of cloud resources and need a consistent secure baseline. Reusable modules provide one place to encode naming, policy, and standard settings.</td></tr><tr><td><strong>Problem</strong></td><td>How do we avoid copy-paste Terraform while still letting teams provision resources quickly and consistently?</td></tr><tr><td><strong>Solution</strong></td><td>• Create reusable Terraform modules per resource type and version them in an internal GitHub-backed module repository<br>• Embed naming rules such as {env}-{region}-{resource-type}-{purpose} and baseline security settings inside the module<br>• Reference secrets indirectly through approved secret-management patterns instead of hardcoding sensitive values in module variables</td></tr><tr><td><strong>Benefits</strong></td><td>• Improves consistency and reduces repeated design effort across teams<br>• Makes upgrades and policy improvements easier to distribute through versioned modules<br>• Accelerates delivery by giving teams approved building blocks</td></tr><tr><td><strong>Considerations</strong></td><td>• Modules need owners, semantic versioning, and change communication to remain useful<br>• Overly generic modules can become hard to understand and harder to adopt</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="environment-workspace-pattern">Environment Workspace Pattern<a href="#environment-workspace-pattern" class="hash-link" aria-label="Direct link to Environment Workspace Pattern" title="Direct link to Environment Workspace Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A solution must promote infrastructure across development, staging, and production environments. Teams need a clean way to isolate state and avoid accidental cross-environment changes.</td></tr><tr><td><strong>Problem</strong></td><td>How do we separate environment state and configuration so promotion is controlled and production remains protected?</td></tr><tr><td><strong>Solution</strong></td><td>• Use Terraform workspaces or clearly separated state backends in GCS to isolate environment deployments<br>• Parameterize environment-specific values while preserving the same core module composition across stages<br>• Keep remote state protected and never rely on local state files for production environments</td></tr><tr><td><strong>Benefits</strong></td><td>• Reduces accidental changes across environments<br>• Supports predictable promotion from dev to staging to prod<br>• Keeps production infrastructure state durable, shared, and recoverable</td></tr><tr><td><strong>Considerations</strong></td><td>• Workspace naming and variable management must remain simple enough for operators to reason about quickly<br>• Separate state is safer than overloaded conditional logic inside one monolithic configuration</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cicd-driven-iac-pattern">CI/CD-driven IaC Pattern<a href="#cicd-driven-iac-pattern" class="hash-link" aria-label="Direct link to CI/CD-driven IaC Pattern" title="Direct link to CI/CD-driven IaC Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>Infrastructure changes must be reviewed, planned, and applied through the same governed delivery path used for application code. The organization also needs continuous detection of drift from unauthorized manual changes.</td></tr><tr><td><strong>Problem</strong></td><td>How do we make infrastructure delivery auditable and repeatable while detecting production drift early?</td></tr><tr><td><strong>Solution</strong></td><td>• Run Terraform plan in GitHub Actions for every pull request and expose the results for review before merge<br>• Run Terraform apply only after merge to main through a controlled pipeline with environment-specific approvals as needed<br>• Schedule recurring Terraform plan jobs to detect drift and investigate any manual resource changes immediately</td></tr><tr><td><strong>Benefits</strong></td><td>• Creates a reviewable infrastructure change record tied to source control<br>• Reduces the risk of manual mistakes and hidden drift<br>• Supports policy enforcement and repeatable promotion across environments</td></tr><tr><td><strong>Considerations</strong></td><td>• Pipeline credentials and workload identity setup must be designed carefully so CI can act without long-lived keys<br>• Teams must resist emergency console changes that bypass the approved IaC path</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sequence-diagrams">Sequence Diagrams<a href="#sequence-diagrams" class="hash-link" aria-label="Direct link to Sequence Diagrams" title="Direct link to Sequence Diagrams" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-pattern-flow">Module Pattern Flow<a href="#module-pattern-flow" class="hash-link" aria-label="Direct link to Module Pattern Flow" title="Direct link to Module Pattern Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="environment-workspace-pattern-flow">Environment Workspace Pattern Flow<a href="#environment-workspace-pattern-flow" class="hash-link" aria-label="Direct link to Environment Workspace Pattern Flow" title="Direct link to Environment Workspace Pattern Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cicd-driven-iac-pattern-flow">CI/CD-driven IaC Pattern Flow<a href="#cicd-driven-iac-pattern-flow" class="hash-link" aria-label="Direct link to CI/CD-driven IaC Pattern Flow" title="Direct link to CI/CD-driven IaC Pattern Flow" translate="no">​</a></h3>
+<!-- -->
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-and-best-practices">Tips and Best Practices<a href="#tips-and-best-practices" class="hash-link" aria-label="Direct link to Tips and Best Practices" title="Direct link to Tips and Best Practices" translate="no">​</a></h2>
+<ul>
+<li class="">Store Terraform state in GCS with versioning enabled and encrypted at rest</li>
+<li class="">Use separate GCP service accounts per environment (dev, test, prod) with least privilege IAM</li>
+<li class="">Run Terraform plan in CI on every pull request; require approval before merge to main</li>
+<li class="">Implement Terraform Cloud or Cloud Build for remote execution; never run locally for prod changes</li>
+<li class="">Use Sentinel policies or OPA to enforce guardrails like required labels and encryption</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#terraform-infrastructure-patterns" class="table-of-contents__link toc-highlight">Terraform Infrastructure Patterns</a></li><li><a href="#document-introduction" class="table-of-contents__link toc-highlight">Document Introduction</a><ul><li><a href="#purpose-of-document" class="table-of-contents__link toc-highlight">Purpose of Document</a></li><li><a href="#scope-and-applicability" class="table-of-contents__link toc-highlight">Scope and Applicability</a></li><li><a href="#intended-audience" class="table-of-contents__link toc-highlight">Intended Audience</a></li></ul></li><li><a href="#context" class="table-of-contents__link toc-highlight">Context</a><ul><li><a href="#why-use-these-patterns" class="table-of-contents__link toc-highlight">Why Use These Patterns</a></li></ul></li><li><a href="#architecture-principles" class="table-of-contents__link toc-highlight">Architecture Principles</a><ul><li><a href="#enterprise-principles" class="table-of-contents__link toc-highlight">Enterprise Principles</a></li><li><a href="#domain-specific-principles" class="table-of-contents__link toc-highlight">Domain-Specific Principles</a></li><li><a href="#security-principles" class="table-of-contents__link toc-highlight">Security Principles</a></li></ul></li><li><a href="#high-level-solution-patterns" class="table-of-contents__link toc-highlight">High-Level Solution Patterns</a></li><li><a href="#pattern-selection-matrix" class="table-of-contents__link toc-highlight">Pattern Selection Matrix</a></li><li><a href="#canonical-patterns" class="table-of-contents__link toc-highlight">Canonical Patterns</a><ul><li><a href="#module-pattern" class="table-of-contents__link toc-highlight">Module Pattern</a></li><li><a href="#environment-workspace-pattern" class="table-of-contents__link toc-highlight">Environment Workspace Pattern</a></li><li><a href="#cicd-driven-iac-pattern" class="table-of-contents__link toc-highlight">CI/CD-driven IaC Pattern</a></li></ul></li><li><a href="#sequence-diagrams" class="table-of-contents__link toc-highlight">Sequence Diagrams</a><ul><li><a href="#module-pattern-flow" class="table-of-contents__link toc-highlight">Module Pattern Flow</a></li><li><a href="#environment-workspace-pattern-flow" class="table-of-contents__link toc-highlight">Environment Workspace Pattern Flow</a></li><li><a href="#cicd-driven-iac-pattern-flow" class="table-of-contents__link toc-highlight">CI/CD-driven IaC Pattern Flow</a></li></ul></li><li><a href="#tips-and-best-practices" class="table-of-contents__link toc-highlight">Tips and Best Practices</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

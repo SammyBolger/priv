@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-patterns/integration/api-ingress-pattern" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Integration Reference Architecture — API Ingress Patterns | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/api-ingress-pattern/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Integration Reference Architecture — API Ingress Patterns | Governed Content Site"><meta data-rh="true" name="description" content="API Ingress Patterns"><meta data-rh="true" property="og:description" content="API Ingress Patterns"><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/api-ingress-pattern/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/api-ingress-pattern/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/api-ingress-pattern/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/ai4ea/docs/knowledge-base/"><span title="Knowledge base" class="categoryLinkLabel_W154">Knowledge base</span></a><button aria-label="Collapse sidebar category &#x27;Knowledge base&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/policies/"><span title="Policies" class="categoryLinkLabel_W154">Policies</span></a><button aria-label="Expand sidebar category &#x27;Policies&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/ai4ea/docs/knowledge-base/patterns/"><span title="Patterns" class="categoryLinkLabel_W154">Patterns</span></a><button aria-label="Collapse sidebar category &#x27;Patterns&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/event-driven-timeseries-pattern/"><span title="Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)" class="linkLabel_WmDU">Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/gcp-egress-pattern/"><span title="Integration Reference Architecture — GCP Egress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — GCP Egress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/access-authorization-pattern/"><span title="Reference Architecture — Access &amp; Authorization Management Patterns" class="linkLabel_WmDU">Reference Architecture — Access &amp; Authorization Management Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/ai-patterns/"><span title="Reference Architecture — AI Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — AI Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/cicd-pipeline-pattern/"><span title="Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns" class="linkLabel_WmDU">Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/local-ai-pattern/"><span title="Reference Architecture — Local AI Patterns" class="linkLabel_WmDU">Reference Architecture — Local AI Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/web-app-deployment-pattern/"><span title="Reference Architecture — Web Application Deployment Patterns" class="linkLabel_WmDU">Reference Architecture — Web Application Deployment Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-engineering-ingestion-pattern/"><span title="Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-ingestion-pattern/"><span title="Integration Reference Architecture — Data Ingestion Patterns" class="linkLabel_WmDU">Integration Reference Architecture — Data Ingestion Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/mdm-data-quality-pattern/"><span title="Reference Architecture — Master Data Management &amp; Data Quality Patterns" class="linkLabel_WmDU">Reference Architecture — Master Data Management &amp; Data Quality Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/cloud-armor-pattern/"><span title="Reference Architecture — Google Cloud Armor Usage Patterns" class="linkLabel_WmDU">Reference Architecture — Google Cloud Armor Usage Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/ot-streaming-pattern/"><span title="Integration Reference Architecture — OT Data Streaming Patterns" class="linkLabel_WmDU">Integration Reference Architecture — OT Data Streaming Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/"><span title="Reference Architecture — Terraform Infrastructure Patterns" class="linkLabel_WmDU">Reference Architecture — Terraform Infrastructure Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai4ea/docs/patterns/integration/api-ingress-pattern/"><span title="Integration Reference Architecture — API Ingress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — API Ingress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/Application Integration Solution Patterns/"><span title="Application Integration Solution Patterns" class="linkLabel_WmDU">Application Integration Solution Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/external-file-share-pattern/"><span title="Integration Reference Architecture — File Share Access and Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — File Share Access and Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sap-integration-pattern/"><span title="Integration Reference Architecture — SAP Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — SAP Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sharepoint-ingestion-pattern/"><span title="Integration Reference Architecture — SharePoint Online Data Ingestion" class="linkLabel_WmDU">Integration Reference Architecture — SharePoint Online Data Ingestion</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/principles/"><span title="Principles" class="categoryLinkLabel_W154">Principles</span></a><button aria-label="Expand sidebar category &#x27;Principles&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/standards/"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Expand sidebar category &#x27;Standards&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/positions/"><span title="Positions" class="categoryLinkLabel_W154">Positions</span></a><button aria-label="Expand sidebar category &#x27;Positions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Integration Reference Architecture — API Ingress Patterns</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-ingress-patterns">API Ingress Patterns<a href="#api-ingress-patterns" class="hash-link" aria-label="Direct link to API Ingress Patterns" title="Direct link to API Ingress Patterns" translate="no">​</a></h2>
+<p><strong>Version:</strong> 0.1
+<strong>Status:</strong> Draft – Pending Architecture Review
+<strong>Audience:</strong> Solution Architects, Integration Engineers, Security and Operations Teams</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-introduction">Document Introduction<a href="#document-introduction" class="hash-link" aria-label="Direct link to Document Introduction" title="Direct link to Document Introduction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="purpose-of-document">Purpose of Document<a href="#purpose-of-document" class="hash-link" aria-label="Direct link to Purpose of Document" title="Direct link to Purpose of Document" translate="no">​</a></h3>
+<p>This document defines approved patterns for inbound API traffic into Entegris platforms on GCP. It gives architects a consistent way to expose public, partner, and internal APIs while preserving security and operational control.</p>
+<ul>
+<li class="">The value of the pattern is speed to execution — leveraging what others have done before and quickly achieving business outcomes</li>
+<li class="">A pattern is best expressed as: When to use, When Not to use certain technologies/approaches</li>
+<li class="">This document is for designers and architects who need to publish or consume inbound APIs with the correct gateway, protection, and authentication approach</li>
+<li class="">If implemented properly, these patterns enable you to get to production as fast as possible and have the most stable, scalable, and maintenance-free set of applications possible</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scope-and-applicability">Scope and Applicability<a href="#scope-and-applicability" class="hash-link" aria-label="Direct link to Scope and Applicability" title="Direct link to Scope and Applicability" translate="no">​</a></h3>
+<p>These patterns cover inbound REST-first API exposure for internet-facing, partner, and internal service traffic.</p>
+<ul>
+<li class="">External consumer access to Entegris APIs through protected ingress services</li>
+<li class="">Partner and internal application-to-application calls into Cloud Run or GKE backends</li>
+</ul>
+<p><strong>Environments:</strong></p>
+<ul>
+<li class="">Cloud</li>
+<li class="">Hybrid</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intended-audience">Intended Audience<a href="#intended-audience" class="hash-link" aria-label="Direct link to Intended Audience" title="Direct link to Intended Audience" translate="no">​</a></h3>
+<ul>
+<li class="">Solution Architects</li>
+<li class="">Integration Engineers</li>
+<li class="">Application Developers</li>
+<li class="">Security and Operations Teams</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="context">Context<a href="#context" class="hash-link" aria-label="Direct link to Context" title="Direct link to Context" translate="no">​</a></h2>
+<ul>
+<li class="">Cloud Armor is mandatory in front of every internet-facing endpoint and must not be bypassed</li>
+<li class="">Published APIs require an OpenAPI 3.1 contract and consistent gateway policy enforcement</li>
+<li class="">Authentication differs by consumer type: OAuth 2.0/OIDC for user-facing flows and service principal credentials for machine-to-machine access</li>
+<li class="">Gateway capabilities such as throttling, routing, and analytics must be centralized in the approved API management layer</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-use-these-patterns">Why Use These Patterns<a href="#why-use-these-patterns" class="hash-link" aria-label="Direct link to Why Use These Patterns" title="Direct link to Why Use These Patterns" translate="no">​</a></h3>
+<ul>
+<li class="">Reduce cost through consolidation of functionality</li>
+<li class="">Agility through solutions based on a set of services that supports restructuring and reconfiguration of business processes</li>
+<li class="">Time-to-market through business-aligned solutions</li>
+<li class="">Alignment between IT and business goals, enabling re-use over time</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-principles">Architecture Principles<a href="#architecture-principles" class="hash-link" aria-label="Direct link to Architecture Principles" title="Direct link to Architecture Principles" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enterprise-principles">Enterprise Principles<a href="#enterprise-principles" class="hash-link" aria-label="Direct link to Enterprise Principles" title="Direct link to Enterprise Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Loosely Coupled and Interoperable Solutions</li>
+<li class="">Remove Friction</li>
+<li class="">Keep It Simple</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="domain-specific-principles">Domain-Specific Principles<a href="#domain-specific-principles" class="hash-link" aria-label="Direct link to Domain-Specific Principles" title="Direct link to Domain-Specific Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Internet and API First</li>
+<li class="">Applications Expose Stable, Documented Interfaces</li>
+<li class="">Observability and Reliability by Design</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-principles">Security Principles<a href="#security-principles" class="hash-link" aria-label="Direct link to Security Principles" title="Direct link to Security Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Security and Privacy by Design</li>
+<li class="">Defense in Depth</li>
+<li class="">Security Assurance Through Least Privilege</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-solution-patterns">High-Level Solution Patterns<a href="#high-level-solution-patterns" class="hash-link" aria-label="Direct link to High-Level Solution Patterns" title="Direct link to High-Level Solution Patterns" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Solution</th><th>When to Use</th><th>When Not to Use</th></tr></thead><tbody><tr><td>Public API Ingress</td><td>• Need internet-facing access for broad external consumers<br>• Require WAF, DDoS protection, and centralized policy enforcement</td><td>• Traffic is private-only inside the enterprise network<br>• The API is not ready for formal external publishing and support</td></tr><tr><td>Partner API Ingress</td><td>• Need controlled access for a known external organization<br>• Require stronger trust controls such as mTLS and scoped OAuth</td><td>• Consumers are anonymous or open public users<br>• The partner cannot support required certificate or token standards</td></tr><tr><td>Internal Service-to-Service</td><td>• Need service calls between Entegris-managed workloads<br>• Traffic stays on approved private or internal paths</td><td>• The API must be exposed to internet consumers<br>• A partner or external tenant needs direct access</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pattern-selection-matrix">Pattern Selection Matrix<a href="#pattern-selection-matrix" class="hash-link" aria-label="Direct link to Pattern Selection Matrix" title="Direct link to Pattern Selection Matrix" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario Cue</th><th>Consumer Type</th><th>Exposure</th><th>Direction</th><th>Recommended Pattern</th><th>Notes</th></tr></thead><tbody><tr><td>Developer-facing external API</td><td>Public external consumer</td><td>Internet-facing</td><td>Consumer → GCP</td><td>Public API Ingress</td><td>Use Cloud Armor with approved API gateway (Apigee or Kong per TRB decision); rate limit to 100 req/sec per API key</td></tr><tr><td>Supplier integration endpoint</td><td>Named partner organization</td><td>Internet-facing</td><td>Partner → GCP</td><td>Partner API Ingress</td><td>Implement mTLS with partner-specific client certificates stored in Certificate Manager</td></tr><tr><td>Internal order service calling pricing service</td><td>Entegris application</td><td>Private/internal</td><td>App → App</td><td>Internal Service-to-Service</td><td>Use Identity-Aware Proxy (IAP) for internal APIs requiring Entegris SSO authentication</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="canonical-patterns">Canonical Patterns<a href="#canonical-patterns" class="hash-link" aria-label="Direct link to Canonical Patterns" title="Direct link to Canonical Patterns" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-api-ingress">Public API Ingress<a href="#public-api-ingress" class="hash-link" aria-label="Direct link to Public API Ingress" title="Direct link to Public API Ingress" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>Entegris exposes a REST API to external consumers over the internet. The API must be resilient, contract-driven, and protected by standard perimeter controls.</td></tr><tr><td><strong>Problem</strong></td><td>How do we expose an external API without letting consumers bypass mandatory protection, governance, and backend isolation controls?</td></tr><tr><td><strong>Solution</strong></td><td>• Front the endpoint with Google Cloud Armor and an approved API gateway platform such as Apigee or Kong once selected by Entegris<br>• Publish an OpenAPI 3.1 specification and enforce authentication, quotas, and routing policies at the gateway layer<br>• Route traffic to a Cloud Run or GKE backend behind the load balancer so the application is not directly exposed to the internet</td></tr><tr><td><strong>Benefits</strong></td><td>• Applies a consistent security and governance posture to all external APIs<br>• Supports rate limiting, analytics, and lifecycle management from a single control point<br>• Decouples consumer-facing contracts from backend implementation details</td></tr><tr><td><strong>Considerations</strong></td><td>• User-facing APIs should use OAuth 2.0/OIDC rather than ad hoc authentication schemes<br>• Cloud Armor rules and gateway policies must be tuned together to avoid blocking legitimate traffic</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="partner-api-ingress">Partner API Ingress<a href="#partner-api-ingress" class="hash-link" aria-label="Direct link to Partner API Ingress" title="Direct link to Partner API Ingress" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A known partner system needs controlled access to a business API hosted by Entegris. The relationship requires tighter identity controls and supportable operating boundaries.</td></tr><tr><td><strong>Problem</strong></td><td>How do we let a partner call an Entegris API while enforcing stronger trust, contractual throttling, and support visibility?</td></tr><tr><td><strong>Solution</strong></td><td>• Expose the API through Cloud Armor and the approved gateway with partner-specific routing and policy enforcement<br>• Require mTLS or OAuth 2.0 client credentials with a service principal based trust model appropriate to the partner integration<br>• Route the request to a backend on Cloud Run or GKE and include correlation IDs for end-to-end tracing</td></tr><tr><td><strong>Benefits</strong></td><td>• Supports secure partner onboarding with explicit policy boundaries<br>• Makes quota, certificate, and scope management visible and auditable<br>• Keeps backend services isolated from direct partner connectivity</td></tr><tr><td><strong>Considerations</strong></td><td>• Certificate lifecycle and partner credential rotation need an agreed operational process<br>• Partner-specific exceptions should be modeled as gateway policy, not custom backend logic</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="internal-service-to-service">Internal Service-to-Service<a href="#internal-service-to-service" class="hash-link" aria-label="Direct link to Internal Service-to-Service" title="Direct link to Internal Service-to-Service" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>Two Entegris-managed workloads need machine-to-machine API communication inside the enterprise boundary. The goal is low-latency access without unnecessary internet exposure.</td></tr><tr><td><strong>Problem</strong></td><td>How do we support internal API calls while preserving service identity, least privilege, and operational traceability?</td></tr><tr><td><strong>Solution</strong></td><td>• Use approved internal routing such as service mesh or direct private access to a Cloud Run or GKE backend<br>• Authenticate machine-to-machine traffic with service principal client credentials or equivalent non-user identity controls<br>• Apply contract, logging, and monitoring standards even when the API is not internet-facing</td></tr><tr><td><strong>Benefits</strong></td><td>• Reduces exposure surface compared with public ingress patterns<br>• Supports efficient low-latency calls between internal services<br>• Preserves identity-based authorization and operational observability</td></tr><tr><td><strong>Considerations</strong></td><td>• Internal APIs still need versioning and OpenAPI contracts when they are reused across teams<br>• Do not treat private networking as a substitute for authentication and authorization</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sequence-diagrams">Sequence Diagrams<a href="#sequence-diagrams" class="hash-link" aria-label="Direct link to Sequence Diagrams" title="Direct link to Sequence Diagrams" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-api-ingress-flow">Public API Ingress Flow<a href="#public-api-ingress-flow" class="hash-link" aria-label="Direct link to Public API Ingress Flow" title="Direct link to Public API Ingress Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="partner-api-ingress-flow">Partner API Ingress Flow<a href="#partner-api-ingress-flow" class="hash-link" aria-label="Direct link to Partner API Ingress Flow" title="Direct link to Partner API Ingress Flow" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="internal-service-to-service-flow">Internal Service-to-Service Flow<a href="#internal-service-to-service-flow" class="hash-link" aria-label="Direct link to Internal Service-to-Service Flow" title="Direct link to Internal Service-to-Service Flow" translate="no">​</a></h3>
+<!-- -->
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-and-best-practices">Tips and Best Practices<a href="#tips-and-best-practices" class="hash-link" aria-label="Direct link to Tips and Best Practices" title="Direct link to Tips and Best Practices" translate="no">​</a></h2>
+<ul>
+<li class="">Use Cloud Armor WAF policies managed in Terraform, never manual Console changes</li>
+<li class="">Store API keys in GCP Secret Manager and rotate every 90 days minimum</li>
+<li class="">Log all API requests to Cloud Logging with correlation_id for distributed tracing</li>
+<li class="">Set Cloud Armor rate limits to 100 requests/sec per client IP by default</li>
+<li class="">Use Identity-Aware Proxy (IAP) for internal APIs requiring Entegris SSO authentication</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#api-ingress-patterns" class="table-of-contents__link toc-highlight">API Ingress Patterns</a></li><li><a href="#document-introduction" class="table-of-contents__link toc-highlight">Document Introduction</a><ul><li><a href="#purpose-of-document" class="table-of-contents__link toc-highlight">Purpose of Document</a></li><li><a href="#scope-and-applicability" class="table-of-contents__link toc-highlight">Scope and Applicability</a></li><li><a href="#intended-audience" class="table-of-contents__link toc-highlight">Intended Audience</a></li></ul></li><li><a href="#context" class="table-of-contents__link toc-highlight">Context</a><ul><li><a href="#why-use-these-patterns" class="table-of-contents__link toc-highlight">Why Use These Patterns</a></li></ul></li><li><a href="#architecture-principles" class="table-of-contents__link toc-highlight">Architecture Principles</a><ul><li><a href="#enterprise-principles" class="table-of-contents__link toc-highlight">Enterprise Principles</a></li><li><a href="#domain-specific-principles" class="table-of-contents__link toc-highlight">Domain-Specific Principles</a></li><li><a href="#security-principles" class="table-of-contents__link toc-highlight">Security Principles</a></li></ul></li><li><a href="#high-level-solution-patterns" class="table-of-contents__link toc-highlight">High-Level Solution Patterns</a></li><li><a href="#pattern-selection-matrix" class="table-of-contents__link toc-highlight">Pattern Selection Matrix</a></li><li><a href="#canonical-patterns" class="table-of-contents__link toc-highlight">Canonical Patterns</a><ul><li><a href="#public-api-ingress" class="table-of-contents__link toc-highlight">Public API Ingress</a></li><li><a href="#partner-api-ingress" class="table-of-contents__link toc-highlight">Partner API Ingress</a></li><li><a href="#internal-service-to-service" class="table-of-contents__link toc-highlight">Internal Service-to-Service</a></li></ul></li><li><a href="#sequence-diagrams" class="table-of-contents__link toc-highlight">Sequence Diagrams</a><ul><li><a href="#public-api-ingress-flow" class="table-of-contents__link toc-highlight">Public API Ingress Flow</a></li><li><a href="#partner-api-ingress-flow" class="table-of-contents__link toc-highlight">Partner API Ingress Flow</a></li><li><a href="#internal-service-to-service-flow" class="table-of-contents__link toc-highlight">Internal Service-to-Service Flow</a></li></ul></li><li><a href="#tips-and-best-practices" class="table-of-contents__link toc-highlight">Tips and Best Practices</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

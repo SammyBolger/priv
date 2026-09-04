@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-context/architecture-checklist" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Architecture Checklist | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/context/architecture-checklist/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Architecture Checklist | Governed Content Site"><meta data-rh="true" name="description" content="Clean, review-friendly version of the architecture checklist provided in CSV format."><meta data-rh="true" property="og:description" content="Clean, review-friendly version of the architecture checklist provided in CSV format."><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/context/architecture-checklist/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/context/architecture-checklist/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/context/architecture-checklist/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Architecture Checklist</h1></header>
+<p>Clean, review-friendly version of the architecture checklist provided in CSV format.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="how-to-use">How To Use<a href="#how-to-use" class="hash-link" aria-label="Direct link to How To Use" title="Direct link to How To Use" translate="no">​</a></h2>
+<ol>
+<li class="">Mark each item as relevant with <code>Y</code> or <code>N</code>.</li>
+<li class="">Mark completion with <code>Y</code> or <code>N</code>.</li>
+<li class="">Capture decisions, evidence, comments, and links during the review.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="status-key">Status Key<a href="#status-key" class="hash-link" aria-label="Direct link to Status Key" title="Direct link to Status Key" translate="no">​</a></h2>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-navigation">Quick Navigation<a href="#quick-navigation" class="hash-link" aria-label="Direct link to Quick Navigation" title="Direct link to Quick Navigation" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="#application-experience--hosting" class="">Application Experience &amp; Hosting</a></li>
+<li class="">Integration &amp; Data</li>
+<li class="">Product, Platform &amp; Operations</li>
+<li class=""><a href="#security-compliance--identity" class="">Security, Compliance &amp; Identity</a></li>
+<li class=""><a href="#ai--networking" class="">AI &amp; Networking</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="application-experience--hosting">Application Experience &amp; Hosting<a href="#application-experience--hosting" class="hash-link" aria-label="Direct link to Application Experience &amp; Hosting" title="Direct link to Application Experience &amp; Hosting" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apps---end-user">Apps - End User<a href="#apps---end-user" class="hash-link" aria-label="Direct link to Apps - End User" title="Direct link to Apps - End User" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-eu-01--app001">A-EU-01 · APP001<a href="#a-eu-01--app001" class="hash-link" aria-label="Direct link to A-EU-01 · APP001" title="Direct link to A-EU-01 · APP001" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the project team understand how the end user will be able to access the application? Web, rich client, mobile, or other access methods.</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: To understand what client solutions are available and whether they are adequately supported by Entegris.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apps---end-user-requirements">Apps - End User Requirements<a href="#apps---end-user-requirements" class="hash-link" aria-label="Direct link to Apps - End User Requirements" title="Direct link to Apps - End User Requirements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-eu-02--app002">A-EU-02 · APP002<a href="#a-eu-02--app002" class="hash-link" aria-label="Direct link to A-EU-02 · APP002" title="Direct link to A-EU-02 · APP002" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the project team know what technology and version the end user requires to access the application? For example: latest Chrome browser, Windows 10, and similar platform requirements.</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: To understand what client solutions are available and whether they are adequately supported by Entegris.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configurable-ui">Configurable UI<a href="#configurable-ui" class="hash-link" aria-label="Direct link to Configurable UI" title="Direct link to Configurable UI" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-eu-03--con001">A-EU-03 · CON001<a href="#a-eu-03--con001" class="hash-link" aria-label="Direct link to A-EU-03 · CON001" title="Direct link to A-EU-03 · CON001" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the project team know if the solution has configurable UI options, including support for mobile devices and a responsive web design approach?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Need to know what types of mobile apps are available and whether they are secure.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="managing-ops-data-vs-ods-vs-bi">Managing Ops Data vs ODS vs BI<a href="#managing-ops-data-vs-ods-vs-bi" class="hash-link" aria-label="Direct link to Managing Ops Data vs ODS vs BI" title="Direct link to Managing Ops Data vs ODS vs BI" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-gen-01--man-01">A-GEN-01 · MAN-01<a href="#a-gen-01--man-01" class="hash-link" aria-label="Direct link to A-GEN-01 · MAN-01" title="Direct link to A-GEN-01 · MAN-01" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the project team know how the solution will manage operating data versus ODS versus BI, and whether this is automated through admin screens?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: To understand data movement, performance implications, and data retention policies.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="app-management">App Management<a href="#app-management" class="hash-link" aria-label="Direct link to App Management" title="Direct link to App Management" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-gen-02--app-03">A-GEN-02 · APP-03<a href="#a-gen-02--app-03" class="hash-link" aria-label="Direct link to A-GEN-02 · APP-03" title="Direct link to A-GEN-02 · APP-03" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the project team understand what is used to manage configuration, database, and report changes migrating from development to test or QA and then to production?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: To understand the ease of migrating functionality from one environment to another.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hosting">Hosting<a href="#hosting" class="hash-link" aria-label="Direct link to Hosting" title="Direct link to Hosting" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="a-gen-03--hos-01">A-GEN-03 · HOS-01<a href="#a-gen-03--hos-01" class="hash-link" aria-label="Direct link to A-GEN-03 · HOS-01" title="Direct link to A-GEN-03 · HOS-01" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the project team understand what hosting options are available? Are you aware if the application supports private cloud solutions such as VMware vxRail, containers, and similar platforms? What is the typical application footprint for a small, medium, or large plant? What required software components are not included in the software, such as databases? What software is needed to run the solution, such as supported database versions and operating systems?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: To understand what is required to run the software.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-compliance--identity">Security, Compliance &amp; Identity<a href="#security-compliance--identity" class="hash-link" aria-label="Direct link to Security, Compliance &amp; Identity" title="Direct link to Security, Compliance &amp; Identity" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-certifications">Security Certifications<a href="#security-certifications" class="hash-link" aria-label="Direct link to Security Certifications" title="Direct link to Security Certifications" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sc-01">SC-01<a href="#sc-01" class="hash-link" aria-label="Direct link to SC-01" title="Direct link to SC-01" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Are there any follow-up security items to address? Does the project team know what level of certification the solution complies with, such as ISO 27001, SOC 2, OWASP ASVS, CSA STAR, or ISO 22301, and can audited results be supplied?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: To understand the level of compliance.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai--networking">AI &amp; Networking<a href="#ai--networking" class="hash-link" aria-label="Direct link to AI &amp; Networking" title="Direct link to AI &amp; Networking" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai---general">AI - General<a href="#ai---general" class="hash-link" aria-label="Direct link to AI - General" title="Direct link to AI - General" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-01--ai-01">AI-01 · AI-01<a href="#ai-01--ai-01" class="hash-link" aria-label="Direct link to AI-01 · AI-01" title="Direct link to AI-01 · AI-01" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Ensure the project team has confirmation that Entegris data is not used to train AI models and that the data is managed on the platform in a way that protects the data.</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: To understand how AI data is being used.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="togaf-ai-native-architecture-assessment">TOGAF AI-Native Architecture Assessment<a href="#togaf-ai-native-architecture-assessment" class="hash-link" aria-label="Direct link to TOGAF AI-Native Architecture Assessment" title="Direct link to TOGAF AI-Native Architecture Assessment" translate="no">​</a></h2>
+<p>This section adds TOGAF-aligned questions for AI-native systems. Use for architectures that include AI/ML components, LLMs, or intelligent automation.</p>
+<p><strong>Reference</strong>: See TOGAF-Domain-Mapping.md for detailed guidance on each domain.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-architecture-for-ai">Data Architecture for AI<a href="#data-architecture-for-ai" class="hash-link" aria-label="Direct link to Data Architecture for AI" title="Direct link to Data Architecture for AI" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="da-ai-01--data-quality">DA-AI-01 · DATA-QUALITY<a href="#da-ai-01--data-quality" class="hash-link" aria-label="Direct link to DA-AI-01 · DATA-QUALITY" title="Direct link to DA-AI-01 · DATA-QUALITY" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the data architecture include quality governance for AI? (accuracy, completeness, consistency checks)</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Poor data quality directly impacts AI model performance, bias, and reliability.</li>
+<li class="">Reference: TOGAF Data Architecture (TOGAF-Domain-Mapping.md)</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="da-ai-02--data-lineage">DA-AI-02 · DATA-LINEAGE<a href="#da-ai-02--data-lineage" class="hash-link" aria-label="Direct link to DA-AI-02 · DATA-LINEAGE" title="Direct link to DA-AI-02 · DATA-LINEAGE" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Can you trace data lineage from source systems through transformations to final outputs and model training?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Data lineage is essential for debugging, compliance, and auditing AI decisions.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="da-ai-03--data-catalog">DA-AI-03 · DATA-CATALOG<a href="#da-ai-03--data-catalog" class="hash-link" aria-label="Direct link to DA-AI-03 · DATA-CATALOG" title="Direct link to DA-AI-03 · DATA-CATALOG" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Is there a data catalog or metadata management system that makes enterprise data discoverable to data scientists and architects?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Discoverability accelerates AI/ML projects and reduces duplicate data work.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="da-ai-04--knowledge-graph">DA-AI-04 · KNOWLEDGE-GRAPH<a href="#da-ai-04--knowledge-graph" class="hash-link" aria-label="Direct link to DA-AI-04 · KNOWLEDGE-GRAPH" title="Direct link to DA-AI-04 · KNOWLEDGE-GRAPH" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+For semantic search or RAG systems: Are you using knowledge graphs or semantic data structures for context understanding?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Knowledge graphs enable richer semantic understanding than keyword search.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="da-ai-05--vector-db">DA-AI-05 · VECTOR-DB<a href="#da-ai-05--vector-db" class="hash-link" aria-label="Direct link to DA-AI-05 · VECTOR-DB" title="Direct link to DA-AI-05 · VECTOR-DB" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+For RAG or similarity search: Do you have vector databases (e.g., Pinecone, Weaviate, Chroma) for embedding storage?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Vector databases enable efficient semantic search for context retrieval.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="da-ai-06--privacy-compliance">DA-AI-06 · PRIVACY-COMPLIANCE<a href="#da-ai-06--privacy-compliance" class="hash-link" aria-label="Direct link to DA-AI-06 · PRIVACY-COMPLIANCE" title="Direct link to DA-AI-06 · PRIVACY-COMPLIANCE" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does the data architecture enforce privacy controls (anonymization, PII masking, access controls) for AI/ML?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: GDPR, CCPA, and regulatory compliance are non-negotiable for AI systems.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="application-architecture-for-ai">Application Architecture for AI<a href="#application-architecture-for-ai" class="hash-link" aria-label="Direct link to Application Architecture for AI" title="Direct link to Application Architecture for AI" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="aa-ai-01--rag-system">AA-AI-01 · RAG-SYSTEM<a href="#aa-ai-01--rag-system" class="hash-link" aria-label="Direct link to AA-AI-01 · RAG-SYSTEM" title="Direct link to AA-AI-01 · RAG-SYSTEM" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+For knowledge-based systems: Is the RAG (Retrieval-Augmented Generation) architecture clearly defined? (Data source → Retrieval → LLM → Output)</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: RAG systems require careful orchestration of retrieval and generation.</li>
+<li class="">Reference: <a class="" href="/ai4ea/docs/patterns/application/ai-patterns/">AI Patterns</a></li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="aa-ai-02--agent-framework">AA-AI-02 · AGENT-FRAMEWORK<a href="#aa-ai-02--agent-framework" class="hash-link" aria-label="Direct link to AA-AI-02 · AGENT-FRAMEWORK" title="Direct link to AA-AI-02 · AGENT-FRAMEWORK" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+For autonomous systems: Are you using an agent framework with clear control flow, tool access, and human oversight?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Agents need guardrails to prevent unintended actions.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="aa-ai-03--conversational-ui">AA-AI-03 · CONVERSATIONAL-UI<a href="#aa-ai-03--conversational-ui" class="hash-link" aria-label="Direct link to AA-AI-03 · CONVERSATIONAL-UI" title="Direct link to AA-AI-03 · CONVERSATIONAL-UI" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Do applications support conversational interfaces (chat/Q&amp;A) alongside traditional UIs?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Conversational interfaces are a core AI-native capability.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="aa-ai-04--api-integration">AA-AI-04 · API-INTEGRATION<a href="#aa-ai-04--api-integration" class="hash-link" aria-label="Direct link to AA-AI-04 · API-INTEGRATION" title="Direct link to AA-AI-04 · API-INTEGRATION" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Can applications seamlessly integrate with LLM APIs and external AI services?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Modern architectures need flexible AI service integration.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technology-architecture-for-ai">Technology Architecture for AI<a href="#technology-architecture-for-ai" class="hash-link" aria-label="Direct link to Technology Architecture for AI" title="Direct link to Technology Architecture for AI" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ta-ai-01--mlops-platform">TA-AI-01 · MLOPS-PLATFORM<a href="#ta-ai-01--mlops-platform" class="hash-link" aria-label="Direct link to TA-AI-01 · MLOPS-PLATFORM" title="Direct link to TA-AI-01 · MLOPS-PLATFORM" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Do you have MLOps infrastructure for model training, versioning, and deployment? (experiment tracking, registries, CI/CD for models)</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: MLOps is essential for scaling from experiments to production.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ta-ai-02--llmops-platform">TA-AI-02 · LLMOPS-PLATFORM<a href="#ta-ai-02--llmops-platform" class="hash-link" aria-label="Direct link to TA-AI-02 · LLMOPS-PLATFORM" title="Direct link to TA-AI-02 · LLMOPS-PLATFORM" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+For LLM-based systems: Do you have LLMOps infrastructure for prompt management, deployment, monitoring, and cost control?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: LLMs are expensive and require active monitoring.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ta-ai-03--model-monitoring">TA-AI-03 · MODEL-MONITORING<a href="#ta-ai-03--model-monitoring" class="hash-link" aria-label="Direct link to TA-AI-03 · MODEL-MONITORING" title="Direct link to TA-AI-03 · MODEL-MONITORING" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Are you monitoring models for drift, bias, performance degradation, and other anomalies?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Models degrade over time; active monitoring catches issues early.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ta-ai-04--inference-scaling">TA-AI-04 · INFERENCE-SCALING<a href="#ta-ai-04--inference-scaling" class="hash-link" aria-label="Direct link to TA-AI-04 · INFERENCE-SCALING" title="Direct link to TA-AI-04 · INFERENCE-SCALING" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Can your infrastructure scale AI inference for production workloads? (GPUs, batch processing, caching)</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Inference at scale requires specialized infrastructure.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ta-ai-05--gpu-infrastructure">TA-AI-05 · GPU-INFRASTRUCTURE<a href="#ta-ai-05--gpu-infrastructure" class="hash-link" aria-label="Direct link to TA-AI-05 · GPU-INFRASTRUCTURE" title="Direct link to TA-AI-05 · GPU-INFRASTRUCTURE" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Do you have GPU infrastructure for model training and inference? (GCP TPUs, AWS p3 instances, Azure GPUs)</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: AI workloads typically require specialized compute.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="governance-for-ai">Governance for AI<a href="#governance-for-ai" class="hash-link" aria-label="Direct link to Governance for AI" title="Direct link to Governance for AI" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gov-ai-01--model-registry">GOV-AI-01 · MODEL-REGISTRY<a href="#gov-ai-01--model-registry" class="hash-link" aria-label="Direct link to GOV-AI-01 · MODEL-REGISTRY" title="Direct link to GOV-AI-01 · MODEL-REGISTRY" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Is there a model registry that tracks all models in production, including versions, lineage, and ownership?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Model governance prevents rogue models and ensures compliance.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gov-ai-02--responsible-ai">GOV-AI-02 · RESPONSIBLE-AI<a href="#gov-ai-02--responsible-ai" class="hash-link" aria-label="Direct link to GOV-AI-02 · RESPONSIBLE-AI" title="Direct link to GOV-AI-02 · RESPONSIBLE-AI" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Does your AI governance framework include responsible AI principles? (transparency, fairness, bias detection, human oversight)</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Ethical AI is increasingly a regulatory requirement.</li>
+<li class="">Reference: <a class="" href="/ai4ea/docs/context/architecture-assurance-guardrails/">Architecture Assurance Guardrails</a></li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gov-ai-03--explainability">GOV-AI-03 · EXPLAINABILITY<a href="#gov-ai-03--explainability" class="hash-link" aria-label="Direct link to GOV-AI-03 · EXPLAINABILITY" title="Direct link to GOV-AI-03 · EXPLAINABILITY" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Can your models explain their decisions in a way that stakeholders can understand and audit?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Explainability is required for high-stakes decisions (credit, hiring, healthcare).</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gov-ai-04--bias-detection">GOV-AI-04 · BIAS-DETECTION<a href="#gov-ai-04--bias-detection" class="hash-link" aria-label="Direct link to GOV-AI-04 · BIAS-DETECTION" title="Direct link to GOV-AI-04 · BIAS-DETECTION" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+Do you have processes to detect and mitigate bias in training data and model predictions?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Biased models can perpetuate discrimination and create legal liability.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gov-ai-05--human-oversight">GOV-AI-05 · HUMAN-OVERSIGHT<a href="#gov-ai-05--human-oversight" class="hash-link" aria-label="Direct link to GOV-AI-05 · HUMAN-OVERSIGHT" title="Direct link to GOV-AI-05 · HUMAN-OVERSIGHT" translate="no">​</a></h4>
+<p><strong>Question</strong><br>
+For high-stakes decisions: Is there a clear human-in-the-loop process for AI recommendations?</p>
+<ul>
+<li class="">Relevant: <code>Y / N</code></li>
+<li class="">Complete: <code>Y / N</code></li>
+<li class="">Why this matters: Humans should retain authority over consequential decisions.</li>
+<li class="">Comments:</li>
+<li class="">Links:</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#how-to-use" class="table-of-contents__link toc-highlight">How To Use</a></li><li><a href="#status-key" class="table-of-contents__link toc-highlight">Status Key</a></li><li><a href="#quick-navigation" class="table-of-contents__link toc-highlight">Quick Navigation</a></li><li><a href="#application-experience--hosting" class="table-of-contents__link toc-highlight">Application Experience &amp; Hosting</a><ul><li><a href="#apps---end-user" class="table-of-contents__link toc-highlight">Apps - End User</a><ul><li><a href="#a-eu-01--app001" class="table-of-contents__link toc-highlight">A-EU-01 · APP001</a></li></ul></li><li><a href="#apps---end-user-requirements" class="table-of-contents__link toc-highlight">Apps - End User Requirements</a><ul><li><a href="#a-eu-02--app002" class="table-of-contents__link toc-highlight">A-EU-02 · APP002</a></li></ul></li><li><a href="#configurable-ui" class="table-of-contents__link toc-highlight">Configurable UI</a><ul><li><a href="#a-eu-03--con001" class="table-of-contents__link toc-highlight">A-EU-03 · CON001</a></li></ul></li><li><a href="#managing-ops-data-vs-ods-vs-bi" class="table-of-contents__link toc-highlight">Managing Ops Data vs ODS vs BI</a><ul><li><a href="#a-gen-01--man-01" class="table-of-contents__link toc-highlight">A-GEN-01 · MAN-01</a></li></ul></li><li><a href="#app-management" class="table-of-contents__link toc-highlight">App Management</a><ul><li><a href="#a-gen-02--app-03" class="table-of-contents__link toc-highlight">A-GEN-02 · APP-03</a></li></ul></li><li><a href="#hosting" class="table-of-contents__link toc-highlight">Hosting</a><ul><li><a href="#a-gen-03--hos-01" class="table-of-contents__link toc-highlight">A-GEN-03 · HOS-01</a></li></ul></li></ul></li><li><a href="#security-compliance--identity" class="table-of-contents__link toc-highlight">Security, Compliance &amp; Identity</a><ul><li><a href="#security-certifications" class="table-of-contents__link toc-highlight">Security Certifications</a><ul><li><a href="#sc-01" class="table-of-contents__link toc-highlight">SC-01</a></li></ul></li></ul></li><li><a href="#ai--networking" class="table-of-contents__link toc-highlight">AI &amp; Networking</a><ul><li><a href="#ai---general" class="table-of-contents__link toc-highlight">AI - General</a><ul><li><a href="#ai-01--ai-01" class="table-of-contents__link toc-highlight">AI-01 · AI-01</a></li></ul></li></ul></li><li><a href="#togaf-ai-native-architecture-assessment" class="table-of-contents__link toc-highlight">TOGAF AI-Native Architecture Assessment</a><ul><li><a href="#data-architecture-for-ai" class="table-of-contents__link toc-highlight">Data Architecture for AI</a><ul><li><a href="#da-ai-01--data-quality" class="table-of-contents__link toc-highlight">DA-AI-01 · DATA-QUALITY</a></li><li><a href="#da-ai-02--data-lineage" class="table-of-contents__link toc-highlight">DA-AI-02 · DATA-LINEAGE</a></li><li><a href="#da-ai-03--data-catalog" class="table-of-contents__link toc-highlight">DA-AI-03 · DATA-CATALOG</a></li><li><a href="#da-ai-04--knowledge-graph" class="table-of-contents__link toc-highlight">DA-AI-04 · KNOWLEDGE-GRAPH</a></li><li><a href="#da-ai-05--vector-db" class="table-of-contents__link toc-highlight">DA-AI-05 · VECTOR-DB</a></li><li><a href="#da-ai-06--privacy-compliance" class="table-of-contents__link toc-highlight">DA-AI-06 · PRIVACY-COMPLIANCE</a></li></ul></li><li><a href="#application-architecture-for-ai" class="table-of-contents__link toc-highlight">Application Architecture for AI</a><ul><li><a href="#aa-ai-01--rag-system" class="table-of-contents__link toc-highlight">AA-AI-01 · RAG-SYSTEM</a></li><li><a href="#aa-ai-02--agent-framework" class="table-of-contents__link toc-highlight">AA-AI-02 · AGENT-FRAMEWORK</a></li><li><a href="#aa-ai-03--conversational-ui" class="table-of-contents__link toc-highlight">AA-AI-03 · CONVERSATIONAL-UI</a></li><li><a href="#aa-ai-04--api-integration" class="table-of-contents__link toc-highlight">AA-AI-04 · API-INTEGRATION</a></li></ul></li><li><a href="#technology-architecture-for-ai" class="table-of-contents__link toc-highlight">Technology Architecture for AI</a><ul><li><a href="#ta-ai-01--mlops-platform" class="table-of-contents__link toc-highlight">TA-AI-01 · MLOPS-PLATFORM</a></li><li><a href="#ta-ai-02--llmops-platform" class="table-of-contents__link toc-highlight">TA-AI-02 · LLMOPS-PLATFORM</a></li><li><a href="#ta-ai-03--model-monitoring" class="table-of-contents__link toc-highlight">TA-AI-03 · MODEL-MONITORING</a></li><li><a href="#ta-ai-04--inference-scaling" class="table-of-contents__link toc-highlight">TA-AI-04 · INFERENCE-SCALING</a></li><li><a href="#ta-ai-05--gpu-infrastructure" class="table-of-contents__link toc-highlight">TA-AI-05 · GPU-INFRASTRUCTURE</a></li></ul></li><li><a href="#governance-for-ai" class="table-of-contents__link toc-highlight">Governance for AI</a><ul><li><a href="#gov-ai-01--model-registry" class="table-of-contents__link toc-highlight">GOV-AI-01 · MODEL-REGISTRY</a></li><li><a href="#gov-ai-02--responsible-ai" class="table-of-contents__link toc-highlight">GOV-AI-02 · RESPONSIBLE-AI</a></li><li><a href="#gov-ai-03--explainability" class="table-of-contents__link toc-highlight">GOV-AI-03 · EXPLAINABILITY</a></li><li><a href="#gov-ai-04--bias-detection" class="table-of-contents__link toc-highlight">GOV-AI-04 · BIAS-DETECTION</a></li><li><a href="#gov-ai-05--human-oversight" class="table-of-contents__link toc-highlight">GOV-AI-05 · HUMAN-OVERSIGHT</a></li></ul></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-policies/operational/it-backup-policy" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">IT Backup Policy | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/policies/operational/it-backup-policy/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="IT Backup Policy | Governed Content Site"><meta data-rh="true" name="description" content="Backup and recovery requirements to protect the integrity and availability of critical Entegris IT systems and data."><meta data-rh="true" property="og:description" content="Backup and recovery requirements to protect the integrity and availability of critical Entegris IT systems and data."><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/policies/operational/it-backup-policy/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/policies/operational/it-backup-policy/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/policies/operational/it-backup-policy/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/ai4ea/docs/knowledge-base/"><span title="Knowledge base" class="categoryLinkLabel_W154">Knowledge base</span></a><button aria-label="Collapse sidebar category &#x27;Knowledge base&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/ai4ea/docs/knowledge-base/policies/"><span title="Policies" class="categoryLinkLabel_W154">Policies</span></a><button aria-label="Collapse sidebar category &#x27;Policies&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/ai-policy/"><span title="AI Policy" class="linkLabel_WmDU">AI Policy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/cybersecurity-policy/"><span title="Cybersecurity Policy" class="linkLabel_WmDU">Cybersecurity Policy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/cybersecurity-risk-management-policy/"><span title="Cyber Risk Management Policy" class="linkLabel_WmDU">Cyber Risk Management Policy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/endpoint-device-protection-policy/"><span title="Endpoint Device Protection Policy" class="linkLabel_WmDU">Endpoint Device Protection Policy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/exceptions-management-policy/"><span title="Exception Management Policy" class="linkLabel_WmDU">Exception Management Policy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/identity-access-management-policy/"><span title="Identity &amp; Access Management Policy" class="linkLabel_WmDU">Identity &amp; Access Management Policy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/international-travel-guidelines/"><span title="International Travel" class="linkLabel_WmDU">International Travel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/it-incident-response-policy/"><span title="IT Incident Response" class="linkLabel_WmDU">IT Incident Response</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/supplier-risk-management-policy/"><span title="Supplier Risk Management" class="linkLabel_WmDU">Supplier Risk Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/technology-acceptable-use-policy/"><span title="Acceptable Use" class="linkLabel_WmDU">Acceptable Use</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/cybersecurity/vulnerability-management-policy/"><span title="Vulnerability Management" class="linkLabel_WmDU">Vulnerability Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/operational/asset-management-policy/"><span title="Asset Management" class="linkLabel_WmDU">Asset Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/operational/email-technology-configuration-policy/"><span title="Email Technology Configuration" class="linkLabel_WmDU">Email Technology Configuration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/operational/incident-major-incident-response-policy/"><span title="Incident &amp; Major Incident Response" class="linkLabel_WmDU">Incident &amp; Major Incident Response</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai4ea/docs/policies/operational/it-backup-policy/"><span title="IT Backup" class="linkLabel_WmDU">IT Backup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/operational/it-change-management-policy/"><span title="IT Change Management" class="linkLabel_WmDU">IT Change Management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/operational/remote-access-standard/"><span title="Remote Access" class="linkLabel_WmDU">Remote Access</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/policies/operational/wireless-communication-policy/"><span title="Wireless Communication" class="linkLabel_WmDU">Wireless Communication</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/patterns/"><span title="Patterns" class="categoryLinkLabel_W154">Patterns</span></a><button aria-label="Expand sidebar category &#x27;Patterns&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/principles/"><span title="Principles" class="categoryLinkLabel_W154">Principles</span></a><button aria-label="Expand sidebar category &#x27;Principles&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/standards/"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Expand sidebar category &#x27;Standards&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/positions/"><span title="Positions" class="categoryLinkLabel_W154">Positions</span></a><button aria-label="Expand sidebar category &#x27;Positions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>IT Backup Policy</h1></header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Detail</th></tr></thead><tbody><tr><td><strong>Document number</strong></td><td>13830 (EtQ)</td></tr><tr><td><strong>Type</strong></td><td>Policy</td></tr><tr><td><strong>Domain</strong></td><td>Operational / Information Security (EQOS-21: Intellectual Property (IP) &amp; Information Security)</td></tr><tr><td><strong>Revision</strong></td><td>3</td></tr><tr><td><strong>Owner</strong></td><td>Not stated in source</td></tr><tr><td><strong>Source file</strong></td><td><code>13830.PDF</code></td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-purpose">1. Purpose<a href="#1-purpose" class="hash-link" aria-label="Direct link to 1. Purpose" title="Direct link to 1. Purpose" translate="no">​</a></h2>
+<p><strong>1.1</strong> This policy deals with the backup guidelines for critical IT systems at Entegris.</p>
+<p><strong>1.2</strong> This policy is required because all systems that are critical to Entegris need to follow a reliable and regular backup schedule that is managed by either automated/ manual processes. This policy would also serve the purpose to provide guidelines for developing tape and tapeless/ disk backup procedures for all sites/ locations where backups are essential.</p>
+<p><strong>1.3</strong> This policy establishes requirements related to the backup and recovery activities to protect the integrity and availability of all electronic assets.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-scope">2. Scope<a href="#2-scope" class="hash-link" aria-label="Direct link to 2. Scope" title="Direct link to 2. Scope" translate="no">​</a></h2>
+<p><strong>2.1</strong> Global.</p>
+<p><strong>2.2</strong> IT understands that all systems over the entire worldwide operations do not maintain the same level of business criticality. Hence it is not essential for all sites to follow this policy on a strict basis as they may not have the resources, support and the hardware to support the needed procedures. Any deviation to the list must be approved by the business heads, according to the critical systems/ application list.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-responsibilities">3. Responsibilities<a href="#3-responsibilities" class="hash-link" aria-label="Direct link to 3. Responsibilities" title="Direct link to 3. Responsibilities" translate="no">​</a></h2>
+<p>For internally hosted applications and systems, all business owners must work with IT to ensure that all critical data is appropriately backed up to ensure appropriate options in the event of an availability outage. For all applications and systems that are hosted in the cloud, the vendor relationship managers need to ensure that appropriate contract terms ensure for this. SaaS vendors are expected to assist with any disaster recovery solutions and annual tests to verify appropriate response procedures.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-references">4. References<a href="#4-references" class="hash-link" aria-label="Direct link to 4. References" title="Direct link to 4. References" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Reference Documents:</strong>
+<ul>
+<li class="">08569 – Creating Backup Status Report</li>
+<li class="">08580 – Entegris Standard Backup Policy</li>
+<li class="">08572 - Remote Backup Reports</li>
+<li class="">09955 – How to Restore File from Backup (File Share Only)</li>
+</ul>
+</li>
+<li class=""><strong>Special Notes:</strong> Policy # DSS04.07.501</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-policy">5. Policy<a href="#5-policy" class="hash-link" aria-label="Direct link to 5. Policy" title="Direct link to 5. Policy" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="51-backups">5.1 Backups<a href="#51-backups" class="hash-link" aria-label="Direct link to 5.1 Backups" title="Direct link to 5.1 Backups" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>5.1.1</strong> All server-based production information systems (application servers, file servers and network infrastructure servers) must be backed up according to an approved backup schedule. The resource owner is responsible for the review and approval of the backup schedule.</li>
+<li class=""><strong>5.1.2</strong> The backup schedule must include the extent (full or differential) of backup, the frequency, and retention period. The backup schedule should reflect the business requirements of the organization and the security regulations of the information.
+<ul>
+<li class=""><strong>5.1.2.1</strong> Daily Disk based Backups</li>
+<li class=""><strong>5.1.2.2</strong> Weekly Disk based Backups</li>
+<li class=""><strong>5.1.2.3</strong> Monthly Tape Backups – stored offsite</li>
+</ul>
+</li>
+<li class=""><strong>5.1.3</strong> Backup procedures must cover all production systems, applications, and data necessary to cover the entire system in the event of disaster.</li>
+<li class=""><strong>5.1.4</strong> Invariable of backup technology (Disk based/ Tape based) all backups must be stored in a secure site at a sufficient distance away to escape any damage from disaster at the main site.</li>
+<li class=""><strong>5.1.5</strong> Backup infrastructure should be given an appropriate level of physical and environmental protection consistent with the standard applied at the main site.</li>
+<li class=""><strong>5.1.6</strong> All backup data stored offsite must be documented that shows the date when the information was most recently modified as well as the nature of the information.</li>
+<li class=""><strong>5.1.7</strong> The backup log should be reviewed and evidenced on a daily basis to confirm the success of each backup job.</li>
+<li class=""><strong>5.1.8</strong> All backup failures must be investigated and resolved within the next backup cycle. Resolution of failed backups must be documented in a IT Service Request.</li>
+<li class=""><strong>5.1.9</strong> With a few exceptions, Entegris does not provide backup of applications or data stored on personal computer hard drives or portable hard drives. Thus, data of this nature should be stored on a network group drive or other source covered by this policy.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="52-recovery">5.2 Recovery<a href="#52-recovery" class="hash-link" aria-label="Direct link to 5.2 Recovery" title="Direct link to 5.2 Recovery" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>5.2.1</strong> File and system restoration requests and results are documented in the IT Service Management Application.</li>
+<li class=""><strong>5.2.2</strong> File and system restoration procedures should be periodically tested to validate that they are effective and that they can be completed within the time allotted in the operational procedures for recovery.</li>
+<li class=""><strong>5.2.3</strong> All files are restored back to the original/ temporary location of the data. All other requests must be approved by the resource owner. The security requirements of the data must not be compromised by providing unauthorized access to restored data.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="53-externally-hosted-systems">5.3 Externally Hosted Systems<a href="#53-externally-hosted-systems" class="hash-link" aria-label="Direct link to 5.3 Externally Hosted Systems" title="Direct link to 5.3 Externally Hosted Systems" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>5.3.1</strong> In the event that Entegris contracts with a third party to host infrastructure and/or data related to a particular system, the third party must have backup and recovery procedures either equivalent to or more rigorous than Entegris’ internal procedures.
+<ul>
+<li class=""><strong>5.3.1.1</strong> Disk Based Backups are sent to Exagrid at local site and then replicated to another Exagrid at a different site</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-revision-history">6. Revision History<a href="#6-revision-history" class="hash-link" aria-label="Direct link to 6. Revision History" title="Direct link to 6. Revision History" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>New Rev</th><th>Description of Change</th><th>Reason for Change</th></tr></thead><tbody><tr><td>V1</td><td>Original version 02/20/2015</td><td>New document</td></tr><tr><td>V1.1</td><td>No Changes 12/02/2016</td><td>Annual review</td></tr><tr><td>V1.2</td><td>No Changes 12/27/2017</td><td>Annual review</td></tr><tr><td>V1.3</td><td>Minor Updates</td><td>Annual Review 10/29/18</td></tr><tr><td>1</td><td>Updated format to Rev 3 Global template 10/19/2018</td><td>Moved to EtQ</td></tr><tr><td>V1.4</td><td>Updated with reference to SOP 317</td><td></td></tr><tr><td>V1.5</td><td>No changes</td><td>Annual Review 7/2/2019</td></tr><tr><td>V1.6</td><td>Minor updates</td><td>Annual Review 2/4/2020</td></tr><tr><td>V2</td><td>Minor updates</td><td>5/13/2020</td></tr><tr><td>V3</td><td>Minor update</td><td>9/2/2020</td></tr></tbody></table></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-purpose" class="table-of-contents__link toc-highlight">1. Purpose</a></li><li><a href="#2-scope" class="table-of-contents__link toc-highlight">2. Scope</a></li><li><a href="#3-responsibilities" class="table-of-contents__link toc-highlight">3. Responsibilities</a></li><li><a href="#4-references" class="table-of-contents__link toc-highlight">4. References</a></li><li><a href="#5-policy" class="table-of-contents__link toc-highlight">5. Policy</a><ul><li><a href="#51-backups" class="table-of-contents__link toc-highlight">5.1 Backups</a></li><li><a href="#52-recovery" class="table-of-contents__link toc-highlight">5.2 Recovery</a></li><li><a href="#53-externally-hosted-systems" class="table-of-contents__link toc-highlight">5.3 Externally Hosted Systems</a></li></ul></li><li><a href="#6-revision-history" class="table-of-contents__link toc-highlight">6. Revision History</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

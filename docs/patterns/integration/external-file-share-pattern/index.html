@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-patterns/integration/external-file-share-pattern" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Integration Reference Architecture — File Share Access and Integration Patterns | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/external-file-share-pattern/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Integration Reference Architecture — File Share Access and Integration Patterns | Governed Content Site"><meta data-rh="true" name="description" content="File Share Access and Integration Patterns"><meta data-rh="true" property="og:description" content="File Share Access and Integration Patterns"><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/external-file-share-pattern/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/external-file-share-pattern/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/patterns/integration/external-file-share-pattern/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/ai4ea/docs/knowledge-base/"><span title="Knowledge base" class="categoryLinkLabel_W154">Knowledge base</span></a><button aria-label="Collapse sidebar category &#x27;Knowledge base&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/policies/"><span title="Policies" class="categoryLinkLabel_W154">Policies</span></a><button aria-label="Expand sidebar category &#x27;Policies&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/ai4ea/docs/knowledge-base/patterns/"><span title="Patterns" class="categoryLinkLabel_W154">Patterns</span></a><button aria-label="Collapse sidebar category &#x27;Patterns&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/event-driven-timeseries-pattern/"><span title="Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)" class="linkLabel_WmDU">Reference Architecture — Event-Driven Architecture Patterns (Time-Series &amp; IoT)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/analytics/gcp-egress-pattern/"><span title="Integration Reference Architecture — GCP Egress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — GCP Egress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/access-authorization-pattern/"><span title="Reference Architecture — Access &amp; Authorization Management Patterns" class="linkLabel_WmDU">Reference Architecture — Access &amp; Authorization Management Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/ai-patterns/"><span title="Reference Architecture — AI Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — AI Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/cicd-pipeline-pattern/"><span title="Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns" class="linkLabel_WmDU">Reference Architecture — DevOps &amp; CI/CD Pipeline Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/local-ai-pattern/"><span title="Reference Architecture — Local AI Patterns" class="linkLabel_WmDU">Reference Architecture — Local AI Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/application/web-app-deployment-pattern/"><span title="Reference Architecture — Web Application Deployment Patterns" class="linkLabel_WmDU">Reference Architecture — Web Application Deployment Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-engineering-ingestion-pattern/"><span title="Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns" class="linkLabel_WmDU">Reference Architecture — Data Engineering &amp; Medallion Architecture Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/data-ingestion-pattern/"><span title="Integration Reference Architecture — Data Ingestion Patterns" class="linkLabel_WmDU">Integration Reference Architecture — Data Ingestion Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/data/mdm-data-quality-pattern/"><span title="Reference Architecture — Master Data Management &amp; Data Quality Patterns" class="linkLabel_WmDU">Reference Architecture — Master Data Management &amp; Data Quality Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/cloud-armor-pattern/"><span title="Reference Architecture — Google Cloud Armor Usage Patterns" class="linkLabel_WmDU">Reference Architecture — Google Cloud Armor Usage Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/ot-streaming-pattern/"><span title="Integration Reference Architecture — OT Data Streaming Patterns" class="linkLabel_WmDU">Integration Reference Architecture — OT Data Streaming Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/infrastructure/terraform-infrastructure-pattern/"><span title="Reference Architecture — Terraform Infrastructure Patterns" class="linkLabel_WmDU">Reference Architecture — Terraform Infrastructure Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/api-ingress-pattern/"><span title="Integration Reference Architecture — API Ingress Patterns" class="linkLabel_WmDU">Integration Reference Architecture — API Ingress Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/Application Integration Solution Patterns/"><span title="Application Integration Solution Patterns" class="linkLabel_WmDU">Application Integration Solution Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai4ea/docs/patterns/integration/external-file-share-pattern/"><span title="Integration Reference Architecture — File Share Access and Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — File Share Access and Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sap-integration-pattern/"><span title="Integration Reference Architecture — SAP Integration Patterns" class="linkLabel_WmDU">Integration Reference Architecture — SAP Integration Patterns</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/patterns/integration/sharepoint-ingestion-pattern/"><span title="Integration Reference Architecture — SharePoint Online Data Ingestion" class="linkLabel_WmDU">Integration Reference Architecture — SharePoint Online Data Ingestion</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/principles/"><span title="Principles" class="categoryLinkLabel_W154">Principles</span></a><button aria-label="Expand sidebar category &#x27;Principles&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/standards/"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Expand sidebar category &#x27;Standards&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/positions/"><span title="Positions" class="categoryLinkLabel_W154">Positions</span></a><button aria-label="Expand sidebar category &#x27;Positions&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Integration Reference Architecture — File Share Access and Integration Patterns</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="file-share-access-and-integration-patterns">File Share Access and Integration Patterns<a href="#file-share-access-and-integration-patterns" class="hash-link" aria-label="Direct link to File Share Access and Integration Patterns" title="Direct link to File Share Access and Integration Patterns" translate="no">​</a></h2>
+<ul>
+<li class="">External Document Sharing (OneDrive and Dropbox)</li>
+</ul>
+<p><strong>Version:</strong> 0.1
+<strong>Status:</strong> Draft – Candidate for TRB Review
+<strong>Audience:</strong> Solution Architects, Application Engineers, Identity and Access Teams, Security and Operations Teams</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-introduction">Document Introduction<a href="#document-introduction" class="hash-link" aria-label="Direct link to Document Introduction" title="Direct link to Document Introduction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="purpose-of-document">Purpose of Document<a href="#purpose-of-document" class="hash-link" aria-label="Direct link to Purpose of Document" title="Direct link to Purpose of Document" translate="no">​</a></h3>
+<p>This document defines an initial Entegris pattern for enterprise file share access and integration. It gives teams a standard path to onboard a file-share-enabled application with SSO, entitlement governance, and controlled application access.</p>
+<ul>
+<li class="">The value of the pattern is speed to execution — leveraging what others have done before and quickly achieving business outcomes</li>
+<li class="">A pattern is best expressed as: When to use, When Not to use certain technologies/approaches</li>
+<li class="">This document is for designers and architects who need to enable user and system access to enterprise file shares without bypassing identity, security, and governance controls</li>
+<li class="">If implemented properly, these patterns enable teams to move quickly while preserving least privilege, auditability, and supportability</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scope-and-applicability">Scope and Applicability<a href="#scope-and-applicability" class="hash-link" aria-label="Direct link to Scope and Applicability" title="Direct link to Scope and Applicability" translate="no">​</a></h3>
+<p>These patterns cover user and application access to enterprise file share platforms with Entra ID, SAML SSO, Access Packages, and governed service-to-service integration.</p>
+<ul>
+<li class="">Human user access through SAML SSO and Access Package assignment</li>
+<li class="">Application access through Entra ID app registration, App ID, and service principal permissions</li>
+<li class="">Optional ingestion of file-share content into enterprise platforms using approved middleware</li>
+</ul>
+<p><strong>Environments:</strong></p>
+<ul>
+<li class="">SaaS</li>
+<li class="">Cloud</li>
+<li class="">Hybrid</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intended-audience">Intended Audience<a href="#intended-audience" class="hash-link" aria-label="Direct link to Intended Audience" title="Direct link to Intended Audience" translate="no">​</a></h3>
+<ul>
+<li class="">Solution Architects</li>
+<li class="">Application Engineers</li>
+<li class="">Integration Engineers</li>
+<li class="">Identity and Access Teams</li>
+<li class="">Security and Operations Teams</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="context">Context<a href="#context" class="hash-link" aria-label="Direct link to Context" title="Direct link to Context" translate="no">​</a></h2>
+<ul>
+<li class="">New app access to file-share resources requires an App ID (Entra ID app registration) if one does not already exist</li>
+<li class="">Human user access must use federated SSO through Entra ID and governed entitlement assignment through Access Packages</li>
+<li class="">Service-to-service access must use a managed application identity and least-privilege scopes; shared credentials and user accounts are not approved</li>
+<li class="">Requests for SAML, Access Package, and onboarding workflow are routed through standard ServiceNow intake with Identity team guidance</li>
+<li class="">Human review remains required for material data publication or externally shared outputs generated from file-share content</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-use-these-patterns">Why Use These Patterns<a href="#why-use-these-patterns" class="hash-link" aria-label="Direct link to Why Use These Patterns" title="Direct link to Why Use These Patterns" translate="no">​</a></h3>
+<ul>
+<li class="">Standardizes onboarding steps across architecture, identity, and operations</li>
+<li class="">Reduces delays from ad hoc access requests and one-off identity configurations</li>
+<li class="">Improves auditability of who can access what, and why</li>
+<li class="">Lowers security risk through least-privilege and centralized identity governance</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-principles">Architecture Principles<a href="#architecture-principles" class="hash-link" aria-label="Direct link to Architecture Principles" title="Direct link to Architecture Principles" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="enterprise-principles">Enterprise Principles<a href="#enterprise-principles" class="hash-link" aria-label="Direct link to Enterprise Principles" title="Direct link to Enterprise Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Keep It Simple</li>
+<li class="">Reuse Shared Application Services First</li>
+<li class="">Remove Friction</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="domain-specific-principles">Domain-Specific Principles<a href="#domain-specific-principles" class="hash-link" aria-label="Direct link to Domain-Specific Principles" title="Direct link to Domain-Specific Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Applications Expose Stable, Documented Interfaces</li>
+<li class="">Single Source of Truth</li>
+<li class="">Humans in the Loop for Material Decisions</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-principles">Security Principles<a href="#security-principles" class="hash-link" aria-label="Direct link to Security Principles" title="Direct link to Security Principles" translate="no">​</a></h3>
+<ul>
+<li class="">Security and Privacy by Design</li>
+<li class="">Security Assurance Through Least Privilege</li>
+<li class="">Defense in Depth</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="guardrail-summary">Guardrail Summary<a href="#guardrail-summary" class="hash-link" aria-label="Direct link to Guardrail Summary" title="Direct link to Guardrail Summary" translate="no">​</a></h2>
+<p>This pattern is constrained by the following guidance:</p>
+<ul>
+<li class="">User-facing authentication must be federated SSO through Entra ID</li>
+<li class="">Entitlements must be governed through Access Packages and reviewable group-based access</li>
+<li class="">Application integration must use an App ID and service principal with narrowly scoped permissions</li>
+<li class="">No shared user credentials, no hardcoded secrets, and no unmanaged local bypass</li>
+<li class="">Access grants, application permissions, and administrative actions must be auditable</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-solution-patterns">High-Level Solution Patterns<a href="#high-level-solution-patterns" class="hash-link" aria-label="Direct link to High-Level Solution Patterns" title="Direct link to High-Level Solution Patterns" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Solution</th><th>When to Use</th><th>When Not to Use</th></tr></thead><tbody><tr><td>SAML + Access Package User Access Pattern</td><td>• Users need interactive file-share access in a browser or enterprise app<br>• Access must be approved, reviewable, and revocable through standard governance</td><td>• Team wants direct local accounts or unmanaged identity flows<br>• Access cannot be mapped to reviewable business roles</td></tr><tr><td>App ID Service Integration Pattern</td><td>• An application needs machine access to file-share data for read/write automation<br>• Permissions can be scoped to defined sites, folders, or resources</td><td>• Integration requires broad tenant-wide permissions without business justification<br>• Team plans to use a user credential, shared account, or embedded secret</td></tr><tr><td>Managed File Share Ingestion Pattern</td><td>• Need scheduled or event-driven extraction of approved file-share content into enterprise data platforms<br>• Team needs retry, logging, and checkpointing controls</td><td>• Data movement bypasses approved middleware, security, or landing-zone controls<br>• Team cannot support operational monitoring and replay</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pattern-selection-matrix">Pattern Selection Matrix<a href="#pattern-selection-matrix" class="hash-link" aria-label="Direct link to Pattern Selection Matrix" title="Direct link to Pattern Selection Matrix" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario Cue</th><th>Access Type</th><th>Identity Method</th><th>Recommended Pattern</th><th>Notes</th></tr></thead><tbody><tr><td>Employees need role-based access to a file-share-backed app</td><td>Human interactive</td><td>Entra ID SAML SSO + Access Package</td><td>SAML + Access Package User Access Pattern</td><td>Access Package assignment should map to business role and owner-approved entitlement</td></tr><tr><td>Backend service needs file metadata and content for processing</td><td>Service-to-service</td><td>Entra ID App ID + service principal</td><td>App ID Service Integration Pattern</td><td>Request App ID early; document scopes and owner in ServiceNow request</td></tr><tr><td>Team needs periodic landing of file-share content for analytics</td><td>Batch/event integration</td><td>Service principal + approved middleware</td><td>Managed File Share Ingestion Pattern</td><td>Land raw content first, keep replayability, and monitor correlation IDs</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="canonical-patterns">Canonical Patterns<a href="#canonical-patterns" class="hash-link" aria-label="Direct link to Canonical Patterns" title="Direct link to Canonical Patterns" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="saml--access-package-user-access-pattern">SAML + Access Package User Access Pattern<a href="#saml--access-package-user-access-pattern" class="hash-link" aria-label="Direct link to SAML + Access Package User Access Pattern" title="Direct link to SAML + Access Package User Access Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>A business app needs user access to file-share content, and access must be granted by business role with centralized identity governance.</td></tr><tr><td><strong>Problem</strong></td><td>How do we enable fast user onboarding while enforcing enterprise SSO and entitlement controls?</td></tr><tr><td><strong>Solution</strong></td><td>• Integrate the application with Entra ID for SAML SSO and disable local authentication paths<br>• Define role-based groups and publish Access Packages aligned to business roles and approval flows<br>• Route onboarding via ServiceNow request with Identity team review, including access owner, approver, and periodic recertification requirements</td></tr><tr><td><strong>Benefits</strong></td><td>• Consistent user login and lifecycle management across enterprise applications<br>• Reviewable and revocable access through centralized entitlement governance<br>• Lower operational risk from ad hoc manual user provisioning</td></tr><tr><td><strong>Considerations</strong></td><td>• Role and entitlement design quality drives usability and supportability<br>• Group and Access Package ownership must be explicit to avoid stale access</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="app-id-service-integration-pattern">App ID Service Integration Pattern<a href="#app-id-service-integration-pattern" class="hash-link" aria-label="Direct link to App ID Service Integration Pattern" title="Direct link to App ID Service Integration Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>An application or integration service requires non-interactive access to file-share resources.</td></tr><tr><td><strong>Problem</strong></td><td>How do we provide machine access without using user credentials or over-scoped permissions?</td></tr><tr><td><strong>Solution</strong></td><td>• Create or reuse a governed Entra ID app registration (App ID) with named ownership and business purpose<br>• Use service principal authentication and request only required permissions for the specific file-share scope<br>• Store client credentials or certificates in approved secret management and implement rotation, logging, and access review controls</td></tr><tr><td><strong>Benefits</strong></td><td>• Eliminates dependency on personal user accounts for system integrations<br>• Enables least-privilege, auditable, and revocable service access<br>• Aligns service authentication to enterprise identity and risk processes</td></tr><tr><td><strong>Considerations</strong></td><td>• Permission expansion requires explicit review and change control<br>• Certificate and secret rotation must be operationalized before go-live</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="managed-file-share-ingestion-pattern">Managed File Share Ingestion Pattern<a href="#managed-file-share-ingestion-pattern" class="hash-link" aria-label="Direct link to Managed File Share Ingestion Pattern" title="Direct link to Managed File Share Ingestion Pattern" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Description</th></tr></thead><tbody><tr><td><strong>Context</strong></td><td>Teams need approved file-share content moved into enterprise processing platforms for analytics, workflow, or indexing.</td></tr><tr><td><strong>Problem</strong></td><td>How do we ingest content reliably while preserving security boundaries and replayability?</td></tr><tr><td><strong>Solution</strong></td><td>• Use approved middleware to orchestrate extraction, checkpointing, retries, and failure handling<br>• Authenticate through App ID service principal and pull only approved paths/content classes<br>• Land raw content in the approved landing zone first, then perform downstream transformation with lineage metadata</td></tr><tr><td><strong>Benefits</strong></td><td>• Improves reliability through standardized retry and checkpoint controls<br>• Preserves traceability from source file to downstream record<br>• Reduces custom one-off ingestion scripts and support burden</td></tr><tr><td><strong>Considerations</strong></td><td>• Event and delta logic requires careful handling of deletes, renames, and replay windows<br>• Data classification and retention obligations apply to copied content</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-controls">Required Controls<a href="#required-controls" class="hash-link" aria-label="Direct link to Required Controls" title="Direct link to Required Controls" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Control Area</th><th>Required Direction for File Share Patterns</th></tr></thead><tbody><tr><td><strong>Authentication</strong></td><td>Use Entra ID SAML SSO for users and service principal identity for machine integrations; no local auth schemes.</td></tr><tr><td><strong>Entitlement Governance</strong></td><td>Use Access Packages and role-based group assignment with owner/approver accountability and periodic reviews.</td></tr><tr><td><strong>Application Identity</strong></td><td>Ensure App ID exists with named owner, documented purpose, and scoped permissions.</td></tr><tr><td><strong>Secrets Management</strong></td><td>Store credentials/certificates in approved secret management; no hardcoded or shared credentials.</td></tr><tr><td><strong>Least Privilege</strong></td><td>Grant only required scopes/resources; avoid wildcard or tenant-wide permissions unless explicitly approved.</td></tr><tr><td><strong>Logging and Audit</strong></td><td>Log access requests, grants, scope changes, and integration actions with correlation IDs; do not log sensitive content bodies by default.</td></tr><tr><td><strong>Data Handling</strong></td><td>Apply data classification, retention, and minimization; do not move restricted data without explicit approval.</td></tr><tr><td><strong>Operational Support</strong></td><td>Define ownership for access lifecycle, secret/cert rotation, incident response, and decommissioning.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sequence-diagrams">Sequence Diagrams<a href="#sequence-diagrams" class="hash-link" aria-label="Direct link to Sequence Diagrams" title="Direct link to Sequence Diagrams" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="user-access-onboarding-saml--access-package">User Access Onboarding (SAML + Access Package)<a href="#user-access-onboarding-saml--access-package" class="hash-link" aria-label="Direct link to User Access Onboarding (SAML + Access Package)" title="Direct link to User Access Onboarding (SAML + Access Package)" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="app-id-creation-and-service-integration">App ID Creation and Service Integration<a href="#app-id-creation-and-service-integration" class="hash-link" aria-label="Direct link to App ID Creation and Service Integration" title="Direct link to App ID Creation and Service Integration" translate="no">​</a></h3>
+<!-- -->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="managed-ingestion-flow">Managed Ingestion Flow<a href="#managed-ingestion-flow" class="hash-link" aria-label="Direct link to Managed Ingestion Flow" title="Direct link to Managed Ingestion Flow" translate="no">​</a></h3>
+<!-- -->
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-guidance">Implementation Guidance<a href="#implementation-guidance" class="hash-link" aria-label="Direct link to Implementation Guidance" title="Direct link to Implementation Guidance" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preferred-approach">Preferred Approach<a href="#preferred-approach" class="hash-link" aria-label="Direct link to Preferred Approach" title="Direct link to Preferred Approach" translate="no">​</a></h3>
+<ul>
+<li class="">Confirm whether an App ID already exists before creating a new one</li>
+<li class="">Start with the minimal set of SAML attributes, access roles, and permissions needed for initial use</li>
+<li class="">Submit one ServiceNow request for SAML/Access Package and one for App ID/service scopes if needed</li>
+<li class="">Partner early with Identity contacts to define role model, approvers, and recertification cycle</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="explicit-non-goals">Explicit Non-Goals<a href="#explicit-non-goals" class="hash-link" aria-label="Direct link to Explicit Non-Goals" title="Direct link to Explicit Non-Goals" translate="no">​</a></h3>
+<ul>
+<li class="">This pattern does not permit bypassing enterprise SSO with local username/password</li>
+<li class="">This pattern does not permit shared technical accounts or hardcoded credentials</li>
+<li class="">This pattern does not authorize broad tenant-wide permissions without explicit risk review</li>
+<li class="">This pattern does not replace human review for material content publication decisions</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-knowledge-base-guidance">Related Knowledge Base Guidance<a href="#related-knowledge-base-guidance" class="hash-link" aria-label="Direct link to Related Knowledge Base Guidance" title="Direct link to Related Knowledge Base Guidance" translate="no">​</a></h3>
+<ul>
+<li class="">Access &amp; Authorization Pattern</li>
+<li class="">SharePoint Online Data Ingestion Pattern</li>
+<li class="">Security Principles</li>
+<li class="">AI Policy</li>
+<li class="">Architecture Assurance Guardrail Framework</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-and-best-practices">Tips and Best Practices<a href="#tips-and-best-practices" class="hash-link" aria-label="Direct link to Tips and Best Practices" title="Direct link to Tips and Best Practices" translate="no">​</a></h2>
+<ul>
+<li class="">Request App ID and SAML/Access Package early in project kickoff to avoid downstream delay</li>
+<li class="">Keep a single source of truth for access roles, approvers, and entitlement rationale</li>
+<li class="">Use group-based authorization in the app and avoid user-by-user exception logic</li>
+<li class="">Add periodic access recertification and permission drift checks to operating routines</li>
+<li class="">Track onboarding lead time as a metric to improve TRB readiness over time</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sources">Sources<a href="#sources" class="hash-link" aria-label="Direct link to Sources" title="Direct link to Sources" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/ai4ea/docs/context/architecture-patterns-and-template/">Architecture Patterns Defined</a></li>
+<li class=""><a class="" href="/ai4ea/docs/context/architecture-assurance-guardrails/">Architecture Assurance Guardrail Framework</a></li>
+<li class=""><a class="" href="/ai4ea/docs/patterns/application/access-authorization-pattern/">Access &amp; Authorization</a></li>
+<li class=""><a class="" href="/ai4ea/docs/patterns/integration/sharepoint-ingestion-pattern/">SharePoint Online Data Ingestion Patterns</a></li>
+<li class=""><a class="" href="/ai4ea/docs/principles/security-principles/">Security Principles</a></li>
+<li class=""><a class="" href="/ai4ea/docs/policies/cybersecurity/ai-policy/">Entegris Artificial Intelligence (AI) Policy</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#file-share-access-and-integration-patterns" class="table-of-contents__link toc-highlight">File Share Access and Integration Patterns</a></li><li><a href="#document-introduction" class="table-of-contents__link toc-highlight">Document Introduction</a><ul><li><a href="#purpose-of-document" class="table-of-contents__link toc-highlight">Purpose of Document</a></li><li><a href="#scope-and-applicability" class="table-of-contents__link toc-highlight">Scope and Applicability</a></li><li><a href="#intended-audience" class="table-of-contents__link toc-highlight">Intended Audience</a></li></ul></li><li><a href="#context" class="table-of-contents__link toc-highlight">Context</a><ul><li><a href="#why-use-these-patterns" class="table-of-contents__link toc-highlight">Why Use These Patterns</a></li></ul></li><li><a href="#architecture-principles" class="table-of-contents__link toc-highlight">Architecture Principles</a><ul><li><a href="#enterprise-principles" class="table-of-contents__link toc-highlight">Enterprise Principles</a></li><li><a href="#domain-specific-principles" class="table-of-contents__link toc-highlight">Domain-Specific Principles</a></li><li><a href="#security-principles" class="table-of-contents__link toc-highlight">Security Principles</a></li></ul></li><li><a href="#guardrail-summary" class="table-of-contents__link toc-highlight">Guardrail Summary</a></li><li><a href="#high-level-solution-patterns" class="table-of-contents__link toc-highlight">High-Level Solution Patterns</a></li><li><a href="#pattern-selection-matrix" class="table-of-contents__link toc-highlight">Pattern Selection Matrix</a></li><li><a href="#canonical-patterns" class="table-of-contents__link toc-highlight">Canonical Patterns</a><ul><li><a href="#saml--access-package-user-access-pattern" class="table-of-contents__link toc-highlight">SAML + Access Package User Access Pattern</a></li><li><a href="#app-id-service-integration-pattern" class="table-of-contents__link toc-highlight">App ID Service Integration Pattern</a></li><li><a href="#managed-file-share-ingestion-pattern" class="table-of-contents__link toc-highlight">Managed File Share Ingestion Pattern</a></li></ul></li><li><a href="#required-controls" class="table-of-contents__link toc-highlight">Required Controls</a></li><li><a href="#sequence-diagrams" class="table-of-contents__link toc-highlight">Sequence Diagrams</a><ul><li><a href="#user-access-onboarding-saml--access-package" class="table-of-contents__link toc-highlight">User Access Onboarding (SAML + Access Package)</a></li><li><a href="#app-id-creation-and-service-integration" class="table-of-contents__link toc-highlight">App ID Creation and Service Integration</a></li><li><a href="#managed-ingestion-flow" class="table-of-contents__link toc-highlight">Managed Ingestion Flow</a></li></ul></li><li><a href="#implementation-guidance" class="table-of-contents__link toc-highlight">Implementation Guidance</a><ul><li><a href="#preferred-approach" class="table-of-contents__link toc-highlight">Preferred Approach</a></li><li><a href="#explicit-non-goals" class="table-of-contents__link toc-highlight">Explicit Non-Goals</a></li><li><a href="#related-knowledge-base-guidance" class="table-of-contents__link toc-highlight">Related Knowledge Base Guidance</a></li></ul></li><li><a href="#tips-and-best-practices" class="table-of-contents__link toc-highlight">Tips and Best Practices</a></li><li><a href="#sources" class="table-of-contents__link toc-highlight">Sources</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

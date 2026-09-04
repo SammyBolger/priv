@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-context/reference-architecture" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Reference Architecture — Functional Domain **NAME** | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/context/reference-architecture/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Reference Architecture — Functional Domain **NAME** | Governed Content Site"><meta data-rh="true" name="description" content="Responsible: Functional Domain Leader"><meta data-rh="true" property="og:description" content="Responsible: Functional Domain Leader"><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/context/reference-architecture/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/context/reference-architecture/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/context/reference-architecture/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Reference Architecture — Functional Domain <strong>NAME</strong></h1></header>
+<p><strong>Responsible: Functional Domain Leader</strong></p>
+<blockquote>
+<p><strong>Purpose:</strong> A blueprint for the desired state of this application domain that supports the
+business strategy and business outcomes per the capabilities that are needed. Application teams
+use this to define what applications should exist, how they communicate, and how they align with
+company standards.</p>
+</blockquote>
+<blockquote>
+<p><strong>Completion:</strong> [DATE] · <strong>Owner:</strong> [TEAM / DEPARTMENT] · <strong>Status:</strong> Draft / Approved</p>
+</blockquote>
+<ul>
+<li class="">Functional Domain Template Set · Domain Charter · Capability Map · Decision Log</li>
+<li class="">Reference Architecture — EA definition and topics</li>
+</ul>
+<p><strong>Prerequisite:</strong> complete the Domain Charter and
+Capability Map first. Sections 1–3 below are unanswerable without them.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-introduction--scope">1. Introduction &amp; Scope<a href="#1-introduction--scope" class="hash-link" aria-label="Direct link to 1. Introduction &amp; Scope" title="Direct link to 1. Introduction &amp; Scope" translate="no">​</a></h2>
+<p><strong>What problem does this architecture solve?</strong></p>
+<p>Describe the business purpose of this application domain and its process boundaries in plain
+language. What capabilities does it enable? Who relies on it?</p>
+<p><strong>Example:</strong></p>
+<blockquote>
+<p>Our Customer Relationship Management (CRM) domain manages all customer interactions, sales
+pipelines, and account data. It enables sales, marketing, and customer success teams to
+collaborate effectively and make data-driven decisions. Without this domain, we cannot track
+customer touchpoints or manage pipeline accurately.</p>
+</blockquote>
+<p><strong>Fill in your domain:</strong></p>
+<ul>
+<li class="">Domain name: [e.g., Order Management, Financial Reporting, Supply Chain]</li>
+<li class="">Primary users: [e.g., Sales team, Finance, Operations]</li>
+<li class="">Key business capabilities enabled: link to the rows in [Capability Map]</li>
+<li class="">Geographic scope: [e.g., Global, North America only, US + Europe]</li>
+</ul>
+<p><strong>Process Boundaries (what is IN scope / OUT of scope):</strong></p>
+<p>Carry these over from the Domain Charter rather than re-deriving
+them. If they differ, the Charter wins and this section is wrong.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>In Scope</th><th>Out of Scope</th><th>Owned instead by</th></tr></thead><tbody><tr><td>[E.g., customer data, sales pipeline]</td><td>[E.g., marketing campaigns, external analytics]</td><td>[Domain]</td></tr><tr><td>[E.g., North American operations]</td><td>[E.g., European subsidiary systems]</td><td>[Domain]</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-architecture-vision">2. Architecture Vision<a href="#2-architecture-vision" class="hash-link" aria-label="Direct link to 2. Architecture Vision" title="Direct link to 2. Architecture Vision" translate="no">​</a></h2>
+<p><strong>How does this application domain look today, at the interim step, and in the target state?</strong></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="21-baseline-current-state">2.1 Baseline (Current State)<a href="#21-baseline-current-state" class="hash-link" aria-label="Direct link to 2.1 Baseline (Current State)" title="Direct link to 2.1 Baseline (Current State)" translate="no">​</a></h3>
+<p>Describe the reality today:</p>
+<ul>
+<li class="">What applications exist?</li>
+<li class="">What works well? <em>(Say so explicitly — a baseline that lists only pain reads as advocacy and gets discounted at review.)</em></li>
+<li class="">What problems or gaps exist?</li>
+<li class="">Who manages it?</li>
+</ul>
+<p><strong>Example:</strong></p>
+<blockquote>
+<p>Today we use three disparate CRM systems: Salesforce (US sales), a legacy on-prem CRM (EMEA),
+and a custom-built pipeline tracker (finance). This creates data silos, inconsistent forecasts,
+and manual reconciliation. The sales team spends four hours per week on data entry across
+systems.</p>
+</blockquote>
+<p><strong>Fill in your baseline:</strong></p>
+<ul>
+<li class="">Existing systems: [List them — must reconcile to §5.1]</li>
+<li class="">What works well: [Do not skip]</li>
+<li class="">Pain points: [What is broken or inefficient?]</li>
+<li class="">Manual processes: [What requires human intervention, and at what cost in hours?]</li>
+<li class="">Data silos: [Where is data trapped?]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="22-interim-state--optional">2.2 Interim State — OPTIONAL<a href="#22-interim-state--optional" class="hash-link" aria-label="Direct link to 2.2 Interim State — OPTIONAL" title="Direct link to 2.2 Interim State — OPTIONAL" translate="no">​</a></h3>
+<p>Use this section <strong>only</strong> when the target cannot be reached in one step and an intermediate
+architecture will be operated for more than two quarters. An interim state is a real architecture
+with real run cost — it is not a project milestone.</p>
+<ul>
+<li class="">What is live at the interim step: [Applications and integrations]</li>
+<li class="">What is deliberately <em>still</em> wrong at this point: [Named, with the reason it is tolerable]</li>
+<li class="">How long the interim state is expected to run: [Quarters]</li>
+<li class="">What triggers the move to target: [Condition, not a date, where possible]</li>
+<li class="">Interim-only assets to be thrown away: [Bridges, dual-writes, reconciliation jobs — and who removes them]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="23-target-vision-future-state">2.3 Target Vision (Future State)<a href="#23-target-vision-future-state" class="hash-link" aria-label="Direct link to 2.3 Target Vision (Future State)" title="Direct link to 2.3 Target Vision (Future State)" translate="no">​</a></h3>
+<p>Describe where this domain should be in 12–24 months:</p>
+<p><strong>Example:</strong></p>
+<blockquote>
+<p>Target: one unified CRM (Salesforce) spanning all regions. All customer and pipeline data flows
+through a single golden-record system. Sales enters data once; it is available to finance,
+marketing and operations automatically. We achieve a single forecast of truth and eliminate
+manual reconciliation. Data-entry time drops to under 30 minutes per week.</p>
+</blockquote>
+<p><strong>Fill in your vision:</strong></p>
+<ul>
+<li class="">Desired end state: [Describe the unified, ideal state]</li>
+<li class="">Key improvements: [What will be better?]</li>
+<li class="">Timeline: [12 months? 24 months? Phased?]</li>
+<li class="">Success metrics: [How will we know we succeeded? Each metric needs a current value and a target value]</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Today</th><th>Target</th><th>Measured by</th></tr></thead><tbody><tr><td>[e.g., Hours/week on manual reconciliation]</td><td>4.0</td><td>&lt;0.5</td><td>[Owner / system]</td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-business-drivers--principles">3. Business Drivers &amp; Principles<a href="#3-business-drivers--principles" class="hash-link" aria-label="Direct link to 3. Business Drivers &amp; Principles" title="Direct link to 3. Business Drivers &amp; Principles" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="31-business-drivers">3.1 Business Drivers<a href="#31-business-drivers" class="hash-link" aria-label="Direct link to 3.1 Business Drivers" title="Direct link to 3.1 Business Drivers" translate="no">​</a></h3>
+<p>The top three to five business needs that shape this architecture. Every driver must trace to a
+stated business outcome — if it cannot, it is a preference, not a driver.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Driver</th><th>Why It Matters</th><th>Constraint / Target</th></tr></thead><tbody><tr><td><strong>Single Source of Truth</strong></td><td>Sales must trust one forecast; eliminates conflicting data</td><td>All customer and pipeline data in one system by Q2 2027</td></tr><tr><td><strong>Real-Time Visibility</strong></td><td>Finance needs current pipeline to forecast accurately</td><td>&lt;1 hour lag between sales entry and finance reporting</td></tr><tr><td><strong>Scalability</strong></td><td>Support 10x transaction volume as the company grows</td><td>100K daily transactions by 2028</td></tr><tr><td><strong>[Driver]</strong></td><td>[Why?]</td><td>[Target / Constraint]</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="32-guiding-principles">3.2 Guiding Principles<a href="#32-guiding-principles" class="hash-link" aria-label="Direct link to 3.2 Guiding Principles" title="Direct link to 3.2 Guiding Principles" translate="no">​</a></h3>
+<p>Follow the enterprise principles pattern — see
+Architecture Principles Defined. A principle is
+<strong>Simple, Forward Looking, Anchored</strong> to the value chain, and <strong>Aspirational</strong>.</p>
+<p>Each principle is written as <strong>Statement → Rationale → Implications</strong>. Do not compress this into a
+one-line table; the implications are the part that changes behaviour.</p>
+<blockquote>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="principle-one-customer-one-record">Principle: One customer, one record<a href="#principle-one-customer-one-record" class="hash-link" aria-label="Direct link to Principle: One customer, one record" title="Direct link to Principle: One customer, one record" translate="no">​</a></h4>
+<p><strong>Statement:</strong> Where the same customer exists in more than one system, we actively unify the
+records into a single profile with one enterprise identifier.</p>
+<p><strong>Rationale:</strong> Conflicting customer identity is the root cause of forecast disputes, duplicate
+outreach, and the reconciliation effort that consumes four hours per rep per week.</p>
+<p><strong>Implications:</strong></p>
+<ul>
+<li class="">Every new application in this domain must accept an externally-supplied customer identifier.</li>
+<li class="">Someone must own the survivorship rules; this domain will fund that role.</li>
+<li class="">Short term, migration will surface duplicate records that business teams must adjudicate.</li>
+</ul>
+</blockquote>
+<blockquote>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="principle-name">Principle: [Name]<a href="#principle-name" class="hash-link" aria-label="Direct link to Principle: [Name]" title="Direct link to Principle: [Name]" translate="no">​</a></h4>
+<p><strong>Statement:</strong></p>
+<p><strong>Rationale:</strong></p>
+<p><strong>Implications:</strong></p>
+</blockquote>
+<p><strong>Inherited principles</strong> — do not restate, link:</p>
+<ul>
+<li class="">Principles — Enterprise Architecture (always applies)</li>
+<li class="">Domain principles</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-application-architecture">4. Application Architecture<a href="#4-application-architecture" class="hash-link" aria-label="Direct link to 4. Application Architecture" title="Direct link to 4. Application Architecture" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="41-process-boundaries">4.1 Process Boundaries<a href="#41-process-boundaries" class="hash-link" aria-label="Direct link to 4.1 Process Boundaries" title="Direct link to 4.1 Process Boundaries" translate="no">​</a></h3>
+<p>Which business processes each application is responsible for. Do not list every field — state what
+each application <em>owns</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Application</th><th>Core Responsibility</th><th>Process Boundary</th><th>Owner</th></tr></thead><tbody><tr><td><strong>Salesforce CRM</strong></td><td>Sales pipeline, customer interactions, account data</td><td>Lead creation through deal close</td><td>Sales Ops, Sales Directors</td></tr><tr><td><strong>SAP ERP</strong></td><td>Financial accounting, revenue recognition</td><td>Deal close through invoicing and revenue reporting</td><td>Finance, Accounting</td></tr><tr><td><strong>Data Warehouse (Snowflake)</strong></td><td>Historical reporting, analytics, forecasting</td><td>Read-only copy for analysis; no operational decisions made here</td><td>Analytics / BI</td></tr><tr><td><strong>[Application]</strong></td><td>[What does it own?]</td><td>[Clear boundary statement]</td><td>[Who manages it?]</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="42-application-interaction-matrix">4.2 Application Interaction Matrix<a href="#42-application-interaction-matrix" class="hash-link" aria-label="Direct link to 4.2 Application Interaction Matrix" title="Direct link to 4.2 Application Interaction Matrix" translate="no">​</a></h3>
+<p>How applications communicate and what data flows between them.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>From</th><th>To</th><th>Data Transferred</th><th>Frequency</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Salesforce</strong></td><td>SAP</td><td>Deal-close events, customer PO, revenue amount</td><td>Near real-time (&lt;1 hr)</td><td>Finance recognises revenue and invoices immediately</td></tr><tr><td><strong>SAP</strong></td><td>Data Warehouse</td><td>GL transactions, invoices, payments</td><td>Daily 02:00 UTC</td><td>Revenue, margin and profitability reporting</td></tr><tr><td><strong>Salesforce</strong></td><td>Data Warehouse</td><td>Customer records, opportunities, forecast</td><td>Daily 02:00 UTC</td><td>Pipeline trends; account targeting</td></tr><tr><td><strong>[App A]</strong></td><td>[App B]</td><td>[What data?]</td><td>[How often?]</td><td>[Why?]</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="43-technology-dependencies">4.3 Technology Dependencies<a href="#43-technology-dependencies" class="hash-link" aria-label="Direct link to 4.3 Technology Dependencies" title="Direct link to 4.3 Technology Dependencies" translate="no">​</a></h3>
+<p>How these applications connect. <strong>Every row must resolve to an approved pattern owned by a
+technology domain.</strong> Where it does not, record a deviation in §9.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Connection</th><th>Protocol</th><th>Data Format</th><th>Latency Requirement</th><th>Approved pattern</th></tr></thead><tbody><tr><td>Salesforce → SAP</td><td>REST API</td><td>JSON</td><td>&lt;1 hour</td><td>Application Integration / APIs / Events</td></tr><tr><td>SAP → Data Warehouse</td><td>SFTP</td><td>CSV / Parquet</td><td>24 hours</td><td>Data Architecture</td></tr><tr><td>Salesforce → Data Warehouse</td><td>Native connector</td><td>Parquet</td><td>24 hours</td><td>Data Architecture</td></tr><tr><td>[App A] ↔ [App B]</td><td>[API / File / Message]</td><td>[JSON / XML / CSV]</td><td>[How strict?]</td><td>[Link — or &quot;DEVIATION, see §9&quot;]</td></tr></tbody></table>
+<p>Relevant technology domains to link from this section:
+AI ·
+Application Integration ·
+Connect &amp; Collect ·
+Data Architecture ·
+Digital Tech Engineering ·
+ERP Technical ·
+Identity &amp; Access Management ·
+Infrastructure &amp; Cloud ·
+Knowledge Graph</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-application-portfolio-catalog">5. Application Portfolio Catalog<a href="#5-application-portfolio-catalog" class="hash-link" aria-label="Direct link to 5. Application Portfolio Catalog" title="Direct link to 5. Application Portfolio Catalog" translate="no">​</a></h2>
+<p>Use the <strong>Application Lifecycle</strong> vocabulary from the Application Data Dictionary on the EA site —
+do not invent local status words. The disposition below is the enterprise investment stance for
+each application:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Disposition</th><th>Meaning</th><th>Consequence</th></tr></thead><tbody><tr><td><strong>Invest</strong></td><td>Strategic; receives new functional investment</td><td>Extend here by default</td></tr><tr><td><strong>Tolerate</strong></td><td>Fit for purpose; maintain only</td><td>No new functionality; no new integrations</td></tr><tr><td><strong>Migrate</strong></td><td>Capability moves to another application</td><td>Freeze; fund the migration</td></tr><tr><td><strong>Eliminate</strong></td><td>Retire; capability no longer needed or already duplicated</td><td>Set a decommission date and an owner</td></tr></tbody></table>
+<blockquote>
+<p><strong>Confirm the exact term set against the Application Data Dictionary on the EA site before
+publishing.</strong> If the dictionary&#x27;s terms differ, the dictionary wins and this table is replaced.</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="51-existing-applications">5.1 Existing Applications<a href="#51-existing-applications" class="hash-link" aria-label="Direct link to 5.1 Existing Applications" title="Direct link to 5.1 Existing Applications" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Application</th><th>Vendor</th><th>Purpose</th><th>Owner</th><th>Users</th><th>Lifecycle status</th><th>Disposition</th></tr></thead><tbody><tr><td><strong>Salesforce</strong></td><td>Salesforce</td><td>CRM, sales pipeline</td><td>VP Sales</td><td>120 reps, 20 ops</td><td>Production</td><td>Invest</td></tr><tr><td><strong>SAP ERP</strong></td><td>SAP</td><td>Financial accounting, invoicing</td><td>CFO</td><td>Finance (15)</td><td>Production, 20-yr-old</td><td>Tolerate</td></tr><tr><td><strong>Snowflake</strong></td><td>Snowflake</td><td>Data warehouse, BI</td><td>VP Analytics</td><td>Finance, Sales leadership (50)</td><td>Production (new)</td><td>Invest</td></tr><tr><td><strong>[App]</strong></td><td>[Vendor]</td><td>[Purpose]</td><td>[Owner]</td><td>[# users]</td><td>[Status]</td><td>[Disposition]</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="52-planned--proposed-applications">5.2 Planned / Proposed Applications<a href="#52-planned--proposed-applications" class="hash-link" aria-label="Direct link to 5.2 Planned / Proposed Applications" title="Direct link to 5.2 Planned / Proposed Applications" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Application</th><th>Why We Need It</th><th>Expected Launch</th><th>Owner</th><th>Investment</th></tr></thead><tbody><tr><td><strong>Customer Data Platform (CDP)</strong></td><td>Unify customer data from all touchpoints (web, mobile, email, sales, support) for marketing</td><td>Q2 2027</td><td>CMO</td><td>$500K</td></tr><tr><td><strong>Supply Chain Visibility Tool</strong></td><td>Real-time tracking of orders and inventory across manufacturing and fulfillment</td><td>Q1 2027</td><td>COO</td><td>$800K</td></tr><tr><td><strong>[Application]</strong></td><td>[Why?]</td><td>[When?]</td><td>[Who sponsors?]</td><td>[Budget?]</td></tr></tbody></table>
+<p>A proposed application with no capability gap behind it does not belong in this table.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="53-applications-to-retire--replace">5.3 Applications to Retire / Replace<a href="#53-applications-to-retire--replace" class="hash-link" aria-label="Direct link to 5.3 Applications to Retire / Replace" title="Direct link to 5.3 Applications to Retire / Replace" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Current Application</th><th>Reason</th><th>Replacement</th><th>Timeline</th><th>Owner</th></tr></thead><tbody><tr><td><strong>Legacy on-prem CRM (EMEA)</strong></td><td>Duplicate of Salesforce; costs $200K/year to maintain; EMEA sales team ready to migrate to Salesforce</td><td>Salesforce (main system)</td><td>Migrate by Dec 2026</td><td>VP Sales</td></tr><tr><td><strong>[App Name]</strong></td><td>[Why retire?]</td><td>[Replace with?]</td><td>[When?]</td><td>[Who owns?]</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-application-communication-diagram">6. Application Communication Diagram<a href="#6-application-communication-diagram" class="hash-link" aria-label="Direct link to 6. Application Communication Diagram" title="Direct link to 6. Application Communication Diagram" translate="no">​</a></h2>
+<p>A visual map of how applications connect and where data flows.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">┌──────────────────────┐</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│   Salesforce CRM     │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│  (Sales Pipeline,    │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│   Customer Data)     │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">└──────────┬───────────┘</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │ REST API (hourly)</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │ Sends: Deal closures, customer PO, revenue</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           ▼</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">┌──────────────────────┐</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│     SAP ERP          │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│   (Accounting,       │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│    Invoicing)        │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">└──────────┬───────────┘</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │ SFTP (daily)</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │ Sends: GL transactions, invoices, payments</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">           ▼</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">┌──────────────────────┐</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│   Snowflake Data     │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│   Warehouse (BI &amp;    │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">│   Reporting)         │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">└──────────────────────┘</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">          ▲             ▲</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">          │             │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">          │ SFTP (daily)│ Native Connector (daily)</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">          │             │</span><br></div><div class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">     (Salesforce)   (SAP data)</span><br></div></code></pre></div></div>
+<p>Every arrow must correspond to a row in §4.2.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-standards-mapping">7. Standards Mapping<a href="#7-standards-mapping" class="hash-link" aria-label="Direct link to 7. Standards Mapping" title="Direct link to 7. Standards Mapping" translate="no">​</a></h2>
+<p>Which company or industry standards each application follows, and where the deviations are.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="71-technology-standards">7.1 Technology Standards<a href="#71-technology-standards" class="hash-link" aria-label="Direct link to 7.1 Technology Standards" title="Direct link to 7.1 Technology Standards" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Standard</th><th>Company Mandate</th><th>App A</th><th>App B</th><th>App C</th></tr></thead><tbody><tr><td><strong>Cloud Infrastructure</strong></td><td>Prefer cloud; on-prem by exception</td><td>✅ Cloud-native</td><td>⚠️ Exception, migration underway</td><td>✅ Cloud-native</td></tr><tr><td><strong>Data Encryption</strong></td><td>AES-256 at rest, TLS 1.3+ in transit</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td><strong>API Security</strong></td><td>Authenticated, rate-limited</td><td>✅ OAuth 2.0</td><td>✅</td><td>✅</td></tr><tr><td><strong>Identity</strong></td><td>Enterprise SSO, no local accounts</td><td>✅</td><td>⚠️ Local admin accounts remain</td><td>✅</td></tr><tr><td><strong>Data Residency</strong></td><td>PII remains in region of origin</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td><strong>[Standard]</strong></td><td>[Requirement]</td><td>[✅ / ⚠️ / ❌]</td><td></td><td></td></tr></tbody></table>
+<p>Legend: ✅ compliant · ⚠️ deviation with an approved, time-boxed exception · ❌ non-compliant, no exception (must appear in §8.1 and §9)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="72-data-standards">7.2 Data Standards<a href="#72-data-standards" class="hash-link" aria-label="Direct link to 7.2 Data Standards" title="Direct link to 7.2 Data Standards" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Standard</th><th>Rule</th><th>App A</th><th>App B</th><th>App C</th></tr></thead><tbody><tr><td><strong>Enterprise Customer ID</strong></td><td>All customer records carry the global identifier, never a local ID</td><td>✅</td><td>⚠️ Partial</td><td>✅</td></tr><tr><td><strong>Date / Time</strong></td><td>ISO 8601, stored UTC</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td><strong>Currency</strong></td><td>Amount + ISO currency code as separate fields</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td><strong>[Standard]</strong></td><td>[Rule]</td><td></td><td></td><td></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-gaps--migration-assessment">8. Gaps &amp; Migration Assessment<a href="#8-gaps--migration-assessment" class="hash-link" aria-label="Direct link to 8. Gaps &amp; Migration Assessment" title="Direct link to 8. Gaps &amp; Migration Assessment" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="81-capability-gaps">8.1 Capability Gaps<a href="#81-capability-gaps" class="hash-link" aria-label="Direct link to 8.1 Capability Gaps" title="Direct link to 8.1 Capability Gaps" translate="no">​</a></h3>
+<p>What this domain cannot do today that it needs to do. Each gap must reference a capability from the
+Capability Map.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Gap</th><th>Capability</th><th>Business Impact</th><th>Severity</th><th>Solution</th><th>Timeline</th></tr></thead><tbody><tr><td><strong>Unified customer view</strong></td><td>[Capability ID]</td><td>Reps search three systems to assemble one customer&#x27;s history</td><td>High</td><td>Migrate EMEA to Salesforce; real-time sync</td><td>Q4 2026</td></tr><tr><td><strong>Real-time forecasting</strong></td><td>[Capability ID]</td><td>Finance forecast runs one week behind</td><td>Medium</td><td>Hourly sync CRM → ERP → warehouse</td><td>Q1 2027</td></tr><tr><td><strong>Privacy request response</strong></td><td>[Capability ID]</td><td>No way to answer &quot;what data do we hold on X?&quot;</td><td>High</td><td>Data catalogue and lineage</td><td>Q2 2027</td></tr><tr><td><strong>[Gap]</strong></td><td></td><td>[Why does it matter?]</td><td>[H/M/L]</td><td>[How to fix?]</td><td>[When?]</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="82-migration-roadmap">8.2 Migration Roadmap<a href="#82-migration-roadmap" class="hash-link" aria-label="Direct link to 8.2 Migration Roadmap" title="Direct link to 8.2 Migration Roadmap" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Phase</th><th>Timeline</th><th>Objective</th><th>Actions</th><th>Owner</th><th>Investment</th></tr></thead><tbody><tr><td><strong>1 — Consolidate</strong></td><td>Q3–Q4 2026</td><td>One customer record</td><td>Migrate EMEA CRM; deduplicate</td><td>VP Sales</td><td>$300K</td></tr><tr><td><strong>2 — Automate</strong></td><td>Q4 2026–Q1 2027</td><td>Remove manual data movement</td><td>Real-time API sync; hourly warehouse load</td><td>IT Operations</td><td>$150K</td></tr><tr><td><strong>3 — Enhance</strong></td><td>Q1–Q2 2027</td><td>New capabilities</td><td>CDP; data lineage tooling</td><td>VP Marketing, VP Engineering</td><td>$700K</td></tr><tr><td><strong>4 — Optimise</strong></td><td>Q2 2027+</td><td>Continuous improvement</td><td>Monitor performance, cost, satisfaction</td><td>Continuous</td><td>Ongoing</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="83-key-risks--mitigation">8.3 Key Risks &amp; Mitigation<a href="#83-key-risks--mitigation" class="hash-link" aria-label="Direct link to 8.3 Key Risks &amp; Mitigation" title="Direct link to 8.3 Key Risks &amp; Mitigation" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Risk</th><th>Impact</th><th>Likelihood</th><th>Mitigation</th><th>Owner</th></tr></thead><tbody><tr><td><strong>Data loss during migration</strong></td><td>Customer history lost; relationships damaged</td><td>Medium</td><td>Full backup; two-week parallel run; validation checklist</td><td>[Name]</td></tr><tr><td><strong>Integration failure between core systems</strong></td><td>Revenue recognition and invoicing delayed</td><td>Medium</td><td>Fallback to daily batch; alerting on sync failure</td><td>[Name]</td></tr><tr><td><strong>Cost overrun on new platform</strong></td><td>Budget exceeded</td><td>High</td><td>Phased rollout; ROI gate at each phase</td><td>[Name]</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-architecture-decisions">9. Architecture Decisions<a href="#9-architecture-decisions" class="hash-link" aria-label="Direct link to 9. Architecture Decisions" title="Direct link to 9. Architecture Decisions" translate="no">​</a></h2>
+<p>Every material choice in this document — an application disposition, a deviation from a technology
+standard, a rejected alternative — is recorded in the domain
+Decision Log using the enterprise
+Decision Log format.</p>
+<p>This section is the <strong>index</strong>, not the record. Keep it to one line per decision.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ID</th><th>Date</th><th>Decision</th><th>Status</th><th>Affects</th><th>Link</th></tr></thead><tbody><tr><td>ADR-001</td><td>[Date]</td><td>Salesforce is the single CRM of record for all regions</td><td>Approved</td><td>§2.3, §5.1</td><td>Decision Log</td></tr><tr><td>ADR-002</td><td>[Date]</td><td>Exception: SAP remains on-prem until FY28</td><td>Approved, expires FY28</td><td>§7.1</td><td>Decision Log</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<p><strong>Open deviations</strong> — anything marked ❌ in §7 or unresolved in §4.3 must appear here with an owner
+and a review date, or the Reference Architecture is not approvable.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="document-metadata">Document Metadata<a href="#document-metadata" class="hash-link" aria-label="Direct link to Document Metadata" title="Direct link to Document Metadata" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td><strong>Created By</strong></td><td>[Name, title]</td></tr><tr><td><strong>Created Date</strong></td><td>[Date]</td></tr><tr><td><strong>Last Updated</strong></td><td>[Date]</td></tr><tr><td><strong>Approval Status</strong></td><td>Draft / Pending Review / Approved</td></tr><tr><td><strong>Version</strong></td><td>1.0</td></tr><tr><td><strong>Related Documents</strong></td><td>Charter · Capability Map · Decision Log · Principles</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="approval-sign-off">Approval Sign-Off<a href="#approval-sign-off" class="hash-link" aria-label="Direct link to Approval Sign-Off" title="Direct link to Approval Sign-Off" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Role</th><th>Name</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td><strong>Functional Domain Leader</strong></td><td>[Name]</td><td>[Date]</td><td>⬜ Pending</td></tr><tr><td><strong>Business Sponsor</strong></td><td>[Name]</td><td>[Date]</td><td>⬜ Pending</td></tr><tr><td><strong>Application Directors</strong></td><td>[Names]</td><td>[Date]</td><td>⬜ Pending</td></tr><tr><td><strong>Enterprise Architecture</strong></td><td>[Name]</td><td>[Date]</td><td>⬜ Pending</td></tr><tr><td><strong>Cybersecurity</strong></td><td>[Name]</td><td>[Date]</td><td>⬜ Pending</td></tr><tr><td><strong>Finance / Budget Owner</strong></td><td>[Name]</td><td>[Date]</td><td>⬜ Pending</td></tr></tbody></table>
+<hr>
+<p><strong>Questions?</strong> Contact the Functional Domain Leader.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-introduction--scope" class="table-of-contents__link toc-highlight">1. Introduction &amp; Scope</a></li><li><a href="#2-architecture-vision" class="table-of-contents__link toc-highlight">2. Architecture Vision</a><ul><li><a href="#21-baseline-current-state" class="table-of-contents__link toc-highlight">2.1 Baseline (Current State)</a></li><li><a href="#22-interim-state--optional" class="table-of-contents__link toc-highlight">2.2 Interim State — OPTIONAL</a></li><li><a href="#23-target-vision-future-state" class="table-of-contents__link toc-highlight">2.3 Target Vision (Future State)</a></li></ul></li><li><a href="#3-business-drivers--principles" class="table-of-contents__link toc-highlight">3. Business Drivers &amp; Principles</a><ul><li><a href="#31-business-drivers" class="table-of-contents__link toc-highlight">3.1 Business Drivers</a></li><li><a href="#32-guiding-principles" class="table-of-contents__link toc-highlight">3.2 Guiding Principles</a><ul><li><a href="#principle-one-customer-one-record" class="table-of-contents__link toc-highlight">Principle: One customer, one record</a></li><li><a href="#principle-name" class="table-of-contents__link toc-highlight">Principle: [Name]</a></li></ul></li></ul></li><li><a href="#4-application-architecture" class="table-of-contents__link toc-highlight">4. Application Architecture</a><ul><li><a href="#41-process-boundaries" class="table-of-contents__link toc-highlight">4.1 Process Boundaries</a></li><li><a href="#42-application-interaction-matrix" class="table-of-contents__link toc-highlight">4.2 Application Interaction Matrix</a></li><li><a href="#43-technology-dependencies" class="table-of-contents__link toc-highlight">4.3 Technology Dependencies</a></li></ul></li><li><a href="#5-application-portfolio-catalog" class="table-of-contents__link toc-highlight">5. Application Portfolio Catalog</a><ul><li><a href="#51-existing-applications" class="table-of-contents__link toc-highlight">5.1 Existing Applications</a></li><li><a href="#52-planned--proposed-applications" class="table-of-contents__link toc-highlight">5.2 Planned / Proposed Applications</a></li><li><a href="#53-applications-to-retire--replace" class="table-of-contents__link toc-highlight">5.3 Applications to Retire / Replace</a></li></ul></li><li><a href="#6-application-communication-diagram" class="table-of-contents__link toc-highlight">6. Application Communication Diagram</a></li><li><a href="#7-standards-mapping" class="table-of-contents__link toc-highlight">7. Standards Mapping</a><ul><li><a href="#71-technology-standards" class="table-of-contents__link toc-highlight">7.1 Technology Standards</a></li><li><a href="#72-data-standards" class="table-of-contents__link toc-highlight">7.2 Data Standards</a></li></ul></li><li><a href="#8-gaps--migration-assessment" class="table-of-contents__link toc-highlight">8. Gaps &amp; Migration Assessment</a><ul><li><a href="#81-capability-gaps" class="table-of-contents__link toc-highlight">8.1 Capability Gaps</a></li><li><a href="#82-migration-roadmap" class="table-of-contents__link toc-highlight">8.2 Migration Roadmap</a></li><li><a href="#83-key-risks--mitigation" class="table-of-contents__link toc-highlight">8.3 Key Risks &amp; Mitigation</a></li></ul></li><li><a href="#9-architecture-decisions" class="table-of-contents__link toc-highlight">9. Architecture Decisions</a></li><li><a href="#document-metadata" class="table-of-contents__link toc-highlight">Document Metadata</a><ul><li><a href="#approval-sign-off" class="table-of-contents__link toc-highlight">Approval Sign-Off</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>

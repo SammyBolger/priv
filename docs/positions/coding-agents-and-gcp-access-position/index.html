@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-positions/coding-agents-and-gcp-access-position" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Architecture Position: AI Coding Agents and Custom Code Deployment | Governed Content Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://EntegrisInternal.github.io/ai4ea/docs/positions/coding-agents-and-gcp-access-position/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Architecture Position: AI Coding Agents and Custom Code Deployment | Governed Content Site"><meta data-rh="true" name="description" content="| | |"><meta data-rh="true" property="og:description" content="| | |"><link data-rh="true" rel="icon" href="/ai4ea/img/favicon.png"><link data-rh="true" rel="canonical" href="https://EntegrisInternal.github.io/ai4ea/docs/positions/coding-agents-and-gcp-access-position/"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/positions/coding-agents-and-gcp-access-position/" hreflang="en"><link data-rh="true" rel="alternate" href="https://EntegrisInternal.github.io/ai4ea/docs/positions/coding-agents-and-gcp-access-position/" hreflang="x-default"><link rel="stylesheet" href="/ai4ea/assets/css/styles.41aa0922.css">
+<script src="/ai4ea/assets/js/runtime~main.f777cc83.js" defer="defer"></script>
+<script src="/ai4ea/assets/js/main.5c135619.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/ai4ea/img/entegris-logo-stacked-2color.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/ai4ea/"><div class="navbar__logo"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/ai4ea/img/entegris-logo-stacked-2color.png" alt="Entegris" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">AI4EA</b></a><a class="navbar__item navbar__link" href="/ai4ea/generate/">Generator</a><a class="navbar__item navbar__link" href="/ai4ea/knowledge-base/">Knowledge base</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/ai4ea/review/">Submit for review</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/ai4ea/docs/knowledge-base/"><span title="Knowledge base" class="categoryLinkLabel_W154">Knowledge base</span></a><button aria-label="Collapse sidebar category &#x27;Knowledge base&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/policies/"><span title="Policies" class="categoryLinkLabel_W154">Policies</span></a><button aria-label="Expand sidebar category &#x27;Policies&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/patterns/"><span title="Patterns" class="categoryLinkLabel_W154">Patterns</span></a><button aria-label="Expand sidebar category &#x27;Patterns&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/principles/"><span title="Principles" class="categoryLinkLabel_W154">Principles</span></a><button aria-label="Expand sidebar category &#x27;Principles&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/ai4ea/docs/knowledge-base/standards/"><span title="Standards" class="categoryLinkLabel_W154">Standards</span></a><button aria-label="Expand sidebar category &#x27;Standards&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/ai4ea/docs/knowledge-base/positions/"><span title="Positions" class="categoryLinkLabel_W154">Positions</span></a><button aria-label="Collapse sidebar category &#x27;Positions&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/ai4ea/docs/positions/positions-overview/"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/ai4ea/docs/positions/coding-agents-and-gcp-access-position/"><span title="Architecture Position: AI Coding Agents and Custom Code Deployment" class="linkLabel_WmDU">Architecture Position: AI Coding Agents and Custom Code Deployment</span></a></li></ul></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Architecture Position: AI Coding Agents and Custom Code Deployment</h1></header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Title</strong></td><td>AI Coding Agents and Custom Code Deployment</td></tr><tr><td><strong>Type</strong></td><td>Architecture Position</td></tr><tr><td><strong>Owner</strong></td><td>Enterprise Architecture</td></tr><tr><td><strong>Date</strong></td><td>2026-07-15</td></tr><tr><td><strong>Status</strong></td><td>Draft — Pending ARB Ratification</td></tr><tr><td><strong>Scope</strong></td><td>Entegris-wide; applies to all business, IT, and engineering colleagues operating within the Entegris network</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>An architecture position is a detailed point of view on a complex topic. Positions articulate when to use — or when not to use — certain technologies or approaches.</p>
+<p>This position defines Entegris&#x27;s stance on the use of AI coding agents, the deployment of custom code to GCP, and the internal sharing of executables. It exists so that Enterprise Architecture, ARB, IT, and business colleagues can align on a single, consistent message to the business as demand for these capabilities grows.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="executive-summary">Executive Summary<a href="#executive-summary" class="hash-link" aria-label="Direct link to Executive Summary" title="Direct link to Executive Summary" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="statement-of-position">Statement of Position<a href="#statement-of-position" class="hash-link" aria-label="Direct link to Statement of Position" title="Direct link to Statement of Position" translate="no">​</a></h3>
+<p><strong>Entegris supports the use of AI coding agents, custom code deployment to GCP, and internal executable sharing — provided the activity takes place inside a secure, sandboxed environment, and provided the user has completed required training and accepted the Entegris Secure Development Policy.</strong> Until these sandboxed capabilities are in place, Entegris does not support coding-agent execution on user laptops, ad-hoc deployment of custom code to GCP outside established data platforms, or internal executable distribution outside sanctioned channels.</p>
+<p>This is a &quot;yes with guardrails&quot; position, not a prohibition. We are actively building the required capabilities.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basis">Basis<a href="#basis" class="hash-link" aria-label="Direct link to Basis" title="Direct link to Basis" translate="no">​</a></h3>
+<p>Demand across the business for coding agents, custom deployment, and code sharing is real and growing. Blocking that demand is not a viable long-term option: historical experience shows that unmet capability demand routes around IT into unmanaged adoption, which is a worse security outcome than a supported path would be.</p>
+<p>However, the current default state — coding agents running on user laptops with unmanaged network egress and unmanaged access to Entegris data — introduces material security risks that we cannot accept as ongoing exposure. These include supply-chain compromise, prompt-injection attacks, data exfiltration, and ransomware exposure. In effect, a coding agent on a user laptop executes untrusted code inside the Entegris network boundary.</p>
+<p>The correct response is neither blanket prohibition nor unrestricted use. It is to deliver a supported capability quickly: sandboxed execution environments, tool-agnostic integration with a preference for open-source and existing provider agreements, and mandatory training. The implementation path is judged low-friction. The primary constraint is organizational prioritization, not technology or skill.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implications">Implications<a href="#implications" class="hash-link" aria-label="Direct link to Implications" title="Direct link to Implications" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Two sandboxed environments will be delivered:</strong> a code sandbox first, an artifact-sharing sandbox second.</li>
+<li class=""><strong>A training program and the Entegris Secure Development Policy</strong> are prerequisites for user access.</li>
+<li class=""><strong>Interim business message (until sandboxes are available):</strong> Entegris supports coding agents that operate within its Secure Development Policy, is actively building secure sandboxed environments to enable this capability, and does not support unmanaged deployments or access outside established data platforms in the meantime.</li>
+<li class=""><strong>Enterprise Architecture</strong> owns the communication of this position to the business.</li>
+<li class=""><strong>ARB</strong> provides ratification and standing air cover for consistent messaging when this position is challenged.</li>
+<li class=""><strong>A published target date for Phase 1 (code sandbox) availability</strong> should accompany ratification so the interim posture has a defined endpoint.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="position-detail">Position Detail<a href="#position-detail" class="hash-link" aria-label="Direct link to Position Detail" title="Direct link to Position Detail" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="background--motivation">Background / Motivation<a href="#background--motivation" class="hash-link" aria-label="Direct link to Background / Motivation" title="Direct link to Background / Motivation" translate="no">​</a></h3>
+<p>Multiple business teams have requested the ability to run AI coding agents on user laptops, deploy custom code to GCP, and share executables internally. In some cases, teams have begun exploring approaches outside existing access controls. This position was requested by EA leadership to establish a single, consistent message across IT and the business, and to give ARB the standard justification it needs when the resulting decisions are pushed back on.</p>
+<p>The choice is not between &quot;AI coding agents&quot; and &quot;no AI coding agents.&quot; That choice has effectively already been made by the market and by the business — the demand is here, and if EA does not provide a supported path, adoption will happen anyway with worse risk exposure. The real choice is between <strong>supported enablement with guardrails</strong> and <strong>unsupported adoption without them</strong>. This position takes the first path.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="subject-area-overview">Subject Area Overview<a href="#subject-area-overview" class="hash-link" aria-label="Direct link to Subject Area Overview" title="Direct link to Subject Area Overview" translate="no">​</a></h3>
+<p><strong>AI coding agents</strong> are tools that combine a large language model with the ability to read, write, and execute code on behalf of a user. Current examples include IDE-integrated agents (GitHub Copilot Agent Mode, Cursor Agent, Claude Code) and self-hosted equivalents. Their productivity value is well-established. So are the security implications of running them without controls inside a corporate network.</p>
+<p><strong>Custom code deployment to GCP</strong> refers to the deployment of executable artifacts to GCP resources by users outside of the sanctioned IT/DevOps deployment pipeline — for example, via personal accounts, direct-to-service uploads, or unmanaged buckets.</p>
+<p><strong>Internal executable sharing</strong> refers to the distribution of compiled binaries, containers, or scripts across the organization outside of governed channels (approved package repositories, sanctioned artifact stores, IT-managed distribution).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="detailed-statement-of-position">Detailed Statement of Position<a href="#detailed-statement-of-position" class="hash-link" aria-label="Direct link to Detailed Statement of Position" title="Direct link to Detailed Statement of Position" translate="no">​</a></h3>
+<p>Entegris supports coding-agent use, custom code deployment to GCP, and internal executable sharing when <strong>all three</strong> of the following conditions are met:</p>
+<ol>
+<li class=""><strong>Sandboxed environment.</strong> The agent or code executes inside an Entegris-approved sandbox with network egress controls, isolation from production data, monitored resource use, and structured audit logging.</li>
+<li class=""><strong>Training.</strong> The user has completed the Entegris coding-agent training program, comprising both synchronous live modules and asynchronous interactive labs.</li>
+<li class=""><strong>Policy acceptance.</strong> The user has read and accepted the Entegris Secure Development Policy.</li>
+</ol>
+<p>Access to any of these capabilities without all three conditions being met is <strong>not</strong> supported. Access requests that cannot be routed through the supported path should be escalated for individual review; they are not automatically permitted.</p>
+<p>The position is deliberately <strong>tool-agnostic</strong>. Specific vendor choices (agent, IDE, model provider, sandbox platform) are implementation decisions made <em>under</em> this position, not <em>by</em> it. Preference is given to open-source tooling and to AI providers with existing Entegris agreements, but the position does not lock in specific products, so it remains valid as the tool landscape evolves.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="options--variants">Options / Variants<a href="#options--variants" class="hash-link" aria-label="Direct link to Options / Variants" title="Direct link to Options / Variants" translate="no">​</a></h3>
+<p>Three alternatives were considered and rejected before arriving at the position above:</p>
+<p><strong>Option A — Blanket prohibition (rejected).</strong> Prohibiting coding-agent use would remove the visible surface area but would not remove the underlying demand. It would drive shadow adoption, which is harder to observe, control, and respond to than sanctioned adoption. It would also position IT and EA as the &quot;department of No,&quot; eroding trust and reducing IT&#x27;s ability to shape adjacent decisions.</p>
+<p><strong>Option B — Unrestricted use (rejected).</strong> Permitting laptop-based coding agents and ad-hoc GCP deployment without controls would accept the enumerated security risks (supply-chain compromise, prompt-injection, data exfiltration, ransomware) as ongoing, unbounded exposure. This is not defensible under existing Entegris security principles or standards.</p>
+<p><strong>Option C — Case-by-case exception approval (rejected).</strong> Reviewing each request individually would consume EA and Security bandwidth linearly with demand, produce inconsistent outcomes, and defer rather than resolve the underlying capability gap. It also does not scale as demand grows.</p>
+<p><strong>Option D — Supported enablement via sandbox + training + policy (chosen).</strong> Scales cleanly, produces consistent outcomes, addresses the underlying risks directly, and gives the business a supported path within a bounded timeline. It converts an open-ended risk exposure into a delivery program with a defined end date.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="detailed-basis">Detailed Basis<a href="#detailed-basis" class="hash-link" aria-label="Direct link to Detailed Basis" title="Direct link to Detailed Basis" translate="no">​</a></h3>
+<p><strong>Security risks of the current unmanaged state.</strong> A coding agent running on a user laptop is, in security terms, a process that reads, writes, and executes code inside the corporate network boundary, often with access to source repositories, credentials in the developer environment, and outbound network egress. The specific risk classes are:</p>
+<ul>
+<li class=""><strong>Supply-chain compromise.</strong> Coding agents pull and execute code from external sources (packages, plug-ins, generated snippets). Without sandboxing, a compromised dependency runs with the user&#x27;s privileges.</li>
+<li class=""><strong>Prompt-injection attacks.</strong> Adversarial content in files, documentation, or web pages the agent processes can cause the agent to take unintended actions — including data movement or code execution — under the user&#x27;s identity.</li>
+<li class=""><strong>Data exfiltration.</strong> Coding agents routinely send file contents to external model providers. Without controlled providers and controlled network egress, this creates an uncontrolled data-egress path.</li>
+<li class=""><strong>Ransomware exposure.</strong> Any process capable of writing files under user privilege is a potential ransomware vector. Coding agents amplify this because they are designed to modify code and configuration.</li>
+</ul>
+<p>These risks apply regardless of the specific agent or vendor chosen. They are properties of the unmanaged-execution pattern, not properties of any specific product.</p>
+<p><strong>Why sandboxing addresses the risks.</strong> A sandboxed environment scopes the agent&#x27;s execution to a controlled context with limited network egress, no direct access to production data, and full audit logging. This does not eliminate the risks, but it bounds them — a compromised dependency or prompt-injection attack inside a sandbox does not automatically reach production data or the broader corporate network.</p>
+<p><strong>Why training and policy acceptance are non-negotiable.</strong> Technical controls alone do not cover the full risk surface. The user has to understand what the tool will and will not do on their behalf, what data they can and cannot expose to it, and what the escalation path is when something goes wrong. Training makes those expectations explicit. Policy acceptance makes them enforceable.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assumptions">Assumptions<a href="#assumptions" class="hash-link" aria-label="Direct link to Assumptions" title="Direct link to Assumptions" translate="no">​</a></h3>
+<ul>
+<li class="">The Entegris IT organization has the tools and personnel to build the required sandboxes. This is a prioritization question, not a technology or skills gap.</li>
+<li class="">Existing Entegris AI provider agreements can be extended or leveraged to serve the sandboxed environment, avoiding the need for greenfield contracting.</li>
+<li class="">Business demand for coding agents is durable — building sandboxed capability is a durable investment, not a one-cycle response to a passing trend.</li>
+<li class="">A published target date for Phase 1 availability can be committed as part of ratification, converting the interim posture from open-ended to time-bound.</li>
+<li class="">The Entegris Secure Development Policy either exists in usable form or can be authored and published on a timeline compatible with sandbox delivery.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="detailed-implications">Detailed Implications<a href="#detailed-implications" class="hash-link" aria-label="Direct link to Detailed Implications" title="Direct link to Detailed Implications" translate="no">​</a></h3>
+<p><strong>For the business.</strong></p>
+<ul>
+<li class="">In the interim: unmanaged coding-agent use on laptops, ad-hoc GCP deployment, and undocumented executable sharing are not supported. Existing sanctioned paths (approved data platforms, IT-owned deployment channels) remain the only supported routes.</li>
+<li class="">After sandbox availability: coding agents, custom code deployment, and internal artifact sharing become supported capabilities, subject to training and policy acceptance.</li>
+</ul>
+<p><strong>For IT and Engineering.</strong></p>
+<ul>
+<li class="">Deliver the <strong>code sandbox (Phase 1):</strong> isolated runtime, controlled network egress, no direct production-data access, structured audit logging, integration with existing identity systems.</li>
+<li class="">Deliver the <strong>artifact-sharing sandbox (Phase 2):</strong> governed executable distribution with provenance, access control, and vulnerability scanning.</li>
+<li class="">Design provider-agnostic integration for AI model access, prioritizing swappable providers over vendor lock-in.</li>
+</ul>
+<p><strong>For Enterprise Architecture.</strong></p>
+<ul>
+<li class="">Own communication of this position to the business.</li>
+<li class="">Provide standardized talking points for pushback scenarios.</li>
+<li class="">Coordinate with ARB for consistent air cover across teams.</li>
+<li class="">Maintain the position document and revise it as the threat and tooling landscape evolves.</li>
+</ul>
+<p><strong>For Security.</strong></p>
+<ul>
+<li class="">Author or update the Entegris Secure Development Policy so it explicitly covers coding-agent usage.</li>
+<li class="">Define acceptable-use criteria and inputs the agent may not process (e.g., data classifications, credential material).</li>
+<li class="">Define an incident-response playbook for coding-agent-related incidents.</li>
+</ul>
+<p><strong>For Training / L&amp;D.</strong></p>
+<ul>
+<li class="">Deliver the synchronous live training modules.</li>
+<li class="">Deliver the asynchronous interactive labs.</li>
+<li class="">Define completion certification and integrate it with the access-control system for the sandbox.</li>
+</ul>
+<p><strong>For ARB.</strong></p>
+<ul>
+<li class="">Ratify this position formally.</li>
+<li class="">Provide standing air cover when this position is challenged in individual review conversations.</li>
+<li class="">Consider a scheduled re-ratification (see Governance below) so the position remains current as the landscape evolves.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="feasibility--scalability">Feasibility / Scalability<a href="#feasibility--scalability" class="hash-link" aria-label="Direct link to Feasibility / Scalability" title="Direct link to Feasibility / Scalability" translate="no">​</a></h3>
+<p><strong>Tooling.</strong> Existing open-source and commercial sandbox technologies cover the required capability. No greenfield technology bet is required. Provider-agnostic AI integration is likewise a well-understood pattern.</p>
+<p><strong>Providers.</strong> Existing Entegris AI provider agreements can be leveraged. The position&#x27;s preference for swappable providers preserves the ability to change vendors without re-writing the sandbox contract.</p>
+<p><strong>People.</strong> Existing IT and Engineering capability is judged sufficient for implementation. This is not a hiring-gated program.</p>
+<p><strong>Timeline.</strong> Constrained primarily by organizational prioritization against competing work. Ratification of this position should be accompanied by a committed Phase 1 target date, so the interim posture is time-bounded and the business message (&quot;we are actively building this&quot;) is anchored to a specific delivery.</p>
+<p><strong>Scalability.</strong> The sandbox model scales with additional users through capacity provisioning, not through per-user architectural rework. Training and policy acceptance are one-time-per-user prerequisites; once completed, they do not gate ongoing use.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="governance">Governance<a href="#governance" class="hash-link" aria-label="Direct link to Governance" title="Direct link to Governance" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Owner</strong></td><td>Enterprise Architecture</td></tr><tr><td><strong>Approver</strong></td><td>Architecture Review Board (ARB)</td></tr><tr><td><strong>Review cadence</strong></td><td>Every 6 months, or upon material change in threat landscape, tooling landscape, or provider agreements</td></tr><tr><td><strong>Related</strong></td><td>Entegris Secure Development Policy; Entegris data classification standards; existing GCP deployment governance; existing AI provider agreements</td></tr><tr><td><strong>Supersedes</strong></td><td>None (this is a new position)</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="standardized-messaging-for-reuse-by-ea-arb-and-it-leaders">Standardized Messaging (for reuse by EA, ARB, and IT leaders)<a href="#standardized-messaging-for-reuse-by-ea-arb-and-it-leaders" class="hash-link" aria-label="Direct link to Standardized Messaging (for reuse by EA, ARB, and IT leaders)" title="Direct link to Standardized Messaging (for reuse by EA, ARB, and IT leaders)" translate="no">​</a></h2>
+<p>The following short-form messages are the recommended standard talking points aligned to this position. Use these verbatim or as a starting point when communicating to the business.</p>
+<p><strong>Short form (one sentence):</strong></p>
+<blockquote>
+<p>Entegris supports coding agents and custom code deployment through secure sandboxed environments, mandatory training, and policy acceptance. In the interim, unmanaged use is not supported.</p>
+</blockquote>
+<p><strong>Interim message (until Phase 1 delivery):</strong></p>
+<blockquote>
+<p>We support the use of coding agents which follow our Secure Development Policy, and we are actively building secure, sandboxed environments to enable this capability. In the interim, we are not supporting unmanaged deployments or access outside established data platforms.</p>
+</blockquote>
+<p><strong>When pushed back on:</strong></p>
+<blockquote>
+<p>The intent of this position is enablement, not prohibition. The controls exist because a coding agent on an unmanaged laptop executes untrusted code inside our network boundary — that risk applies regardless of vendor. We are building the supported path on a committed timeline and expect the sandbox to cover the majority of business use cases.</p>
+</blockquote></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-07-06T00:00:00.000Z" itemprop="dateModified">Jul 6, 2026</time></b> by <b>Sam Bolger</b></span></div></div></footer></article></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#executive-summary" class="table-of-contents__link toc-highlight">Executive Summary</a><ul><li><a href="#statement-of-position" class="table-of-contents__link toc-highlight">Statement of Position</a></li><li><a href="#basis" class="table-of-contents__link toc-highlight">Basis</a></li><li><a href="#implications" class="table-of-contents__link toc-highlight">Implications</a></li></ul></li><li><a href="#position-detail" class="table-of-contents__link toc-highlight">Position Detail</a><ul><li><a href="#background--motivation" class="table-of-contents__link toc-highlight">Background / Motivation</a></li><li><a href="#subject-area-overview" class="table-of-contents__link toc-highlight">Subject Area Overview</a></li><li><a href="#detailed-statement-of-position" class="table-of-contents__link toc-highlight">Detailed Statement of Position</a></li><li><a href="#options--variants" class="table-of-contents__link toc-highlight">Options / Variants</a></li><li><a href="#detailed-basis" class="table-of-contents__link toc-highlight">Detailed Basis</a></li><li><a href="#assumptions" class="table-of-contents__link toc-highlight">Assumptions</a></li><li><a href="#detailed-implications" class="table-of-contents__link toc-highlight">Detailed Implications</a></li><li><a href="#feasibility--scalability" class="table-of-contents__link toc-highlight">Feasibility / Scalability</a></li></ul></li><li><a href="#governance" class="table-of-contents__link toc-highlight">Governance</a></li><li><a href="#standardized-messaging-for-reuse-by-ea-arb-and-it-leaders" class="table-of-contents__link toc-highlight">Standardized Messaging (for reuse by EA, ARB, and IT leaders)</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright 2026 Entegris, Inc. Internal use only.</div></div></div></footer></div>
+</body>
+</html>
