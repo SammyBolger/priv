@@ -1,0 +1,623 @@
+/* this is the global stylesheet for the site. it loads on every page.
+   structure of this file:
+     1. :root css variables, entegris brand colors and docusaurus theme tokens.
+     2. base typography for html/body and headings.
+     3. navbar styling so it matches the brand.
+     4. docs sidebar styling (red left-border on the active item).
+     5. typography overrides for markdown content in the docs.
+     6. ai4ea landing page classes prefixed with .gc-*.
+   docusaurus's classic theme variables start with --ifm-* and are documented at
+   docusaurus.io. brand-specific variables start with --entegris-*.
+   keep --ifm-color-primary = entegris blue unless a reviewed brand change says otherwise. */
+
+:root {
+  --entegris-red: #B31A1B;
+  --entegris-deep-red: #870608;
+  --entegris-dark-gray: #393630;
+  --entegris-medium-gray: #7F7773;
+  --entegris-light-gray: #BFB6AF;
+  --entegris-blue: #2A6A83;
+  --entegris-yellow: #FFDA48;
+  --entegris-bg-light: #F7F5F5;
+  --entegris-bg-alt: #ECE9E7;
+  --entegris-white: #FFFFFF;
+
+  --ifm-color-primary: #2A6A83;
+  --ifm-color-primary-dark: #265d74;
+  --ifm-color-primary-darker: #23586d;
+  --ifm-color-primary-darkest: #1d495a;
+  --ifm-color-primary-light: #2e7592;
+  --ifm-color-primary-lighter: #317c9b;
+  --ifm-color-primary-lightest: #3a89ac;
+
+  --ifm-font-family-base: "Open Sans", Arial, Helvetica, sans-serif;
+  --ifm-font-family-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --ifm-font-weight-base: 300;
+  --ifm-font-weight-bold: 600;
+  --ifm-heading-font-weight: 600;
+  --ifm-line-height-base: 1.6;
+
+  --ifm-background-color: #FFFFFF;
+  --ifm-background-surface-color: #FFFFFF;
+  --ifm-link-color: var(--entegris-blue);
+  --ifm-link-hover-decoration: underline;
+  --ifm-button-border-radius: 2px;
+  --ifm-global-radius: 2px;
+  --ifm-card-border-radius: 2px;
+  --ifm-alert-border-radius: 2px;
+  --ifm-code-border-radius: 2px;
+
+  --ifm-navbar-height: 72px;
+  --ifm-navbar-background-color: #FFFFFF;
+  --ifm-navbar-shadow: none;
+  --ifm-menu-link-padding-vertical: 6px;
+  --ifm-menu-link-padding-horizontal: 12px;
+  --ifm-footer-background-color: var(--entegris-dark-gray);
+  --ifm-footer-color: var(--entegris-light-gray);
+  --ifm-footer-link-color: var(--entegris-light-gray);
+  --ifm-footer-link-hover-color: #FFFFFF;
+  --ifm-footer-title-color: #FFFFFF;
+  --ifm-code-font-size: 0.88rem;
+  --ifm-pre-background: #F6F4F2;
+  --ifm-code-background: #F6F4F2;
+  --docusaurus-highlighted-code-line-bg: rgba(179, 26, 27, 0.08);
+}
+
+html,
+body {
+  background: #FFFFFF;
+  color: var(--entegris-dark-gray);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.005em;
+}
+
+h1 {
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--entegris-bg-alt);
+  padding: 0 24px;
+}
+
+.navbar__logo,
+.navbar__logo img {
+  height: 40px;
+}
+
+.navbar__title,
+.navbar__link {
+  color: var(--entegris-dark-gray);
+  font-weight: 600;
+}
+
+.navbar__link--active,
+.navbar__link:hover {
+  color: var(--entegris-dark-gray);
+  text-decoration-color: var(--entegris-red);
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--entegris-bg-alt);
+}
+
+.menu {
+  font-size: 14px;
+}
+
+.menu__link {
+  border-left: 2px solid transparent;
+  border-radius: 0;
+}
+
+.menu__link:hover,
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--entegris-bg-light);
+  color: var(--entegris-dark-gray);
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  border-left-color: var(--entegris-red);
+  font-weight: 600;
+}
+
+.theme-doc-markdown h1:first-child {
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.theme-doc-markdown h2 {
+  border-bottom: 1px solid var(--entegris-bg-alt);
+  margin-top: 48px;
+  padding-bottom: 8px;
+}
+
+.theme-doc-markdown blockquote {
+  background: var(--entegris-bg-light);
+  border-left: 3px solid var(--entegris-red);
+  color: var(--entegris-dark-gray);
+  padding: 12px 20px;
+}
+
+.theme-doc-markdown table {
+  border: 1px solid var(--entegris-bg-alt);
+  border-collapse: collapse;
+  display: table;
+  width: 100%;
+}
+
+.theme-doc-markdown table thead tr {
+  background: var(--entegris-bg-light);
+}
+
+.theme-doc-markdown table th,
+.theme-doc-markdown table td {
+  border-bottom: 1px solid var(--entegris-bg-alt);
+  padding: 12px 16px;
+  vertical-align: top;
+}
+
+.theme-doc-markdown table td a {
+  color: var(--entegris-blue);
+}
+
+.theme-admonition,
+.alert {
+  border-radius: 2px;
+  border-left-width: 4px;
+  box-shadow: none;
+}
+
+.docusaurus-mermaid-container {
+  background: #FFFFFF;
+  border: 1px solid var(--entegris-bg-alt);
+  display: flex;
+  justify-content: center;
+  margin: 0 0 24px;
+  padding: 24px;
+}
+
+.footer__title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gc-hero {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--entegris-bg-light) 100%);
+  border-bottom: 1px solid var(--entegris-bg-alt);
+  padding: 72px 0;
+}
+
+.gc-hero__inner,
+.gc-section__inner {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 0 32px;
+}
+
+.gc-eyebrow {
+  color: var(--entegris-red);
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.gc-eyebrow::after {
+  background: var(--entegris-red);
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 8px;
+  width: 70px;
+}
+
+.gc-hero h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  margin: 0;
+  max-width: 760px;
+}
+
+.gc-hero__lead {
+  color: var(--entegris-dark-gray);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 20px 0 0;
+  max-width: 680px;
+}
+
+.gc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.gc-button {
+  border: 1px solid var(--entegris-blue);
+  border-radius: 2px;
+  display: inline-flex;
+  font-weight: 600;
+  padding: 11px 16px;
+  text-decoration: none;
+}
+
+.gc-button--primary {
+  background: var(--entegris-blue);
+  color: #FFFFFF;
+}
+
+.gc-button--primary:hover {
+  color: #FFFFFF;
+}
+
+.gc-button--secondary {
+  background: #FFFFFF;
+  color: var(--entegris-blue);
+}
+
+.gc-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.gc-section {
+  padding: 64px 0;
+}
+
+.gc-card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+/* knowledge-base landing shows all 5 area cards on a single row on wide
+   screens (responsive step-downs live in the media queries below). */
+.gc-card-grid--kb {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.gc-card {
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 2px;
+  color: var(--entegris-dark-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  text-decoration: none;
+}
+
+.gc-card:hover {
+  border-color: var(--entegris-blue);
+  text-decoration: none;
+}
+
+.gc-card h3 {
+  margin-top: 0;
+}
+
+.gc-card p {
+  color: var(--entegris-medium-gray);
+  margin-bottom: 0;
+}
+
+@media (max-width: 996px) {
+  .gc-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-hero {
+    padding: 48px 0;
+  }
+}
+
+/* knowledge-base landing keeps its 5 area cards balanced: one row on wide
+   screens, then 3 across (3 + 2) on mid widths, then a single column, so no
+   card is ever stranded alone on its own row. defined after the generic grid
+   rule above so the --kb variant always wins for the knowledge-base page. */
+@media (max-width: 1180px) {
+  .gc-card-grid--kb {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .gc-card-grid--kb {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Category index table used by the DocCategoryGeneratedIndexPage swizzle.
+   Every item is listed in a single alternating grey/white table, matching
+   the field/detail tables at the top of each doc. */
+.gc-index-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.gc-index-table thead th {
+  background: var(--entegris-bg-light);
+  border: 1px solid var(--entegris-bg-alt);
+  font-weight: 600;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.gc-index-table td {
+  border: 1px solid var(--entegris-bg-alt);
+  padding: 12px 16px;
+  vertical-align: top;
+}
+
+.gc-index-table tbody tr:nth-child(even) {
+  background: var(--entegris-bg-light);
+}
+
+.gc-index-table tbody tr:hover {
+  background: var(--entegris-bg-alt);
+}
+
+.gc-index-table td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gc-index-table td:first-child a {
+  text-decoration: none;
+}
+
+.gc-index-table td:first-child a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .gc-index-table td:first-child {
+    white-space: normal;
+  }
+}
+
+/* =========================================================================
+   AI4EA landing — extends the .gc-* system above.
+   Red accent stripe + soft blue radial wash on hero, 4-up card grid with
+   a primary "Generate" variant, and a "How it works" strip.
+   ========================================================================= */
+
+.gc-hero {
+  background:
+    radial-gradient(900px 360px at 82% -10%, rgba(42, 106, 131, 0.10), transparent 65%),
+    linear-gradient(180deg, #FFFFFF 0%, var(--entegris-bg-light) 100%);
+  overflow: hidden;
+  padding: 96px 0 80px;
+  position: relative;
+}
+
+.gc-hero::before {
+  background: var(--entegris-red);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gc-hero__lead {
+  max-width: 720px;
+}
+
+.gc-card {
+  transition: border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+
+.gc-card:hover {
+  box-shadow: 0 6px 18px rgba(57, 54, 48, 0.08);
+  transform: translateY(-2px);
+}
+
+.gc-card__meta {
+  color: var(--entegris-medium-gray);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.gc-card__cta {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 18px;
+}
+
+.gc-card__cta::after {
+  content: "→";
+  margin-left: 6px;
+  transition: transform 140ms ease;
+}
+
+.gc-card--primary {
+  background: var(--entegris-blue);
+  border-color: var(--entegris-blue);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gc-card--primary:hover {
+  border-color: var(--entegris-blue);
+  box-shadow: 0 10px 28px rgba(42, 106, 131, 0.28);
+}
+
+.gc-card--primary h3 {
+  color: #FFFFFF;
+}
+
+.gc-card--primary p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.gc-card--primary .gc-card__meta {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.gc-card--primary:hover .gc-card__cta::after {
+  transform: translateX(4px);
+}
+
+.gc-card-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gc-how {
+  background: var(--entegris-bg-light);
+  border-bottom: 1px solid var(--entegris-bg-alt);
+  border-top: 1px solid var(--entegris-bg-alt);
+  padding: 64px 0;
+}
+
+.gc-how__grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.gc-how__step {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+}
+
+.gc-how__num {
+  align-items: center;
+  background: var(--entegris-red);
+  border-radius: 50%;
+  color: #FFFFFF;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.gc-how__title {
+  color: var(--entegris-dark-gray);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 2px 0 6px;
+}
+
+.gc-how__body {
+  color: var(--entegris-medium-gray);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 1180px) {
+  .gc-card-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 996px) {
+  .gc-card-grid--four {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-how__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-hero {
+    padding: 64px 0 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gc-card,
+  .gc-card__cta::after {
+    transition: none;
+  }
+
+  .gc-card:hover,
+  .gc-card--primary:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================================
+   AI4EA review page — placeholder for the human-in-the-loop workflow.
+   Centered panel with a status pill and the intended primary action.
+   ========================================================================= */
+
+.gc-review-panel {
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 2px;
+  margin: 28px auto 0;
+  max-width: 640px;
+  padding: 40px;
+  text-align: center;
+}
+
+.gc-review-panel h2 {
+  color: var(--entegris-dark-gray);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 14px 0 8px;
+}
+
+.gc-review-panel p {
+  color: var(--entegris-medium-gray);
+  line-height: 1.6;
+  margin: 0 auto 24px;
+  max-width: 460px;
+}
+
+.gc-review-panel .gc-actions {
+  justify-content: center;
+  margin-top: 0;
+}
+
+.gc-pill {
+  background: var(--entegris-bg-light);
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 999px;
+  color: var(--entegris-medium-gray);
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  padding: 4px 12px;
+  text-transform: uppercase;
+}

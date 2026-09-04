@@ -1,0 +1,52 @@
+# builds the docusaurus site with AI4EA_DEMO_MODE=true and publishes it to
+# github pages. runs on push to main whenever anything under frontend/ or this
+# workflow itself changes. also has a manual trigger button in the actions ui.
+#
+# the demo-mode flag is what makes /generate show the "public demo, generation
+# disabled" banner. the gcp deployment builds without that flag so the full
+# app works there.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install
+        working-directory: ./frontend
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        working-directory: ./frontend
+        env:
+          # SITE_URL + BASE_URL together produce https://EntegrisInternal.github.io/ai4ea/
+          SITE_URL: https://EntegrisInternal.github.io
+          BASE_URL: /ai4ea/
+          # tells the frontend to show the demo banner + disable /generate
+          AI4EA_DEMO_MODE: "true"
+        run: bun run build
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/build
