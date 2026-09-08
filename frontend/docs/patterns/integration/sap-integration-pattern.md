@@ -1,4 +1,8 @@
-# Integration Reference Architecture — SAP Integration Patterns
+---
+description: "This document defines approved patterns for integrating Entegris applications and platforms with SAP systems."
+---
+
+# SAP Integration Patterns
 
 ## SAP Integration Patterns
 

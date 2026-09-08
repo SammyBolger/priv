@@ -1,4 +1,8 @@
-# Reference Architecture — Data Engineering & Medallion Architecture Patterns
+---
+description: "This document defines approved data engineering patterns for promoting data through the Entegris medallion architecture."
+---
+
+# Data Engineering & Medallion Architecture Patterns
 
 ## Data Engineering and Medallion Architecture Patterns
 

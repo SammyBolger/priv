@@ -1,4 +1,8 @@
-# Reference Architecture — Master Data Management & Data Quality Patterns
+---
+description: "This document defines approved patterns for master data management and data quality at Entegris."
+---
+
+# Master Data Management & Data Quality Patterns
 
 ## Master Data Management and Data Quality Patterns
 

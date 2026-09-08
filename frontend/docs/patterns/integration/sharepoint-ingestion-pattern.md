@@ -1,4 +1,8 @@
-# Integration Reference Architecture — SharePoint Online Data Ingestion
+---
+description: "This document defines approved patterns for ingesting SharePoint Online content into the Entegris GCP data platform using Microsoft Graph API and Boomi."
+---
+
+# SharePoint Online Data Ingestion
 
 ## SharePoint Online Data Ingestion Patterns
 

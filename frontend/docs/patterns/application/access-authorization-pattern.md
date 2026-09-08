@@ -1,4 +1,8 @@
-# Reference Architecture — Access & Authorization Management Patterns
+---
+description: "This document defines approved identity and authorization patterns for Entegris applications, APIs, and privileged operations."
+---
+
+# Access & Authorization Management Patterns
 
 ## Access and Authorization Management Patterns
 

@@ -1,27 +1,27 @@
-// knowledge base landing page, served at "/knowledge-base".
+// Knowledge base landing page, served at /knowledge-base/.
 //
-// mirrors the structure and styling of the site home page (src/pages/index.tsx):
-//   1. hero: red accent stripe + headline + lead
-//   2. card grid: one card per knowledge-base area
+// Custom page (not a docs-plugin generated-index) - it owns the URL that
+// the navbar "Knowledge base" link points at. Renders the 5 KB area cards
+// plus an embedded search bar so users can search the KB directly from
+// this landing page instead of only in the docs sidebar.
 //
-// all styling lives in src/css/custom.css under the .gc-* classes.
-//
-// platform-governed custom code, AMP engineer review required for changes.
+// Sub-category pages (/docs/knowledge-base/patterns, /docs/knowledge-base/
+// policies, ...) are docs-plugin generated-index pages rendered by the
+// swizzle at src/theme/DocCategoryGeneratedIndexPage.
 
 import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
+import SearchBar from "@theme/SearchBar";
 import type { ReactNode } from "react";
 
-// shape of one knowledge-base area card.
 type Area = {
-  meta: string;        // small uppercase tag at the top of the card
-  title: string;       // big card title
-  description: string; // one or two lines of body text
-  href: string;        // where the card links to (a category index page)
-  cta: string;         // call-to-action text shown at the bottom
+  meta: string;
+  title: string;
+  description: string;
+  href: string;
+  cta: string;
 };
 
-// the 5 knowledge-base areas, each linking to its category index page.
 const areas: Area[] = [
   {
     meta: "Guardrails",
@@ -69,22 +69,28 @@ export default function KnowledgeBase(): ReactNode {
   return (
     <Layout
       title="Knowledge base"
-      description="Browse Entegris policies, patterns, principles, standards, and positions that ground every reference architecture."
+      description="Browse and search Entegris policies, patterns, principles, standards, and positions."
     >
       <main>
-        {/* hero section: red top stripe is on the .gc-hero ::before pseudo-element in css */}
         <section className="gc-hero">
           <div className="gc-hero__inner">
             <span className="gc-eyebrow">Knowledge base</span>
             <h1>Every guardrail that grounds an Entegris reference architecture.</h1>
             <p className="gc-hero__lead">
-              One place for the policies, patterns, principles, standards, and positions
-              that AI4EA draws on. Choose an area to start browsing.
+              One place for the policies, patterns, principles, standards, and
+              positions that AI4EA draws on. Search the whole KB or pick an
+              area below.
             </p>
+
+            {/* Embedded search bar. Lives in the page (not the navbar) so it
+                only shows in the KB, and sits in the calm hero area rather
+                than fighting for space in the top nav. */}
+            <div className="kb-search">
+              <SearchBar />
+            </div>
           </div>
         </section>
 
-        {/* card grid section: one card per knowledge-base area */}
         <section className="gc-section">
           <div className="gc-section__inner">
             <span className="gc-eyebrow">Browse by area</span>

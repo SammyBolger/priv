@@ -1,4 +1,8 @@
-# Reference Architecture — Terraform Infrastructure Patterns
+---
+description: "This document defines approved Terraform patterns for provisioning and operating Entegris cloud resources."
+---
+
+# Terraform Infrastructure Patterns
 
 ## Terraform Infrastructure Patterns
 

@@ -1,4 +1,8 @@
-# Reference Architecture — Google Cloud Armor Usage Patterns
+---
+description: "This document defines approved usage patterns for Google Cloud Armor in front of Entegris internet-facing workloads."
+---
+
+# Google Cloud Armor Usage Patterns
 
 ## Google Cloud Armor Usage Patterns
 

@@ -1,4 +1,8 @@
-# Reference Architecture — AI Architecture Patterns
+---
+description: "This document defines approved patterns for AI and LLM-enabled solutions at Entegris."
+---
+
+# AI Architecture Patterns
 
 ## AI Architecture Patterns
 

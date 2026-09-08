@@ -1,4 +1,8 @@
-# Reference Architecture — DevOps & CI/CD Pipeline Patterns
+---
+description: "This document defines approved CI/CD patterns for delivering Entegris applications and infrastructure."
+---
+
+# DevOps & CI/CD Pipeline Patterns
 
 ## DevOps and CI/CD Pipeline Patterns
 

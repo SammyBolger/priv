@@ -1,4 +1,8 @@
-# Reference Architecture — Event-Driven Architecture Patterns (Time-Series & IoT)
+---
+description: "This document defines approved event-driven and time-series patterns for Entegris solutions on GCP."
+---
+
+# Event-Driven Architecture Patterns (Time-Series & IoT)
 
 ## Event-Driven and Time-Series Patterns
 

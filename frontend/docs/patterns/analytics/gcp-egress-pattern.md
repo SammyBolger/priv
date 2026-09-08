@@ -1,4 +1,8 @@
-# Integration Reference Architecture — GCP Egress Patterns
+---
+description: "This document defines approved patterns for outbound data and integration traffic leaving Entegris workloads on GCP."
+---
+
+# GCP Egress Patterns
 
 ## GCP Egress Patterns
 

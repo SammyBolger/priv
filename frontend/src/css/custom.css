@@ -93,7 +93,7 @@ b {
 }
 
 .navbar {
-  border-bottom: 1px solid var(--entegris-bg-alt);
+  border-bottom: 4px solid var(--entegris-red);
   padding: 0 24px;
 }
 
@@ -401,6 +401,69 @@ b {
   }
 }
 
+/* Collapsible sub-folder groups on the category index pages. Each group is a
+   native <details> element wrapping one gc-index-table. Expanded by default. */
+.gc-index-group {
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 2px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.gc-index-group[open] > .gc-index-group__summary {
+  border-bottom: 1px solid var(--entegris-bg-alt);
+}
+
+.gc-index-group__summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--entegris-dark-gray);
+  background: var(--entegris-bg-light);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.gc-index-group__summary::-webkit-details-marker {
+  display: none;
+}
+
+.gc-index-group__summary::before {
+  content: "▸";
+  font-size: 0.75rem;
+  color: var(--entegris-medium-gray);
+  transition: transform 120ms ease;
+  display: inline-block;
+}
+
+.gc-index-group[open] > .gc-index-group__summary::before {
+  transform: rotate(90deg);
+}
+
+.gc-index-group__count {
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--entegris-medium-gray);
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 10px;
+  padding: 1px 8px;
+}
+
+.gc-index-group .gc-index-table {
+  margin-top: 0;
+  border-top: none;
+}
+
+.gc-index-group .gc-index-table thead th {
+  border-top: none;
+}
+
 /* =========================================================================
    AI4EA landing — extends the .gc-* system above.
    Red accent stripe + soft blue radial wash on hero, 4-up card grid with
@@ -416,15 +479,8 @@ b {
   position: relative;
 }
 
-.gc-hero::before {
-  background: var(--entegris-red);
-  content: "";
-  height: 4px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+/* Red stripe used to live here as .gc-hero::before. It's now on the navbar
+   so it renders on every page, not just pages with a .gc-hero section. */
 
 .gc-hero__lead {
   max-width: 720px;
@@ -575,40 +631,6 @@ b {
     transform: none;
   }
 }
-
-/* =========================================================================
-   AI4EA review page — placeholder for the human-in-the-loop workflow.
-   Centered panel with a status pill and the intended primary action.
-   ========================================================================= */
-
-.gc-review-panel {
-  border: 1px solid var(--entegris-bg-alt);
-  border-radius: 2px;
-  margin: 28px auto 0;
-  max-width: 640px;
-  padding: 40px;
-  text-align: center;
-}
-
-.gc-review-panel h2 {
-  color: var(--entegris-dark-gray);
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 14px 0 8px;
-}
-
-.gc-review-panel p {
-  color: var(--entegris-medium-gray);
-  line-height: 1.6;
-  margin: 0 auto 24px;
-  max-width: 460px;
-}
-
-.gc-review-panel .gc-actions {
-  justify-content: center;
-  margin-top: 0;
-}
-
 .gc-pill {
   background: var(--entegris-bg-light);
   border: 1px solid var(--entegris-bg-alt);
@@ -621,3 +643,553 @@ b {
   padding: 4px 12px;
   text-transform: uppercase;
 }
+
+/* Left-aligned form-friendly variant of the gc-review-panel look. Used by
+   the /review page for the file-picker / confirm / result panels. */
+.gc-form-panel {
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 2px;
+  margin-top: 20px;
+  padding: 24px 28px;
+}
+
+.gc-form-panel:first-child {
+  margin-top: 28px;
+}
+
+.gc-form-panel--success {
+  border-left: 3px solid #3fa76a;
+}
+
+.gc-form-panel__label {
+  color: var(--entegris-red);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.gc-form-panel__label--success {
+  color: #3fa76a;
+}
+
+.gc-form-field {
+  margin-bottom: 14px;
+}
+
+.gc-form-field > label {
+  color: var(--entegris-dark-gray);
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.gc-form-field input[type="text"],
+.gc-form-field select,
+.gc-form-field textarea {
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--entegris-dark-gray);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.92rem;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.gc-form-field textarea {
+  resize: vertical;
+}
+
+.gc-form-help {
+  color: var(--entegris-medium-gray);
+  font-size: 0.78rem;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.gc-form-panel__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.gc-error-banner {
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-left: 3px solid var(--entegris-red);
+  border-radius: 2px;
+  color: var(--entegris-dark-gray);
+  font-size: 0.9rem;
+  margin-top: 16px;
+  padding: 12px 16px;
+  white-space: pre-wrap;
+}
+
+.gc-retrieval-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.gc-retrieval-chip {
+  background: var(--entegris-bg-light);
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 2px;
+  color: var(--entegris-dark-gray);
+  font-size: 0.78rem;
+  padding: 3px 10px;
+}
+
+/* =========================================================================
+   Generator (/generate) chat UI — modern, minimal, Entegris-themed.
+   Inspired by the clean layouts of Claude / ChatGPT / Gemini / Copilot.
+   ========================================================================= */
+
+.chat-page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: min(
+    calc(100dvh - var(--ifm-navbar-height) - 4px),
+    calc(100vh - var(--ifm-navbar-height) - 4px)
+  );
+  box-sizing: border-box;
+}
+
+/* Thin top bar shown only after a conversation has started. Holds the
+   "New conversation" reset button. Removed entirely in the empty state
+   for max focus on the greeting. */
+.chat-topbar {
+  border-bottom: 1px solid var(--entegris-bg-alt);
+  padding: 8px 24px;
+  background: #fff;
+}
+.chat-topbar__inner {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  max-width: 780px;
+}
+.chat-topbar__new {
+  background: transparent;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 999px;
+  color: var(--entegris-medium-gray);
+  cursor: pointer;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+.chat-topbar__new:hover:not(:disabled) {
+  border-color: var(--entegris-blue);
+  color: var(--entegris-blue);
+}
+.chat-topbar__new:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Scrolling middle area — holds either the empty state or the message log. */
+.chat-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 24px;
+}
+.chat-scroll__inner {
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 32px 0 16px;
+}
+
+/* Empty state — big greeting, mode pills, example cards. */
+.chat-empty {
+  padding: 48px 0 24px;
+  text-align: center;
+}
+.chat-empty__greeting {
+  color: var(--entegris-dark-gray);
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+.chat-empty__subtitle {
+  color: var(--entegris-medium-gray);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 auto 32px;
+  max-width: 560px;
+}
+.chat-empty__examples {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: left;
+}
+.chat-empty__examples-label {
+  color: var(--entegris-medium-gray);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.chat-example-card {
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 10px;
+  color: var(--entegris-dark-gray);
+  cursor: pointer;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 12px 16px;
+  text-align: left;
+  transition: border-color 140ms ease, background 140ms ease,
+    transform 140ms ease;
+}
+.chat-example-card:hover {
+  background: var(--entegris-bg-light);
+  border-color: var(--entegris-blue);
+  transform: translateY(-1px);
+}
+
+/* Segmented mode selector — pills inside a rounded track. Cleaner and
+   less "tab-bar" feeling than boxy buttons. */
+.chat-mode-track {
+  background: var(--entegris-bg-light);
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 4px;
+  margin: 0 auto 32px;
+  padding: 4px;
+}
+.chat-mode-pill {
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: var(--entegris-medium-gray);
+  cursor: pointer;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  transition: background 120ms ease, color 120ms ease,
+    box-shadow 120ms ease;
+}
+.chat-mode-pill:hover:not(:disabled):not(.chat-mode-pill--active) {
+  color: var(--entegris-dark-gray);
+}
+.chat-mode-pill--active {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: var(--entegris-dark-gray);
+  font-weight: 600;
+}
+.chat-mode-pill:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Message rows. User = right-aligned tinted bubble. Assistant = left-
+   aligned plain text (no bubble) so long pattern responses breathe. */
+.chat-row {
+  display: flex;
+  margin-bottom: 24px;
+}
+.chat-row--user {
+  justify-content: flex-end;
+}
+.chat-row--assistant {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.chat-bubble--user {
+  background: var(--entegris-bg-light);
+  border-radius: 16px 16px 4px 16px;
+  color: var(--entegris-dark-gray);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  max-width: 82%;
+  padding: 11px 16px;
+  white-space: pre-wrap;
+}
+.chat-assistant__label {
+  align-items: center;
+  color: var(--entegris-medium-gray);
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 600;
+  gap: 8px;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.chat-assistant__badge {
+  background: var(--entegris-red);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+}
+.chat-response {
+  color: var(--entegris-dark-gray);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.chat-response > *:first-child {
+  margin-top: 0;
+}
+.chat-response > *:last-child {
+  margin-bottom: 0;
+}
+.chat-error {
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-left: 3px solid var(--entegris-red);
+  border-radius: 2px;
+  color: var(--entegris-red);
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  white-space: pre-wrap;
+}
+.chat-copy {
+  margin-top: 12px;
+}
+
+/* Sticky composer at the bottom. Rounded input with an inline send button. */
+.chat-composer {
+  background: #fff;
+  border-top: 1px solid var(--entegris-bg-alt);
+  padding: 12px 24px 20px;
+}
+.chat-composer__inner {
+  margin: 0 auto;
+  max-width: 780px;
+}
+.chat-composer__field {
+  align-items: flex-end;
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px 8px 8px 16px;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.chat-composer__field:focus-within {
+  border-color: var(--entegris-blue);
+  box-shadow: 0 0 0 3px rgba(42, 106, 131, 0.1);
+}
+.chat-composer__textarea {
+  background: transparent;
+  border: none;
+  color: var(--entegris-dark-gray);
+  flex: 1;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-height: 220px;
+  min-height: 24px;
+  outline: none;
+  padding: 6px 0;
+  resize: none;
+}
+.chat-composer__textarea:disabled {
+  cursor: not-allowed;
+}
+.chat-composer__send {
+  align-self: flex-end;
+  background: var(--entegris-blue);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ifm-font-family-base);
+  font-size: 1rem;
+  height: 34px;
+  transition: background 120ms ease, transform 120ms ease, opacity 120ms ease;
+  width: 34px;
+}
+.chat-composer__send:disabled {
+  background: var(--entegris-bg-alt);
+  color: var(--entegris-medium-gray);
+  cursor: not-allowed;
+}
+.chat-composer__send:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+.chat-composer__meta {
+  align-items: center;
+  color: var(--entegris-medium-gray);
+  display: flex;
+  font-size: 0.74rem;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.chat-composer__mode-inline {
+  display: flex;
+  gap: 6px;
+}
+.chat-composer__mode-inline .chat-mode-pill {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+}
+
+/* Modern rounded pill button. Used by /review for Open PR / Submit another
+   and anywhere else that needs a Chat-style call to action. */
+.chat-btn {
+  background: var(--entegris-blue);
+  border: 1px solid var(--entegris-blue);
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: background 120ms ease, transform 120ms ease, opacity 120ms ease;
+}
+.chat-btn:hover:not(:disabled) {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.chat-btn:disabled {
+  background: var(--entegris-bg-alt);
+  border-color: var(--entegris-bg-alt);
+  color: var(--entegris-medium-gray);
+  cursor: not-allowed;
+}
+.chat-btn--secondary {
+  background: transparent;
+  border-color: var(--entegris-bg-alt);
+  color: var(--entegris-medium-gray);
+}
+.chat-btn--secondary:hover:not(:disabled) {
+  background: transparent;
+  border-color: var(--entegris-blue);
+  color: var(--entegris-blue);
+}
+/* Quality-score badge shown in the assistant message header. Combines the
+   3 existing check signals (missing sections + invalid citations + retrieval
+   strength) into one visible letter grade. Hover for the reasoning. */
+.chat-quality {
+  align-items: center;
+  border-radius: 4px;
+  color: #fff;
+  cursor: help;
+  display: inline-flex;
+  font-size: 0.7rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  min-width: 22px;
+  padding: 1px 6px;
+}
+
+/* Toolbar of small utility buttons under each assistant response
+   (copy, download .md, download .doc). */
+.chat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.chat-toolbar__btn {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 6px;
+  color: var(--entegris-medium-gray);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.75rem;
+  font-weight: 500;
+  gap: 4px;
+  padding: 4px 10px;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+.chat-toolbar__btn:hover {
+  border-color: var(--entegris-blue);
+  color: var(--entegris-blue);
+}
+
+/* Hide the plugin's auto-injected navbar SearchBar. We render our own
+   copy inside the KB landing page (see .kb-search below) so search only
+   shows where it belongs. Uses a broad attribute selector because the
+   plugin's module class is hashed at build time. */
+.navbar__items [class*="searchBar"],
+.navbar__items--right [class*="searchBar"] {
+  display: none !important;
+}
+
+/* Embedded search bar inside the KB landing hero. Wraps the plugin's
+   SearchBar in a container that gives it a fixed max-width, room to
+   breathe, and consistent look with the hero. */
+.kb-search {
+  margin: 28px 0 0;
+  max-width: 640px;
+}
+.kb-search [class*="searchBar"] {
+  display: inline-block !important;
+}
+
+/* Dev-mode note shown in place of the search bar (index only builds in
+   production). Small, muted, not embarrassing. */
+.kb-search-note {
+  background: var(--entegris-bg-light);
+  border: 1px dashed var(--entegris-bg-alt);
+  border-radius: 8px;
+  color: var(--entegris-medium-gray);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding: 10px 14px;
+}
+.kb-search-note code {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+.kb-search [class*="searchBar"] {
+  width: 100%;
+}
+.kb-search [class*="searchInput"] {
+  background: #fff;
+  border: 1px solid var(--entegris-bg-alt);
+  border-radius: 999px;
+  color: var(--entegris-dark-gray);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.95rem;
+  height: 44px;
+  padding: 0 44px 0 18px;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+  width: 100%;
+}
+.kb-search [class*="searchInput"]:focus {
+  border-color: var(--entegris-blue);
+  box-shadow: 0 0 0 3px rgba(42, 106, 131, 0.1);
+  outline: none;
+}
+

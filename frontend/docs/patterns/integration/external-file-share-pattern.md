@@ -1,4 +1,8 @@
-# Integration Reference Architecture — File Share Access and Integration Patterns
+---
+description: "This document defines an initial Entegris pattern for enterprise file share access and integration."
+---
+
+# File Share Access and Integration Patterns
 
 ## File Share Access and Integration Patterns
 - External Document Sharing (OneDrive and Dropbox)
@@ -263,5 +267,5 @@ sequenceDiagram
 - [Architecture Assurance Guardrail Framework](../../context/07-architecture-assurance-guardrails.md)
 - [Access & Authorization](../application/access-authorization-pattern.md)
 - [SharePoint Online Data Ingestion Patterns](./sharepoint-ingestion-pattern.md)
-- [Security Principles](../../principles/security-principles.md)
+- [Security Principles](/docs/knowledge-base/principles)
 - [Entegris Artificial Intelligence (AI) Policy](../../policies/cybersecurity/ai-policy.md)

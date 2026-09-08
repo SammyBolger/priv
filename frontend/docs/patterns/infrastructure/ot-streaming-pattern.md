@@ -1,4 +1,8 @@
-# Integration Reference Architecture — OT Data Streaming Patterns
+---
+description: "This document defines approved patterns for moving operational technology data from plant environments into the Entegris enterprise data platform."
+---
+
+# OT Data Streaming Patterns
 
 ## OT Data Streaming Patterns
 

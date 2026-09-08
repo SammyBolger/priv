@@ -1,4 +1,8 @@
-# Reference Architecture — Local AI Patterns
+---
+description: "This document defines an initial Entegris pattern for running approved local AI capabilities on managed workstations."
+---
+
+# Local AI Patterns
 
 ## Local AI Patterns
 
@@ -261,8 +265,8 @@ sequenceDiagram
 
 - [Architecture Patterns Defined](../../context/05-architecture-patterns-and-template.md)
 - [Architecture Assurance Guardrail Framework](../../context/07-architecture-assurance-guardrails.md)
-- [AI Principles](../../principles/ai-principles.md)
-- [Application Principles](../../principles/application-principles.md)
-- [Security Principles](../../principles/security-principles.md)
+- [AI Principles](/docs/knowledge-base/principles)
+- [Application Principles](/docs/knowledge-base/principles)
+- [Security Principles](/docs/knowledge-base/principles)
 - [Entegris Artificial Intelligence (AI) Policy](../../policies/cybersecurity/ai-policy.md)
 - [AI Architecture Patterns](./ai-patterns.md)

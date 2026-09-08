@@ -43,7 +43,24 @@ const config: Config = {
       onBrokenMarkdownLinks: "warn",
     },
   },
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: [
+    "@docusaurus/theme-mermaid",
+    // local search - indexes at build time, no external service.
+    // The plugin always renders its SearchBar in the navbar; we hide that
+    // instance via CSS and render our own <SearchBar /> inside the KB
+    // landing page so search only appears where it belongs.
+    [
+      "@easyops-cn/docusaurus-search-local",
+      {
+        hashed: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: "/docs",
+        language: ["en"],
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
+  ],
 
   presets: [
     [

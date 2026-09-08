@@ -62,9 +62,10 @@ ALWAYS_INCLUDED_DIRS = ["principles/"]
 # specific enough that we let bm25 decide which ones apply per request.
 TOPICAL_DIRS = ["patterns/", "positions/", "policies/", "standards/"]
 
-# paths under a topical dir that we DON'T index. keeps placeholder stubs
-# from diluting bm25 scores and being cited as sources by the llm.
-TOPICAL_EXCLUDE_DIRS = ["standards/missing/"]
+# paths under a topical dir that we DON'T index. currently empty since we
+# deleted the standards/missing/ placeholder stubs, but kept as a hook for
+# any future placeholder folder that needs to stay out of retrieval.
+TOPICAL_EXCLUDE_DIRS: list[str] = []
 
 # per-category quotas keyed by mode. instead of picking a global top-N
 # across every topical doc (which lets one loudly-matching category crowd

@@ -1,4 +1,8 @@
-# Integration Reference Architecture — Data Ingestion Patterns
+---
+description: "This document defines approved patterns for moving source data into the Entegris GCP data platform."
+---
+
+# Data Ingestion Patterns
 
 ## Enterprise Data Ingestion Patterns
 

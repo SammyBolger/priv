@@ -1,3 +1,7 @@
+---
+description: "Reference architecture pattern."
+---
+
 ## High-Level Integration Solution Patterns
 
 | Integration Category | Strategic Platform | When to Use | When Not to Use | Approved Pattern |

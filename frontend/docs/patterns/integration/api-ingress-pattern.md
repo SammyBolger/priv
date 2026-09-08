@@ -1,4 +1,8 @@
-# Integration Reference Architecture — API Ingress Patterns
+---
+description: "This document defines approved patterns for inbound API traffic into Entegris platforms on GCP."
+---
+
+# API Ingress Patterns
 
 ## API Ingress Patterns
 

@@ -1,4 +1,8 @@
-# Reference Architecture — Web Application Deployment Patterns
+---
+description: "This document defines approved deployment patterns for Entegris web applications on GCP."
+---
+
+# Web Application Deployment Patterns
 
 ## Web Application Deployment Patterns
 

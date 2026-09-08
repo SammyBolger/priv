@@ -690,6 +690,219 @@ function renderBlock(block: Block, key: number): ReactNode {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Markdown -> HTML string (for .doc export). Reuses the same parseMarkdown /
+// parseInline the on-screen renderer uses so exports match what the user
+// saw. Only for export - the on-screen React version stays the source of
+// truth for actual display.
+// ---------------------------------------------------------------------------
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function inlineToHtml(nodes: Array<Inline>): string {
+  return nodes
+    .map((n) => {
+      switch (n.kind) {
+        case "text":
+          return escapeHtml(n.value);
+        case "bold":
+          return `<strong>${inlineToHtml(n.children)}</strong>`;
+        case "italic":
+          return `<em>${inlineToHtml(n.children)}</em>`;
+        case "code":
+          return `<code>${escapeHtml(n.value)}</code>`;
+        case "link":
+          return `<a href="${escapeHtml(n.href)}">${inlineToHtml(n.children)}</a>`;
+      }
+    })
+    .join("");
+}
+
+function blocksToHtml(blocks: Array<Block>): string {
+  return blocks
+    .map((b) => {
+      switch (b.kind) {
+        case "heading":
+          return `<h${b.level}>${inlineToHtml(parseInline(b.text))}</h${b.level}>`;
+        case "paragraph":
+          return `<p>${inlineToHtml(parseInline(b.text))}</p>`;
+        case "code":
+          return `<pre><code>${escapeHtml(b.code)}</code></pre>`;
+        case "mermaid":
+          // Word can't render Mermaid. Keep the source as a code block so a
+          // reviewer can rebuild the diagram elsewhere if they need to.
+          return `<p><em>[Mermaid diagram - source below]</em></p><pre><code>${escapeHtml(b.code)}</code></pre>`;
+        case "list": {
+          const tag = b.ordered ? "ol" : "ul";
+          const items = b.items
+            .map((i) => `<li>${inlineToHtml(parseInline(i))}</li>`)
+            .join("");
+          return `<${tag}>${items}</${tag}>`;
+        }
+        case "table": {
+          const thead = `<thead><tr>${b.headers
+            .map((h) => `<th>${inlineToHtml(parseInline(h))}</th>`)
+            .join("")}</tr></thead>`;
+          const tbody = `<tbody>${b.rows
+            .map(
+              (r) =>
+                `<tr>${r
+                  .map((c) => `<td>${inlineToHtml(parseInline(c))}</td>`)
+                  .join("")}</tr>`,
+            )
+            .join("")}</tbody>`;
+          return `<table>${thead}${tbody}</table>`;
+        }
+        case "quote":
+          return `<blockquote>${inlineToHtml(parseInline(b.text))}</blockquote>`;
+        case "hr":
+          return `<hr/>`;
+      }
+    })
+    .join("\n");
+}
+
+// ---------------------------------------------------------------------------
+// Download helpers. .md is a straight blob of the raw response markdown.
+// .doc is the markdown parsed into HTML then wrapped in a Word-openable
+// template. Word opens it as a proper formatted document (tables, headings,
+// lists all preserved). Technically it's .doc (older format) not .docx, but
+// Word/Google Docs/LibreOffice all handle it fine and users don't notice.
+// ---------------------------------------------------------------------------
+
+function triggerDownload(blob: Blob, filename: string): void {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function slugForDownload(source: string, fallback: string): string {
+  // use the first H1 as the filename base; fall back to the mode name.
+  const h1 = source.match(/^# (.+)$/m);
+  const raw = (h1?.[1] ?? fallback).trim();
+  const slug = raw
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return slug || "ai4ea-response";
+}
+
+function downloadMarkdown(source: string, fallback: string): void {
+  const filename = `${slugForDownload(source, fallback)}.md`;
+  const blob = new Blob([source], { type: "text/markdown;charset=utf-8" });
+  triggerDownload(blob, filename);
+}
+
+function downloadDoc(source: string, fallback: string): void {
+  const filename = `${slugForDownload(source, fallback)}.doc`;
+  const bodyHtml = blocksToHtml(parseMarkdown(source));
+  const wordDoc = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>${escapeHtml(filename)}</title>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #222; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 15pt; }
+  h3 { font-size: 12.5pt; }
+  h4, h5, h6 { font-size: 11.5pt; }
+  table { border-collapse: collapse; margin: 10px 0; }
+  th, td { border: 1px solid #999; padding: 6px 8px; vertical-align: top; }
+  th { background: #f2f2f2; text-align: left; }
+  code { font-family: Consolas, monospace; background: #f5f5f5; padding: 1px 4px; }
+  pre { background: #f5f5f5; padding: 8px; font-family: Consolas, monospace; }
+  blockquote { border-left: 3px solid #ccc; padding-left: 10px; color: #555; }
+  hr { border: none; border-top: 1px solid #ccc; }
+</style>
+</head>
+<body>${bodyHtml}</body>
+</html>`;
+  // '﻿' BOM helps some Word versions detect the charset.
+  const blob = new Blob(["﻿" + wordDoc], {
+    type: "application/msword",
+  });
+  triggerDownload(blob, filename);
+}
+
+// ---------------------------------------------------------------------------
+// Quality score. Aggregates the 3 existing check signals into one letter
+// grade so users see the trust signal at a glance instead of scanning
+// three separate banners.
+// ---------------------------------------------------------------------------
+
+type QualitySignal = {
+  grade: "A" | "B" | "C" | "D" | "F";
+  color: string;
+  score: number;
+  issues: string[];
+};
+
+function computeQuality(
+  checks: OutputCheck | undefined,
+  retrieved: Array<{ path: string; score: number }> | undefined,
+): QualitySignal {
+  let score = 100;
+  const issues: string[] = [];
+
+  if (checks) {
+    if (checks.missingSections.length > 0) {
+      const n = checks.missingSections.length;
+      score -= 20 * n;
+      issues.push(`${n} missing section${n > 1 ? "s" : ""}`);
+    }
+    if (checks.invalidSources.length > 0) {
+      const n = checks.invalidSources.length;
+      score -= 15 * n;
+      issues.push(`${n} invalid citation${n > 1 ? "s" : ""}`);
+    }
+  }
+
+  if (retrieved) {
+    if (retrieved.length === 0) {
+      score -= 30;
+      issues.push("no topical retrieval");
+    } else if ((retrieved[0]?.score ?? 0) < 5) {
+      score -= 15;
+      issues.push("weak retrieval");
+    }
+  }
+
+  score = Math.max(0, Math.min(100, score));
+
+  let grade: QualitySignal["grade"];
+  let color: string;
+  if (score >= 90) {
+    grade = "A";
+    color = "#3fa76a";
+  } else if (score >= 80) {
+    grade = "B";
+    color = "#3fa76a";
+  } else if (score >= 70) {
+    grade = "C";
+    color = "#c78a1a";
+  } else if (score >= 60) {
+    grade = "D";
+    color = "#c78a1a";
+  } else {
+    grade = "F";
+    color = "var(--entegris-red)";
+  }
+
+  return { grade, color, score, issues };
+}
+
 function MarkdownView({ source }: { source: string }): ReactNode {
   const blocks = useMemo(() => parseMarkdown(source), [source]);
   return <>{blocks.map((b, i) => renderBlock(b, i))}</>;
@@ -1066,105 +1279,88 @@ function ChecksBanner({ checks }: { checks: OutputCheck }): ReactNode {
 // assistant messages are left-aligned and (for pattern mode) wider so the
 // pattern document doesn't get cramped.
 function MessageBubble({ message }: { message: ChatMessage }): ReactNode {
-  // is this from the user or the assistant?
   const isUser = message.role === "user";
 
-  // pattern responses are full documents (7 sections + sources). they need
-  // more horizontal room than a chat reply, so widen the bubble for those.
-  const isWidePanel = !isUser && message.mode === "pattern";
+  // user messages: right-aligned tinted bubble, plain text.
+  if (isUser) {
+    return (
+      <div className="chat-row chat-row--user">
+        <div className="chat-bubble--user">{message.content}</div>
+      </div>
+    );
+  }
 
-  // outer wrapper, decides left vs right alignment.
-  const wrapperStyle: CSSProperties = {
-    display: "flex",
-    justifyContent: isUser ? "flex-end" : "flex-start",
-    margin: "0 0 1rem",
-  };
-
-  // the bubble itself. wider for pattern responses, otherwise normal chat width.
-  const bubbleStyle: CSSProperties = {
-    maxWidth: isWidePanel ? "min(880px, 96%)" : "min(720px, 86%)",
-    background: isUser ? "var(--entegris-blue)" : (isWidePanel ? "#fff" : "var(--entegris-bg-light)"),
-    color: isUser ? "#fff" : "var(--entegris-dark-gray)",
-    border: isUser ? "none" : "1px solid var(--entegris-bg-alt)",
-    borderRadius: 2,
-    padding: isWidePanel ? "1.2rem 1.4rem" : "0.85rem 1rem",
-    fontSize: "0.92rem",
-    lineHeight: 1.55,
-    boxShadow: isUser ? "none" : "0 1px 2px rgba(0,0,0,0.02)",
-  };
+  // assistant messages: no bubble, full-width column with a small label,
+  // then any retrieval/check chrome, then the rendered response, then a
+  // toolbar of utility buttons (copy + downloads).
+  const showResult =
+    !message.pending && !message.error && message.content.trim() !== "";
+  const quality = showResult
+    ? computeQuality(message.checks, message.retrieved)
+    : null;
+  const modeLabel = MODE_BY_ID[message.mode].label;
 
   return (
-    <div style={wrapperStyle}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: isUser ? "flex-end" : "flex-start",
-          gap: 4,
-          // for wide panel, take up the parent's space so the inner bubble can grow.
-          width: isWidePanel ? "100%" : undefined,
-        }}
-      >
-        {/* who sent it + mode tag */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+    <div className="chat-row chat-row--assistant">
+      <div className="chat-assistant__label">
+        <span className="chat-assistant__badge">AI4EA</span>
+        <span>{modeLabel}</span>
+        {quality && (
           <span
-            style={{
-              fontSize: "0.72rem",
-              fontWeight: 600,
-              color: "var(--entegris-medium-gray)",
-              letterSpacing: "0.04em",
-            }}
+            className="chat-quality"
+            style={{ background: quality.color }}
+            title={
+              quality.issues.length > 0
+                ? `Quality ${quality.score}/100 - ${quality.issues.join(", ")}`
+                : `Quality ${quality.score}/100 - all checks passed`
+            }
           >
-            {isUser ? "you" : "ai4ea"}
+            {quality.grade}
           </span>
-          {!isUser && <ModeBadge mode={message.mode} />}
-        </div>
-
-        {/* retrieval panel: only shown above assistant messages that have a
-            non-empty retrieved array. lets the user see what grep picked. */}
-        {!isUser && !message.pending && !message.error && message.retrieved && (
-          <RetrievalChips retrieved={message.retrieved} />
-        )}
-
-        {/* retrieval-strength banner: amber caution when top match is weak,
-            or a stronger note when nothing matched at all. renders nothing
-            when retrieval was strong. sits between RetrievalChips and
-            ChecksBanner so the flow reads: what we consulted -> was it any
-            good -> did the response pass audit. */}
-        {!isUser && !message.pending && !message.error && message.retrieved && (
-          <RetrievalStrengthBanner retrieved={message.retrieved} />
-        )}
-
-        {/* output check banner: surfaces the deterministic audit (missing
-            sections + invalid citations) from checkOutput. quiet green pill
-            when clean, red-bordered panel listing specifics when flagged. */}
-        {!isUser && !message.pending && !message.error && message.checks && (
-          <ChecksBanner checks={message.checks} />
-        )}
-
-        {/* the message body itself */}
-        <div style={bubbleStyle}>
-          {message.pending ? (
-            // still waiting for the llm. show the bouncing dots.
-            <TypingIndicator />
-          ) : message.error ? (
-            // the request failed. show the error in red, preserve any line breaks.
-            <div style={{ color: "var(--entegris-red)", whiteSpace: "pre-wrap" }}>{message.content}</div>
-          ) : isUser ? (
-            // user messages are plain text, preserve line breaks.
-            <div style={{ whiteSpace: "pre-wrap" }}>{message.content}</div>
-          ) : (
-            // assistant messages get the full markdown renderer.
-            <MarkdownView source={message.content} />
-          )}
-        </div>
-
-        {/* small "copy" button below assistant responses so the user can grab
-            the raw markdown. only shown for finished, non-error responses. */}
-        {!isUser && !message.pending && !message.error && message.content.trim() !== "" && (
-          <CopyButton text={message.content} />
         )}
       </div>
+
+      {message.pending ? (
+        <TypingIndicator />
+      ) : message.error ? (
+        <div className="chat-error">{message.content}</div>
+      ) : (
+        <>
+          {message.retrieved && (
+            <RetrievalChips retrieved={message.retrieved} />
+          )}
+          {message.retrieved && (
+            <RetrievalStrengthBanner retrieved={message.retrieved} />
+          )}
+          {message.checks && <ChecksBanner checks={message.checks} />}
+
+          <div className="chat-response">
+            <MarkdownView source={message.content} />
+          </div>
+
+          {showResult && (
+            <div className="chat-toolbar">
+              <CopyButton text={message.content} />
+              <button
+                type="button"
+                className="chat-toolbar__btn"
+                onClick={() => downloadMarkdown(message.content, modeLabel)}
+                title="Download the raw markdown"
+              >
+                ↓ .md
+              </button>
+              <button
+                type="button"
+                className="chat-toolbar__btn"
+                onClick={() => downloadDoc(message.content, modeLabel)}
+                title="Download as a Word-openable .doc"
+              >
+                ↓ Word
+              </button>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }
@@ -1179,16 +1375,7 @@ function ModeSelector({
   disabled: boolean;
 }): ReactNode {
   return (
-    <div
-      role="tablist"
-      aria-label="Conversation mode"
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: 8,
-        margin: "0 0 0.5rem",
-      }}
-    >
+    <div className="chat-mode-track" role="tablist" aria-label="Conversation mode">
       {MODES.map((m) => {
         const active = m.id === value;
         return (
@@ -1200,18 +1387,7 @@ function ModeSelector({
             onClick={() => onChange(m.id)}
             disabled={disabled}
             title={m.description}
-            style={{
-              padding: "6px 12px",
-              fontSize: "0.82rem",
-              fontFamily: "var(--ifm-font-family-base)",
-              fontWeight: 600,
-              border: `1px solid ${active ? "var(--entegris-blue)" : "var(--entegris-bg-alt)"}`,
-              background: active ? "var(--entegris-blue)" : "#fff",
-              color: active ? "#fff" : "var(--entegris-dark-gray)",
-              borderRadius: 2,
-              cursor: disabled ? "not-allowed" : "pointer",
-              opacity: disabled && !active ? 0.6 : 1,
-            }}
+            className={`chat-mode-pill${active ? " chat-mode-pill--active" : ""}`}
           >
             {m.label}
           </button>
@@ -1221,109 +1397,40 @@ function ModeSelector({
   );
 }
 
-// empty state shown when there are no messages yet. has a title/body and a
-// row of clickable example chips so the user doesn't have to invent a scenario.
-// onPickExample is called when a chip is clicked, it fills the textarea.
+// empty state shown when there are no messages yet. big centered greeting,
+// mode selector as pills, then click-to-fill example scenarios. inspired by
+// the empty states in claude / chatgpt / gemini / copilot.
 function EmptyState({
   mode,
+  onModeChange,
   onPickExample,
+  loading,
 }: {
   mode: Mode;
+  onModeChange: (m: Mode) => void;
   onPickExample: (example: string) => void;
+  loading: boolean;
 }): ReactNode {
-  // grab the config for the current mode (title, body, example list, etc).
   const cfg = MODE_BY_ID[mode];
 
   return (
-    <div
-      style={{
-        textAlign: "center",
-        padding: "3rem 1rem",
-        color: "var(--entegris-medium-gray)",
-      }}
-    >
-      {/* small red eyebrow tag identifying the mode */}
-      <div
-        style={{
-          fontSize: "0.72rem",
-          fontWeight: 600,
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-          color: "var(--entegris-red)",
-          marginBottom: 8,
-        }}
-      >
-        ai4ea . {cfg.label.toLowerCase()}
-      </div>
-
-      {/* main title */}
-      <h2
-        style={{
-          fontSize: "1.4rem",
-          fontWeight: 300,
-          color: "var(--entegris-dark-gray)",
-          margin: "0 0 0.5rem",
-        }}
-      >
-        {cfg.emptyStateTitle}
-      </h2>
-
-      {/* explanation body */}
-      <p style={{ maxWidth: 540, margin: "0 auto 1.5rem", lineHeight: 1.55 }}>
-        {cfg.emptyStateBody}
+    <div className="chat-empty">
+      <h1 className="chat-empty__greeting">How can I help you draft?</h1>
+      <p className="chat-empty__subtitle">
+        AI4EA drafts reference architectures, runs assurance reviews, and
+        answers questions grounded in the Entegris knowledge base.
       </p>
 
-      {/* small label above the chip row */}
-      <div
-        style={{
-          fontSize: "0.7rem",
-          fontWeight: 600,
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-          color: "var(--entegris-medium-gray)",
-          marginBottom: 12,
-        }}
-      >
-        try one of these
-      </div>
+      <ModeSelector value={mode} onChange={onModeChange} disabled={loading} />
 
-      {/* the chip row itself. each example becomes a clickable button. */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 8,
-          maxWidth: 640,
-          margin: "0 auto",
-        }}
-      >
+      <div className="chat-empty__examples-label">try one of these</div>
+      <div className="chat-empty__examples">
         {cfg.examples.map((example, i) => (
           <button
             key={i}
             type="button"
+            className="chat-example-card"
             onClick={() => onPickExample(example)}
-            style={{
-              background: "#fff",
-              border: "1px solid var(--entegris-bg-alt)",
-              borderRadius: 2,
-              color: "var(--entegris-dark-gray)",
-              cursor: "pointer",
-              fontFamily: "var(--ifm-font-family-base)",
-              fontSize: "0.86rem",
-              lineHeight: 1.5,
-              padding: "10px 14px",
-              textAlign: "left",
-              transition: "border-color 120ms ease, background 120ms ease",
-            }}
-            onMouseEnter={(e) => {
-              // a tiny visual cue that the chip is clickable.
-              e.currentTarget.style.borderColor = "var(--entegris-blue)";
-              e.currentTarget.style.background = "var(--entegris-bg-light)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "var(--entegris-bg-alt)";
-              e.currentTarget.style.background = "#fff";
-            }}
           >
             {example}
           </button>
@@ -1534,190 +1641,122 @@ export default function GeneratePage(): ReactNode {
 
   const canSubmit = input.trim().length > 0 && !loading && !demoMode;
 
+  const hasMessages = messages.length > 0;
+
   return (
     <Layout
       title="AI4EA — Enterprise Architecture Assistant"
       description="Generate Entegris architecture patterns, run assurance reviews, and ask architecture questions."
     >
       <style>{INLINE_KEYFRAMES}</style>
-      <main
-        style={{
-          maxWidth: 980,
-          margin: "0 auto",
-          padding: "1.5rem 1.5rem 2rem",
-          display: "flex",
-          flexDirection: "column",
-          // use dynamic viewport height (100dvh) so the layout stays correct
-          // when the mobile browser url bar shows/hides. fall back to vh for
-          // older browsers via min().
-          height: "min(calc(100dvh - var(--ifm-navbar-height)), calc(100vh - var(--ifm-navbar-height)))",
-          boxSizing: "border-box",
-        }}
-      >
-        {/* demo-mode banner sits first so visitors see the explanation before
-            the mode tabs. only rendered when AI4EA_DEMO_MODE=true at build. */}
-        {demoMode && <DemoModeBanner />}
-
-        {/* Mode tabs — placed above the header so the active mode reads as a
-            tab selection first, then the header names the selected mode. */}
-        <ModeSelector value={mode} onChange={setMode} disabled={loading} />
-
-        {/* Header */}
-        <header style={{ marginBottom: "1rem" }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              gap: 8,
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  fontSize: "0.72rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "var(--entegris-red)",
-                  marginBottom: 6,
-                }}
-              >
-                AI4EA · Enterprise Architecture Assistant
-              </div>
-              <h1
-                style={{
-                  fontSize: "1.6rem",
-                  fontWeight: 300,
-                  margin: 0,
-                  color: "var(--entegris-dark-gray)",
-                }}
-              >
-                {MODE_BY_ID[mode].label}
-              </h1>
-              <p
-                style={{
-                  margin: "0.25rem 0 0",
-                  color: "var(--entegris-medium-gray)",
-                  fontSize: "0.92rem",
-                }}
-              >
-                {MODE_BY_ID[mode].description}
-              </p>
+      <main className="chat-page">
+        {demoMode && (
+          <div style={{ padding: "12px 24px 0" }}>
+            <div style={{ maxWidth: 780, margin: "0 auto" }}>
+              <DemoModeBanner />
             </div>
+          </div>
+        )}
 
-            {messages.length > 0 && (
+        {/* Top bar: only visible once a conversation has started. Keeps the
+            empty state as clean as possible. */}
+        {hasMessages && (
+          <div className="chat-topbar">
+            <div className="chat-topbar__inner">
               <button
                 type="button"
+                className="chat-topbar__new"
                 onClick={clearConversation}
                 disabled={loading}
-                style={{
-                  background: "transparent",
-                  color: "var(--entegris-medium-gray)",
-                  border: "1px solid var(--entegris-bg-alt)",
-                  borderRadius: 2,
-                  padding: "5px 12px",
-                  fontSize: "0.8rem",
-                  fontWeight: 600,
-                  fontFamily: "var(--ifm-font-family-base)",
-                  cursor: loading ? "not-allowed" : "pointer",
-                }}
               >
-                New conversation
+                + New conversation
               </button>
-            )}
+            </div>
           </div>
-        </header>
+        )}
 
-        {/* Message log */}
+        {/* Scrolling middle area */}
         <div
           ref={logRef}
-          style={{
-            flex: 1,
-            overflowY: "auto",
-            border: "1px solid var(--entegris-bg-alt)",
-            borderRadius: 2,
-            padding: "1rem",
-            background: "#fff",
-            marginTop: "0.5rem",
-          }}
+          className="chat-scroll"
           aria-live="polite"
           aria-busy={loading}
         >
-          {messages.length === 0 ? (
-            <EmptyState mode={mode} onPickExample={pickExample} />
-          ) : (
-            messages.map((m) => <MessageBubble key={m.id} message={m} />)
-          )}
+          <div className="chat-scroll__inner">
+            {!hasMessages ? (
+              <EmptyState
+                mode={mode}
+                onModeChange={setMode}
+                onPickExample={pickExample}
+                loading={loading}
+              />
+            ) : (
+              messages.map((m) => <MessageBubble key={m.id} message={m} />)
+            )}
+          </div>
         </div>
 
-        {/* Composer */}
-        <div
-          style={{
-            marginTop: "0.75rem",
-            border: "1px solid var(--entegris-bg-alt)",
-            borderRadius: 2,
-            background: "#fff",
-            padding: "0.6rem 0.75rem",
-          }}
-        >
-          <textarea
-            ref={textareaRef}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={onKeyDown}
-            rows={2}
-            placeholder={demoMode ? "Generation disabled in public demo" : MODE_BY_ID[mode].placeholder}
-            disabled={loading || demoMode}
-            style={{
-              width: "100%",
-              border: "none",
-              outline: "none",
-              resize: "none",
-              fontFamily: "var(--ifm-font-family-base)",
-              fontSize: "0.94rem",
-              lineHeight: 1.5,
-              color: "var(--entegris-dark-gray)",
-              background: "transparent",
-              minHeight: 44,
-              maxHeight: 220,
-              boxSizing: "border-box",
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginTop: 6,
-            }}
-          >
-            <span style={{ fontSize: "0.74rem", color: "var(--entegris-medium-gray)" }}>
-              {demoMode
-                ? "Public demo — generation disabled"
-                : loading
-                ? "Generating…"
-                : "⌘/Ctrl + Enter to send"}
-            </span>
-            <button
-              type="button"
-              onClick={() => void send()}
-              disabled={!canSubmit}
-              style={{
-                padding: "0.5rem 1.2rem",
-                background: canSubmit ? "var(--entegris-blue)" : "var(--entegris-light-gray)",
-                color: "#fff",
-                border: "none",
-                borderRadius: 2,
-                fontFamily: "var(--ifm-font-family-base)",
-                fontWeight: 600,
-                fontSize: "0.9rem",
-                cursor: canSubmit ? "pointer" : "not-allowed",
-              }}
-            >
-              {loading ? "Generating…" : "Send"}
-            </button>
+        {/* Sticky composer at the bottom */}
+        <div className="chat-composer">
+          <div className="chat-composer__inner">
+            <div className="chat-composer__field">
+              <textarea
+                ref={textareaRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={onKeyDown}
+                rows={1}
+                placeholder={
+                  demoMode
+                    ? "Generation disabled in public demo"
+                    : MODE_BY_ID[mode].placeholder
+                }
+                disabled={loading || demoMode}
+                className="chat-composer__textarea"
+              />
+              <button
+                type="button"
+                onClick={() => void send()}
+                disabled={!canSubmit}
+                className="chat-composer__send"
+                aria-label="Send message"
+                title="Send (⌘/Ctrl + Enter)"
+              >
+                {loading ? "…" : "↑"}
+              </button>
+            </div>
+            <div className="chat-composer__meta">
+              {/* mode selector shown inline in the composer once a chat is
+                  active. keeps the empty-state greeting uncluttered. */}
+              {hasMessages ? (
+                <div className="chat-composer__mode-inline">
+                  {MODES.map((m) => {
+                    const active = m.id === mode;
+                    return (
+                      <button
+                        key={m.id}
+                        type="button"
+                        onClick={() => setMode(m.id)}
+                        disabled={loading}
+                        title={m.description}
+                        className={`chat-mode-pill${active ? " chat-mode-pill--active" : ""}`}
+                      >
+                        {m.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
+                <span />
+              )}
+              <span>
+                {demoMode
+                  ? "Public demo — generation disabled"
+                  : loading
+                  ? "Generating…"
+                  : "⌘/Ctrl + Enter to send"}
+              </span>
+            </div>
           </div>
         </div>
       </main>
