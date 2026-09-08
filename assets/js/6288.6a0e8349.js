@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkai4ea_frontend=globalThis.webpackChunkai4ea_frontend||[]).push([[6288],{86288(e,a,n){n.d(a,{createInfoServices:()=>i.v});var i=n(19511);n(69302)}}]);
